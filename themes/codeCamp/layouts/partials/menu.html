@@ -1,3 +1,5 @@
+<!-- Original Doug Code
+
 <div class="navbar transparent navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
@@ -22,9 +24,9 @@
         </div>
     </div>
   </div>
-</div>
+</div> -->
 
-<!-- {{- /*
+{{- /*
 Renders a menu for the given menu ID.
 
 @context {page} page The current page.
@@ -37,14 +39,29 @@ Renders a menu for the given menu ID.
 {{- $menuID := .menuID }}
 
 {{- with index site.Menus $menuID }}
-  <nav>
-    <ul>
-      {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
-    </ul>
-  </nav>
+<div class="navbar transparent navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="../index.html">
+        <strong class="hidden-phone">Chippewa Valley Code Camp</strong>
+        <strong class="visible-phone">CVCC</strong>
+    </a>
+    <div class="nav-collapse collapse">
+      <ul class="nav nav-pills pull-right">
+        {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+      </ul>
+      </div>
+    </div>
+  </div>
+</div>
 {{- end }}
 
-{{- define "partials/inline/menu/walk.html" }}
+<!-- {{- define "partials/inline/menu/walk.html" }}
   {{- $page := .page }}
   {{- range .menuEntries }}
     {{- $attrs := dict "href" .URL }}

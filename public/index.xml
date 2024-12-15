@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on Chippewa Valley Code Camp</title>
+    <link>192.168.1.10/</link>
+    <description>Recent content in Home on Chippewa Valley Code Camp</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Jan 2023 08:00:00 -0700</lastBuildDate>
+    <atom:link href="192.168.1.10/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Example</title>
+      <link>192.168.1.10/posts/sessions/goworkshop/</link>
+      <pubDate>Fri, 02 Feb 2024 04:14:54 -0800</pubDate>
+      <guid>192.168.1.10/posts/sessions/goworkshop/</guid>
+      <description>Create a Restful JSON Service in Go with GIN All Morning Workshop Need to create a JSON web service FAST! Gin is a JSON web framework that comes with all batteries included. You can have a RESTFUL JSON Service up and running in just minutes! And get al the Benefits of Go with it! Fast compile/test speeds, fast runtime, robust language features!&#xA;Test now</description>
+    </item>
+    <item>
+      <title>Post 3</title>
+      <link>192.168.1.10/posts/post-3/</link>
+      <pubDate>Wed, 15 Mar 2023 11:00:00 -0700</pubDate>
+      <guid>192.168.1.10/posts/post-3/</guid>
+      <description>Occaecat aliqua consequat laborum ut ex aute aliqua culpa quis irure esse magna dolore quis. Proident fugiat labore eu laboris officia Lorem enim. Ipsum occaecat cillum ut tempor id sint aliqua incididunt nisi incididunt reprehenderit. Voluptate ad minim sint est aute aliquip esse occaecat tempor officia qui sunt. Aute ex ipsum id ut in est velit est laborum incididunt. Aliqua qui id do esse sunt eiusmod id deserunt eu nostrud aute sit ipsum.</description>
+    </item>
+    <item>
+      <title>Post 2</title>
+      <link>192.168.1.10/posts/post-2/</link>
+      <pubDate>Wed, 15 Feb 2023 10:00:00 -0700</pubDate>
+      <guid>192.168.1.10/posts/post-2/</guid>
+      <description>Anim eiusmod irure incididunt sint cupidatat. Incididunt irure irure irure nisi ipsum do ut quis fugiat consectetur proident cupidatat incididunt cillum. Dolore voluptate occaecat qui mollit laborum ullamco et. Ipsum laboris officia anim laboris culpa eiusmod ex magna ex cupidatat anim ipsum aute. Mollit aliquip occaecat qui sunt velit ut cupidatat reprehenderit enim sunt laborum. Velit veniam in officia nulla adipisicing ut duis officia.&#xA;Exercitation voluptate irure in irure tempor mollit Lorem nostrud ad officia.</description>
+    </item>
+    <item>
+      <title>Post 1</title>
+      <link>192.168.1.10/posts/post-1/</link>
+      <pubDate>Sun, 15 Jan 2023 09:00:00 -0700</pubDate>
+      <guid>192.168.1.10/posts/post-1/</guid>
+      <description>Tempor proident minim aliquip reprehenderit dolor et ad anim Lorem duis sint eiusmod. Labore ut ea duis dolor. Incididunt consectetur proident qui occaecat incididunt do nisi Lorem. Tempor do laborum elit laboris excepteur eiusmod do. Eiusmod nisi excepteur ut amet pariatur adipisicing Lorem.&#xA;Occaecat nulla excepteur dolore excepteur duis eiusmod ullamco officia anim in voluptate ea occaecat officia. Cillum sint esse velit ea officia minim fugiat. Elit ea esse id aliquip pariatur cupidatat id duis minim incididunt ea ea.</description>
+    </item>
+    <item>
+      <title></title>
+      <link>192.168.1.10/posts/home/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>192.168.1.10/posts/home/</guid>
+      <description>It&amp;rsquo;s Back! go this should be a list Back by popular demand, we are excited to announce the 13th annual Chippewa Valley Code Camp!&#xA;On December 2nd, 2023, we will be bringing together the brightest minds in West-Central Wisconsin to celebrate our shared passion for creating and developing software!</description>
+    </item>
+    <item>
+      <title></title>
+      <link>192.168.1.10/posts/speakers/cory/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>192.168.1.10/posts/speakers/cory/</guid>
+      <description>Cory LaNou&#xA;Cory LaNou a full stack technologist who has specialized in start-ups for the last 20 years. Cory has started several technology companies over the years, including companies such as Pulsity, a web consulting firm in the late 90&amp;rsquo;s. From that company, Local Launch, an internet marketing technology company was formed and sold to RH Donnelly in 2006.&#xA;Cory has deep experience in the Go world, having worked on the Core engineering team that contributes to InfluxDB, a highly scalable, distributed time series database written in Go.</description>
+    </item>
+  </channel>
+</rss>

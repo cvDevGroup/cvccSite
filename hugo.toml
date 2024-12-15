@@ -1,5 +1,46 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://chippewavalleycodecamp.com/'
 languageCode = 'en-us'
 title = 'Chippewa Valley Code Camp'
 
 theme='codeCamp'
+
+sectionPagesMenu = 'main'
+
+[[menus.main]]
+name = 'Home'
+pageRef = '/'
+weight = 10
+
+[[menus.main]]
+name = 'Sessions'
+pageRef = '/Sessions'
+weight = 11
+
+[[menus.main]]
+name = 'Speakers'
+pageRef = '/Speakers'
+weight = 12
+
+[[menus.main]]
+name = 'Register'
+pageRef = '/Register'
+weight = 13
+
+[[menus.main]]
+name = 'Schedule'
+pageRef = '/Schedule'
+weight = 14
+
+[[menus.main]]
+name = 'Sponsors'
+pageRef = '/Sponsors'
+weight = 15
+
+
+[[menus.footer]]
+name = 'Tags'
+pageRef = '/tags'
+weight = 30
+
+
+
