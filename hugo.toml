@@ -6,35 +6,35 @@ theme='codeCamp'
 
 sectionPagesMenu = 'main'
 
-[[menus.main]]
-name = 'Home'
-pageRef = '/'
-weight = 10
-
-[[menus.main]]
+[[menus.topNav]]
 name = 'Sessions'
 pageRef = '/Sessions'
 weight = 11
 
-[[menus.main]]
+[[menus.topNav]]
 name = 'Speakers'
 pageRef = '/Speakers'
 weight = 12
 
-[[menus.main]]
+[[menus.topNav]]
 name = 'Register'
-pageRef = '/Register'
+pageRef = 'https://www.eventbrite.com/e/chippewa-valley-code-camp-2025-tickets-1128422765869'
 weight = 13
 
-[[menus.main]]
+[[menus.topNav]]
 name = 'Schedule'
 pageRef = '/Schedule'
 weight = 14
 
-[[menus.main]]
+[[menus.topNav]]
 name = 'Sponsors'
 pageRef = '/Sponsors'
 weight = 15
+
+[[menus.topNav]]
+name = 'Archive'
+pageRef = '/Archive'
+weight = 16
 
 
 [[menus.footer]]

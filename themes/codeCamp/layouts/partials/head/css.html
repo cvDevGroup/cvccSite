@@ -8,16 +8,25 @@
   {{- end }}
 {{- end }}
 
-{{- with resources.Get "css/bootstrap.min.css" }}
+<!-- {{- with resources.Get "css/bootstrap.min.css" }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}">
+{{- end }} -->
+
+
+<!-- {{- with resources.Get "css/spectre-exp.min.css" }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}">
+{{- end }} -->
+
+{{- with resources.Get "css/spectre.min.css" }}
   <link rel="stylesheet" href="{{ .RelPermalink }}">
 {{- end }}
 
 
-{{- with resources.Get "css/index.css" }}
+<!-- {{- with resources.Get "css/index.css" }}
   <link rel="stylesheet" href="{{ .RelPermalink }}">
-{{- end }}
+{{- end }} -->
 
 
-{{- with resources.Get "css/theme.css" }}
-  <link rel="stylesheet" href="{{ .RelPermalink }}">
-{{- end }}
+  <!-- {{- with resources.Get "css/theme.css" }}
+    <link rel="stylesheet" href="{{ .RelPermalink }}">
+  {{- end }} -->

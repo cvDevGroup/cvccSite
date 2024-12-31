@@ -1,24 +1,7 @@
     <!-- starts footer -->
-    <footer id="footer">
-        <div class="container">
-            <div class="row credits">
-                <div class="span12">
-                    <div class="row social">
-                        <div class="span12">
-                            <!-- <a href="http://twitter.com/CVdevgroup" class="twitter" target="_blank">
-                                <span class="socialicons ico2"></span>
-                                <span class="socialicons_h ico2h"></span>
-                            </a> -->
-                        </div>
-                    </div>
-                    <div class="row copyright">
-                        <div class="span12">
-                            &copy; {{ now.Year }} Chippewa Valley Developer Group. All rights reserved. 
-                        </div>
-                    </div>
-                </div>            
-            </div>
-        </div>
-    </footer>
+     <div class="navbar">
+     <section class="navbar-center">
+<a href="/" class="btn btn-link">Home</a></section>{{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+</div>
+<p>Copyright {{ now.Year }} Chippewa Valley Developer Group. All rights reserved.</p>
 
-<p>Copyright {{ now.Year }}. All rights reserved.</p>

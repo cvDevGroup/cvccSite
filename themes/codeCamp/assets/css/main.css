@@ -1,20 +1,26 @@
-h1{
+/* h1{
   color: red;
   border: 1px solid;
-}
+} */
 
 body {
   color: #222;
   font-family: sans-serif;
   line-height: 1.5;
   margin: 1rem;
-  max-width: 768px;
+  /* max-width: 768px; */
 }
+
+/* h3{
+  display:block;
+}
+p{
+  display:block;
+} */
 
 header {
   border-bottom: 1px solid #222;
   margin-bottom: 1rem;
-  color:aqua;
 }
 
 footer {
@@ -22,7 +28,93 @@ footer {
   margin-top: 1rem;
 }
 
-a {
-  color: #00e;
-  text-decoration: none;
+.titleText{
+  font-size: _vw;
+  /* margin-top:5px; */
+  margin-bottom:5px;
+  color: lightblue;
+  background-color:#222;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
+}
+
+.linkz{
+  background-color:lightblue;
+}
+
+#navLinkz {
+  display: none;
+}
+
+.callout{
+  /* -webkit-box-shadow: -1px 1px 5px 9px lightblue;
+  -moz-box-shadow: -1px 1px 5px 9px lightblue;
+  box-shadow: -1px 1px 5px 9px lightblue; */
+}
+
+#stickyLogo{
+  position:absolute;
+  top:20vh;
+  right:0em;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  opacity: 0.05;
+  overflow:hidden;
+
+
+}
+.stickyLogo img{
+  /* opacity: 0.5; */
+  /* max-width:40%; */
+  overflow:hidden;
+}
+
+/*! Spectre.css Icons v0.5.9 | MIT License | github.com/picturepan2/spectre */
+.icon {
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: inherit;
+  font-style: normal;
+  height: 1em;
+  position: relative;
+  text-indent: -9999px;
+  vertical-align: middle;
+  width: 1em;
+}
+
+.icon::before,
+.icon::after {
+  content: "";
+  display: block;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.icon.icon-2x {
+  font-size: 1.6rem;
+}
+
+.icon.icon-3x {
+  font-size: 2.4rem;
+}
+
+.icon.icon-4x {
+  font-size: 3.2rem;
+}
+
+.accordion .icon,
+.btn .icon,
+.toast .icon,
+.menu .icon {
+  vertical-align: -10%;
+} 
+
+.icon-menu::before {
+  background: currentColor;
+  box-shadow: 0 -.35em, 0 .35em;
+  height: .1rem;
+  width: 100%;
 }

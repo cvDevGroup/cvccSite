@@ -2,32 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Chippewa Valley Code Camp</title>
-    <link>192.168.1.10/tags/</link>
+    <link>https://chippewavalleycodecamp.com/tags/</link>
     <description>Recent content in Tags on Chippewa Valley Code Camp</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Mar 2023 11:00:00 -0700</lastBuildDate>
-    <atom:link href="192.168.1.10/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>blue</title>
-      <link>192.168.1.10/tags/blue/</link>
-      <pubDate>Wed, 15 Mar 2023 11:00:00 -0700</pubDate>
-      <guid>192.168.1.10/tags/blue/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>green</title>
-      <link>192.168.1.10/tags/green/</link>
-      <pubDate>Wed, 15 Mar 2023 11:00:00 -0700</pubDate>
-      <guid>192.168.1.10/tags/green/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>red</title>
-      <link>192.168.1.10/tags/red/</link>
-      <pubDate>Wed, 15 Mar 2023 11:00:00 -0700</pubDate>
-      <guid>192.168.1.10/tags/red/</guid>
-      <description></description>
-    </item>
+    <atom:link href="https://chippewavalleycodecamp.com/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

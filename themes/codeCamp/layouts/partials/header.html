@@ -1,4 +1,40 @@
-<h1>{{ site.Title }}</h1>
 <!-- <h3>Header.html</h3> -->
 <!-- <p>{{ .RelPermalink }}</p> -->
-{{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+<!-- <sub>Chippewa Valley</sub> -->
+
+
+<header class="navbar linkz hide-sm">
+    <a href="/">
+        <h1 class="titleText"><sup>Chippewa</sup><sub>Valley</sub><sup>Code</sup><sub>Camp</sub></h1>
+    </a>
+    {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+</header>
+
+<!-- <header class="navbar linkz show-sm">
+    <a href="/">
+        <h1 class="titleText"><sup>C</sup><sub>V</sub><sup>C</sup><sub>C</sub></h1>
+    </a>
+    <div id="navLinkz">
+        {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="displayMobileNav()">
+        <i class="fa fa-bars"></i>
+      </a>
+</header> -->
+
+<header class="navbar linkz show-sm">
+    <a href="/">
+        <h1 class="titleText">Code Camp</h1>
+    </a>
+<!-- details and summary Accordions example -->
+<details class="accordion">
+    <summary class="accordion-header">
+        <i class="icon icon-menu"></i>
+    </summary>
+    <div class="accordion-body">
+        {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+      
+    </div>
+  </details>
+
+</header>

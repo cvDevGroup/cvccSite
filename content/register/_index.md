@@ -5,4 +5,4 @@ draft = false
 +++
 
 
-Register now
+[Register now](https://www.eventbrite.com/e/chippewa-valley-code-camp-2025-tickets-1128422765869)

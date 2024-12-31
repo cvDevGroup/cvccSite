@@ -2,12 +2,6 @@ baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'My Code Camp Site'
 
-
-
-
-
-
-
 [module]
   [module.hugoVersion]
     extended = false
