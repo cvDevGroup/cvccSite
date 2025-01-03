@@ -1,7 +1,9 @@
 {{ define "main" }}
+<!-- <h3>This is begin list Content</h3> -->
+
   <h1>{{ .Title }}</h1>
   {{ .Content }}
-  <!-- <h3>This is List Content</h3> -->
+  <!-- <h3>This is end Content</h3> -->
   {{ range .Pages }}
     <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
     {{ .Content }}

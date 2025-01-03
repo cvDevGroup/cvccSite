@@ -32,8 +32,8 @@ pageRef = '/Sponsors'
 weight = 15
 
 [[menus.topNav]]
-name = 'Archive'
-pageRef = '/Archive'
+name = 'Past Camps'
+pageRef = '/past_camps'
 weight = 16
 
 

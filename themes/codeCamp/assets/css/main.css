@@ -70,6 +70,19 @@ footer {
   overflow:hidden;
 }
 
+.container p img{
+  max-width: 49%;
+}
+
+@media only screen and (max-width: 600px) {
+  .container p img{
+    max-width: 100%;
+  }
+}
+
+
+
+
 /*! Spectre.css Icons v0.5.9 | MIT License | github.com/picturepan2/spectre */
 .icon {
   box-sizing: border-box;

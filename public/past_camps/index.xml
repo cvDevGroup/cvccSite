@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Past Camps on Chippewa Valley Code Camp</title>
+    <link>https://chippewavalleycodecamp.com/past_camps/</link>
+    <description>Recent content in Past Camps on Chippewa Valley Code Camp</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 30 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://chippewavalleycodecamp.com/past_camps/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CVCC 2023</title>
+      <link>https://chippewavalleycodecamp.com/past_camps/2023/</link>
+      <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://chippewavalleycodecamp.com/past_camps/2023/</guid>
+      <description>On Saturday, December 2nd, 2023, professionals and students alike gathered at beautiful Chippewa Valley Technical College to engage in a full day of learning, networking, and comradery.&#xA;The day kicked off with a keynote by Zach Halmstad, Eau Claire&amp;rsquo;s celebrity entrepreneur and co-founder of Jamf Software!&#xA;All in all, we had a total of 95 folks participate at the event. Free sandwiches helped open conversation with current and potential friends who share similar interests.</description>
+    </item>
+  </channel>
+</rss>
