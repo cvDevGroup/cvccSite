@@ -1,5 +1,5 @@
 +++
-title = 'Register'
+title = 'Code of Conduct'
 date = 2025-01-03
 draft = false
 +++
