@@ -34,21 +34,25 @@ Access on http://localhost:1313
     
 
 ## Site Todo
+- Schedule page
+    - The schedule page should be just a `<table>` element
+    - The rows consist of talk titles, names, and locations from `/sessions` posts
+        - put a var in `/sessions` for talk time
+            - list the specific times in each session post?
+            - maybe specify talk order in there?
+                - lunch is likely going to be the 3rd item on the list
+                - eg. list 4 for third talk that day?
+    - At the end of the day, i'd love to be able to just edit posts in `/sessions`, and have a table built out that shows everything
 - CSS editing 
     - I'm only loading a main.css and a spectre.min.css file
     - [spectre docs](https://picturepan2.github.io/spectre/getting-started.html)
 - Page templates that need to be did
-    - Sessions
     - Speakers
-    - Register
+    - Sessions
     - schedule
         - Template that reads each .md in sessions folder
         - grabs 'sessionTime' metadata
         - creates a schedule list like https://archive.chippewavalleycodecamp.com/2023/schedule.html
-    - Sponsors (will likley just be a content page)
-        - could do something cooler?
-    
-
 
 
 Base layout nees reworking
