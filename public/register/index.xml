@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Register on Chippewa Valley Code Camp</title>
-    <link>https://chippewavalleycodecamp.com/register/</link>
+    <link>http://localhost:1313/register/</link>
     <description>Recent content in Register on Chippewa Valley Code Camp</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Dec 2024 08:30:00 -0700</lastBuildDate>
-    <atom:link href="https://chippewavalleycodecamp.com/register/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/register/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Code of Conduct</title>
-      <link>https://chippewavalleycodecamp.com/register/code_of_conduct/</link>
+      <link>http://localhost:1313/register/code_of_conduct/</link>
       <pubDate>Fri, 03 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://chippewavalleycodecamp.com/register/code_of_conduct/</guid>
-      <description>Code Of Conduct and Anti-Harassment Policy Chippewa Valley Code Camp and the Chippewa Valley Developers&amp;rsquo; Group are dedicated to providing a harassment-free conference experience for everyone, regardless of gender, sexual orientation, disability, physical appearance, body size, race, or religion. We do not tolerate harassment of conference participants in any form. Sexual language and imagery is not deemed appropriate for any conference venue, including talks. Conference participants violating any of these rules may be sanctioned or expelled from the event, at the discretion of the conference organizers.</description>
+      <guid>http://localhost:1313/register/code_of_conduct/</guid>
+      <description>&lt;h2 id=&#34;code-of-conduct-and-anti-harassment-policy&#34;&gt;Code Of Conduct and Anti-Harassment Policy&lt;/h2&gt;&#xA;&lt;p&gt;Chippewa Valley Code Camp and the Chippewa Valley Developers&amp;rsquo; Group are dedicated to providing a harassment-free conference experience for everyone, regardless of gender, sexual orientation, disability, physical appearance, body size, race, or religion. We do not tolerate harassment of conference participants in any form. Sexual language and imagery is not deemed appropriate for any conference venue, including talks. Conference participants violating any of these rules may be sanctioned or expelled from the event, at the discretion of the conference organizers.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

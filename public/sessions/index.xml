@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sessions on Chippewa Valley Code Camp</title>
+    <link>http://localhost:1313/sessions/</link>
+    <description>Recent content in Sessions on Chippewa Valley Code Camp</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 02 Feb 2024 04:14:54 -0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/sessions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go Workshop</title>
+      <link>http://localhost:1313/sessions/goworkshop/</link>
+      <pubDate>Fri, 02 Feb 2024 04:14:54 -0800</pubDate>
+      <guid>http://localhost:1313/sessions/goworkshop/</guid>
+      <description>&lt;h3 id=&#34;create-a-restful-json-service-in-go-with-gin&#34;&gt;Create a Restful JSON Service in Go with GIN&lt;/h3&gt;&#xA;&lt;h1 id=&#34;all-morning-workshop&#34;&gt;All Morning Workshop&lt;/h1&gt;&#xA;&lt;p&gt;Need to create a JSON web service FAST! Gin is a JSON web framework that comes with all batteries included. You can have a RESTFUL JSON Service up and running in just minutes! And get al the Benefits of Go with it! Fast compile/test speeds, fast runtime, robust language features!&lt;/p&gt;&#xA;&lt;p&gt;Test now&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/sessions/2023/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sessions/2023/</guid>
+      <description>&lt;div class=&#34;span12&#34;&gt;&#xD;&#xA;    &lt;div class=&#34;row&#34;&gt;&#xD;&#xA;        &lt;h1&gt;Sessions&lt;/h1&gt;&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;    &lt;div class=&#34;row&#34;&gt;&#xD;&#xA;&#xD;&#xA;        &lt;div class=&#34;span9&#34;&gt;&#xD;&#xA;            &lt;h2&gt;Keynote&lt;/h2&gt;&#xD;&#xA;            &lt;p&gt;Getting us fired up for our first CVCC in four years!&lt;/p&gt;&#xD;&#xA;        &lt;/div&gt;&#xD;&#xA;        &lt;div class=&#34;span3&#34;&gt;&#xD;&#xA;            &lt;a href=&#34;zach-halmstad.html&#34; title=&#34;Zach Halmstad&#34; class=&#34;thumbnail&#34;&gt;&#xD;&#xA;                &lt;img src=&#34;http://localhost:1313/2023/img/speakers/zach-halmstad.jpg&#34; alt=&#34;Zach Halmstad&#34; width=&#34;200&#34;&#xD;&#xA;                    height=&#34;200&#34;&gt;&#xD;&#xA;            &lt;/a&gt;&#xD;&#xA;            &lt;dl&gt;&#xD;&#xA;                &lt;dt&gt;Speaker: &lt;a href=&#34;zach-halmstad.html&#34; title=&#34;Zach Halmstad&#34;&gt;Zach Halmstad&lt;/a&gt;&lt;/dt&gt;&#xD;&#xA;            &lt;/dl&gt;&#xD;&#xA;        &lt;/div&gt;&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;    &lt;hr&gt;&#xD;&#xA;    &lt;div class=&#34;row&#34;&gt;&#xD;&#xA;        &lt;div class=&#34;span9&#34;&gt;&#xD;&#xA;            &lt;h2&gt;Create a Restful JSON Service in Go with GIN&lt;/h2&gt;&#xD;&#xA;            &lt;h3&gt;&lt;em&gt;All Morning Workshop&lt;/em&gt;&lt;/h3&gt;&#xD;&#xA;            &lt;p&gt;Need to create a JSON web service FAST! Gin is a JSON web framework that comes with all&#xD;&#xA;                batteries included. You can have a RESTFUL JSON Service up and running in just minutes! And&#xD;&#xA;                get al the Benefits of Go with it! Fast compile/test speeds, fast runtime, robust language&#xD;&#xA;                features!&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
