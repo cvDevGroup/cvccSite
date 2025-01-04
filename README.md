@@ -19,7 +19,7 @@ hugo serve
 
 if you want to test from mobile
 ```
-
+hugo serve --bind 192.168.1.20 baseURL http://192.168.1.20/
 ```
 
 Access on http://localhost:1313
