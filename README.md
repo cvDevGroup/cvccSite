@@ -17,9 +17,12 @@ cd cvccSite
 hugo serve
 ```
 
-if you want to test from mobile
+if you want to test from other devices on your wifi:
+run dev server with `--bind` and `basURL` flags.
+
+Any posts with `draft=true` at the top won't render, but if you want to run a dev build and test that content, you need to run `--buildDrafts` and those posts will display.
 ```
-hugo serve --bind 192.168.1.20 baseURL http://192.168.1.20/
+hugo serve --bind 192.168.1.20 baseURL http://192.168.1.20/ --buildDrafts
 ```
 
 Access on http://localhost:1313
