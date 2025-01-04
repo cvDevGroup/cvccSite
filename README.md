@@ -1,12 +1,25 @@
 # Chippewa Valley Code Camp site
 
 
+## prerequisites
+
+
+install hugo - https://gohugo.io/installation/windows/
+
+We're using this CSS lib: [spectre](https://picturepan2.github.io/spectre/getting-started.html)
+
+
 ## how to use this repo
 build site
 ```
 git clone https://github.com/cvDevGroup/cvccSite.git
 cd cvccSite
 hugo serve
+```
+
+if you want to test from mobile
+```
+
 ```
 
 Access on http://localhost:1313
