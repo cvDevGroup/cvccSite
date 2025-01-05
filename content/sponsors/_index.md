@@ -19,9 +19,9 @@ For many CVCC attendees, programming and information systems aren't just a vocat
 
 ### Sponsorship Goals
 
-The event is free to attend, so all of our costs are met by sponsors. Here are some items, and their costs that your sponsorship will cover.
+The event is free to attend, so all of our costs are met by sponsors. Here are some items that still need to be covered in order of cost and impact on the event.
 
-- Organization fees and event insurance
+- ~~Organization fees and event insurance~~
 - Coffee
 - Breakfast
 - Lunch
