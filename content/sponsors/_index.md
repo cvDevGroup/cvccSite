@@ -31,6 +31,6 @@ The event is free to attend, so all of our costs are met by sponsors. Here are s
 - A/V Equipment (For recording presentations)
 
 
-#### View our [2025 Sponsorship Program](/fil/cvcc-2025-Sponsorship-Program.pdf) or contact [dan@cvdevgroup.org](mailto:dan@cvdevgroup.org) for information.
+#### View our [2025 Sponsorship Program](/fil/cvcc-2025-Sponsorship-Program.pdf) or contact [codecamp@cvdevgroup.org](mailto:codecamp@cvdevgroup.org) for information.
 
 ----
