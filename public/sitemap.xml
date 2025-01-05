@@ -2,34 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://chippewavalleycodecamp.com/speakers/cfp/</loc>
+    <loc>http://localhost:1313/speakers/cfp/</loc>
     <lastmod>2024-12-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://chippewavalleycodecamp.com/register/code_of_conduct/</loc>
+    <loc>http://localhost:1313/speakers/cory/</loc>
+    <lastmod>2024-02-02T04:14:54-08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sessions/goworkshop/</loc>
+    <lastmod>2024-02-02T04:14:54-08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/register/code_of_conduct/</loc>
     <lastmod>2025-01-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://chippewavalleycodecamp.com/past_camps/2023/</loc>
+    <loc>http://localhost:1313/past_camps/2023/</loc>
     <lastmod>2025-01-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://chippewavalleycodecamp.com/past_camps/</loc>
+    <loc>http://localhost:1313/past_camps/</loc>
     <lastmod>2024-12-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://chippewavalleycodecamp.com/register/</loc>
+    <loc>http://localhost:1313/register/</loc>
     <lastmod>2024-12-14T08:30:00-07:00</lastmod>
   </url><url>
-    <loc>https://chippewavalleycodecamp.com/speakers/</loc>
+    <loc>http://localhost:1313/schedule/</loc>
     <lastmod>2024-12-14T08:30:00-07:00</lastmod>
   </url><url>
-    <loc>https://chippewavalleycodecamp.com/sponsors/</loc>
+    <loc>http://localhost:1313/sessions/</loc>
     <lastmod>2024-12-14T08:30:00-07:00</lastmod>
   </url><url>
-    <loc>https://chippewavalleycodecamp.com/</loc>
+    <loc>http://localhost:1313/speakers/</loc>
+    <lastmod>2024-12-14T08:30:00-07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sponsors/</loc>
+    <lastmod>2024-12-14T08:30:00-07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2024-01-01T08:00:00-07:00</lastmod>
   </url><url>
-    <loc>https://chippewavalleycodecamp.com/sponsors/2025/</loc>
+    <loc>http://localhost:1313/sessions/2023/</loc>
   </url><url>
-    <loc>https://chippewavalleycodecamp.com/categories/</loc>
+    <loc>http://localhost:1313/sponsors/2025/</loc>
   </url><url>
-    <loc>https://chippewavalleycodecamp.com/tags/</loc>
+    <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
   </url>
 </urlset>
