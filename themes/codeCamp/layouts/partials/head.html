@@ -3,11 +3,13 @@
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
 {{ partialCached "head/css.html" . }}
 {{ partialCached "head/js.html" . }}
-
-<head>
 	<title>Chippewa Valley Code Camp</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta HTTP-EQUIV="Pragma" content="no-cache">
     <meta HTTP-EQUIV="Expires" content="-1">
-</head>
+    <meta property="og:title" content="Chippewa Valley Code Camp in Eau Claire, Wisconsin" />
+    <meta property="og:description" content="Free Event hosted by the Chippewa Valley Developers Group" />
+    <meta property="og:url" content="https://chippewavalleycodecamp.com/" />
+    <meta property="og:image" content="https://chippewavalleycodecamp.com/img/cvdevgroup-logo.jpg" />
+    <meta name="x:card" content="summary_large_image" />
