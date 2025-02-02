@@ -47,6 +47,9 @@ Access on http://localhost:1313
         - $1000
     - Speaker Swag
         - And T-shirts?!
+- Nail down event time with CVTC!
+    - official start and end times
+        - update Eventbrite, Volume1, papercall, WEAU event page, and website
     
 
 ## Site Todo
