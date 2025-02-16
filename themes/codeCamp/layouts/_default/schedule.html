@@ -1,0 +1,8 @@
+{{ define "main" }}
+  {{ range where .Site.RegularPages "Section" "sessions" }}
+    {{ if eq (path.Ext .File.Path) ".md" }}
+      <h2>{{ .Params.title }}</h2>
+      <p>Date: {{ .Params.date.Format "January 2, 2006" }}</p>
+    {{ end }}
+  {{ end }}
+{{ end }}
