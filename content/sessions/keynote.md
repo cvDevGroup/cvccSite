@@ -4,6 +4,7 @@ draft: true
 params:
   sessionTime: "9:15 am"
 title: Keynote
+link: keynote
 weight: 10
 ---
 

@@ -4,6 +4,7 @@ draft: true
 params:
   sessionTime: "10:00 am"
 title: Go Workshop
+link: goworkshop
 weight: 10
 ---
 
