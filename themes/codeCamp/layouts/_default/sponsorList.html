@@ -1,0 +1,36 @@
+{{ define "main" }}
+<!-- <h3>This is begin list Content</h3> -->
+
+  <h1>Proudly Sponsored By:</h1>
+  <!-- {{ .Content }} -->
+  <!-- <h3>This is end Content</h3> -->
+<div class="columns">
+  {{ range .Pages }}
+    <div class="column col-6 col-xs-12" style="vertical-align: middle">
+        <!-- <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2> -->
+        <!-- <div class="hero bg-gray"> -->
+            <a href='{{  .Param "sponsorLink" }}'>
+
+        <div class="card" style="height: 10rem; vertical-align: middle">
+            
+            <div class="card-image" style="height: 150px; vertical-align: middle; position:relative;">
+                <img src='{{  .Param "sponsorImg" }}' class="img-responsive" style="vertical-align: middle; top: 25%; position:absolute; max-height:110px; left: 2%;"/>
+            </div>
+            <div class="card-header">
+            <div class="card-title h5">{{ .Title }}</div>
+            <!-- <div class="card-subtitle text-gray">...</div> -->
+            </div>
+            <div class="card-body">
+            
+            </div>
+            <!-- </div> -->
+        </div>
+    </div>
+</a>
+
+    
+  {{ end }}
+</div>
+  {{ .Content }}
+
+{{ end }}
