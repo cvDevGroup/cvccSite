@@ -1,10 +1,9 @@
 ---
 date: 2024-02-02T04:14:54-08:00
-draft: true
+draft: false
 title: Cory LaNou
 weight: 10
 ---
-Cory LaNou
 
 Cory LaNou a full stack technologist who has specialized in start-ups for the last 20 years. Cory has started several technology companies over the years, including companies such as Pulsity, a web consulting firm in the late 90's. From that company, Local Launch, an internet marketing technology company was formed and sold to RH Donnelly in 2006.
 

@@ -5,7 +5,11 @@
   {{ .Content }}
   <!-- <h3>This is end Content</h3> -->
   {{ range .Pages }}
+  <hr /> 
+  <br/> 
+
     <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
     {{ .Content }}
+
   {{ end }}
 {{ end }}

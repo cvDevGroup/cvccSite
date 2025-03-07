@@ -2,18 +2,24 @@
   <h1>{{ .Title }}</h1>
   <div class="columns">
       {{ $pages := where .Site.RegularPages "Section" "sessions" }}
-      {{ $sortedPages := sort $pages ".Params.date" "asc" }}
+      {{ $sortedPages := sort $pages ".Params.weight" "asc" }}
       {{ range $sortedPages }}
           {{ if eq (path.Ext .File.Path) ".md" }}
-            <div class="column col-4 col-lg-6">
-                {{ .Params.date.Format "January 2, 2006" }}
+            <div class="column col-3">
+                <!-- {{ .Params.date.Format "January 2, 2006" }} -->
+                {{ .Params.sessionTime }}
             </div>
-            <div class="column col-4 col-lg-6">
+            <div class="column col-6">
               <a href="/{{ .Params.link }}">
                   {{ .Params.title }}
               </a>
             </div>
-            <div class="column col-4 hide-lg"></div>
+            <div class="column col-3">
+              
+                  {{ .Params.location }}
+              
+            </div>
+            <!-- <div class="column col-4 hide-lg"></div> -->
           {{ end }}
       {{ end }}
   </div>

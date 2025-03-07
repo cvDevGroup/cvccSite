@@ -3,7 +3,7 @@ date: 2024-02-02T04:14:54-08:00
 draft: true
 params:
   sessionTime: "10:00 am"
-title: Go Workshop
+title: Test Draft Session
 link: sessions/goworkshop
 weight: 10
 ---

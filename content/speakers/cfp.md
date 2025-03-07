@@ -1,8 +1,8 @@
 ---
 date: 2024-12-30
-draft: false
+draft: true
 title: Call For Speakers
-weight: 10
+weight: 100
 ---
 
 ## CFP is OPEN!
