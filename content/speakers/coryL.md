@@ -16,3 +16,5 @@ When Cory isn't working on writing new Go training material, he volunteers his t
 Github
     https://corylanou.github.io/
 
+
+![Cory LaNou](/img/speakers/cory-lanou.png)

@@ -5,7 +5,7 @@ sessionTime = "9:15 am"
 location = "Commons"
 title = "Keynote"
 link = "sessions/keynote"
-weight = 1
+weight = 2
 layout = "session"
 +++
 

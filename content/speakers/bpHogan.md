@@ -6,3 +6,6 @@ weight: 4
 ---
 
 Brian Hogan is a technical content expert, educator, software developer, and author of 13 technical books. He currently leads documentation at Tailscale and has run content programs at Temporal and DigitalOcean.
+
+![Brian P. Hogan](/img/speakers/bpHogan.jpg)
+

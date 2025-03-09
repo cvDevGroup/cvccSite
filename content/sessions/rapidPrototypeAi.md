@@ -5,7 +5,7 @@ draft = false
 location = "Room B"
 sessionTime = "11:15 am"
 link = "sessions/rapidPrototypeAi"
-weight = 5
+weight = 21
 layout = "session"
 +++
 

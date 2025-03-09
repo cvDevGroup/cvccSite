@@ -5,10 +5,9 @@ sessionTime = "9:05 am"
 location = "Commons"
 title = "Opening Remarks"
 link = "sessions/openingRemarks"
-weight = 0
+weight = 1
 layout = "session"
 +++
 
 
-## Welcome To Code Camp
-
+## Welcome To Code Camp!

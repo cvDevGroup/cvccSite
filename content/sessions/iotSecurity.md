@@ -5,7 +5,7 @@ draft = false
 sessionTime = "3:00 pm"
 location = "Room A"
 link = "sessions/iotSecurity"
-weight = 10
+weight = 50
 layout = "session"
 +++
 

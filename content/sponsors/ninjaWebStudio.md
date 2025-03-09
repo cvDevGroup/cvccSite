@@ -2,7 +2,7 @@
 title = 'Ninja Web Studios'
 date = 2024-12-14T08:30:00-07:00
 draft = false
-weight = 2
+weight = 40
 layout = "sponsorPage"
 sponsorImg = '/img/sponsors/ninja-web-studios.svg'
 sponsorLink = 'https://ninjawebstudios.com/'

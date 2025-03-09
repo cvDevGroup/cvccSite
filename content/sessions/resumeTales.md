@@ -5,7 +5,7 @@ draft = false
 sessionTime = "10:15 am"
 location = "Room B"
 link = "sessions/resumeTales"
-weight = 3
+weight = 11
 layout = "session"
 +++
 

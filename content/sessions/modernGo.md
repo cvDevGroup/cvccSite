@@ -3,9 +3,9 @@ title = "Modern Web Development with Go Workshop"
 date = 2025-03-07T00:05:06-06:00
 draft = false
 sessionTime = "2:00-4:00 pm"
-location = "Workshop Room"
+location = "Room W"
 link = "sessions/modernGo"
-weight = 8
+weight = 40
 layout = "session"
 +++
 

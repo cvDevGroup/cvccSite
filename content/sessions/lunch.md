@@ -5,7 +5,7 @@ draft = false
 location = "Commons"
 sessionTime = "12:15 pm"
 link = "sessions/lunch"
-weight = 6
+weight = 30
 layout = "session"
 +++
 

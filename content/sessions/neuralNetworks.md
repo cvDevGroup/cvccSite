@@ -5,7 +5,7 @@ draft = false
 sessionTime = "10:15 am"
 location = "Room A"
 link = "sessions/neuralNetworks"
-weight = 2
+weight = 10
 layout = "session"
 +++
 

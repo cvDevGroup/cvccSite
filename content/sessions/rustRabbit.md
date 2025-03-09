@@ -5,7 +5,7 @@ draft = false
 sessionTime = "2:00 pm"
 location = "Room A"
 link = "sessions/rustRabbit"
-weight = 9
+weight = 41
 layout = "session"
 +++
 

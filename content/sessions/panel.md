@@ -5,7 +5,7 @@ draft = false
 location = "Commons"
 sessionTime = "1:00 pm"
 link = "sessions/panel"
-weight = 7
+weight = 31
 layout = "session"
 +++
 

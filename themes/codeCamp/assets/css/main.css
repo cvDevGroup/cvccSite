@@ -145,3 +145,7 @@ a {
   height: .1rem;
   width: 100%;
 }
+
+.scheduleLine > div{
+  border-bottom: 1px solid black;
+}

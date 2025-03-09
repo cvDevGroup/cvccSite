@@ -5,7 +5,7 @@ draft = false
 location = "Room A"
 sessionTime = "11:15 am"
 link = "sessions/osTools"
-weight = 4
+weight = 20
 layout = "session"
 +++
 

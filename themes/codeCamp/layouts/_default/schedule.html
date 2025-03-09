@@ -1,6 +1,6 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
-  <div class="columns">
+  <div class="columns scheduleLine">
       {{ $pages := where .Site.RegularPages "Section" "sessions" }}
       {{ $sortedPages := sort $pages ".Params.weight" "asc" }}
       {{ range $sortedPages }}
@@ -21,6 +21,8 @@
             </div>
             <!-- <div class="column col-4 hide-lg"></div> -->
           {{ end }}
+
       {{ end }}
+      <hr />
   </div>
 {{ end }}
