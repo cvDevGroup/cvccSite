@@ -7,10 +7,6 @@ layout= "sponsorList"
 +++
 
 
-
-<!-- Proudly sponsored by: THE WINNERS -->
-
-
 <!-- [![Chippeaw Valley Technical College](/img/sponsors/cvtc.jpg)](https://cvtc.edu)
 -----
 [![Ninja Web Studios](/img/sponsors/ninja-web-studios.svg)](https://ninjawebstudios.com/)
@@ -31,13 +27,13 @@ For many CVCC attendees, programming and information systems aren't just a vocat
 
 The event is free to attend, so all of our costs are met by sponsors. Here are some items that still need to be covered in order of cost and impact on the event.
 
-- Organization fees and event insurance
+- ~~Organization fees and event insurance~~
 - ~~Coffee~~
 - ~~Breakfast~~
 - ~~Lunch~~
-- SWAG
+- ~~SWAG~~
 - Afterparty
-- T-shirts
+- ~~T-shirts~~
 - A/V Equipment (For recording presentations)
 
 

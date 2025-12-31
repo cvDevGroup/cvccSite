@@ -6,15 +6,19 @@
   <!-- <h3>This is end Content</h3> -->
 <div class="columns">
   {{ range .Pages }}
-    <div class="column col-6 col-xs-12" style="vertical-align: middle">
+    <div class="column col-4 col-xs-12" style="vertical-align: middle">
         <!-- <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2> -->
         <!-- <div class="hero bg-gray"> -->
             <a href='{{  .Param "sponsorLink" }}'>
 
         <div class="card" style="height: 10rem; vertical-align: middle">
             
-            <div class="card-image" style="height: 150px; vertical-align: middle; position:relative;">
-                <img src='{{  .Param "sponsorImg" }}' class="img-responsive" style="vertical-align: middle; top: 25%; position:absolute; max-height:110px; left: 2%;"/>
+            <div class="card-image" style="height: 150px; vertical-align: middle; position:relative; text-align: center;">
+              {{ if .Param "sponsorImg" }}  
+              <img src='{{  .Param "sponsorImg" }}' class="img-responsive" style="vertical-align: middle; top: 25%; position:absolute; max-height:110px; left: 2%; text-align: center;"/>
+              {{ else }}
+                
+              {{ end }}
             </div>
             <div class="card-header">
             <div class="card-title h5">{{ .Title }}</div>

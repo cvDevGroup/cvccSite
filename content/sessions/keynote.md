@@ -1,12 +1,13 @@
----
-date: 2025-02-15T04:14:54-08:00
-draft: false
-sessionTime: "9:15 am"
-location: "Commons"
-title: Keynote
-weight: 10
-layout: "session"
----
++++
+date = 2025-02-15T04:14:54-08:00
+draft = false
+sessionTime = "9:15 am"
+location = "Room A"
+title = "Keynote"
+link = "sessions/keynote"
+weight = 2
+layout = "session"
++++
 
 
 ## Success On Your Own Terms
