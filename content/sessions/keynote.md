@@ -2,7 +2,7 @@
 date = 2025-02-15T04:14:54-08:00
 draft = false
 sessionTime = "9:15 am"
-location = "Commons"
+location = "Room A"
 title = "Keynote"
 link = "sessions/keynote"
 weight = 2

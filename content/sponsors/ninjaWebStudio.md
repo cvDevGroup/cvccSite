@@ -10,4 +10,4 @@ sponsorLink = 'https://ninjawebstudios.com/'
 
 
 
-<!-- [![Ninja Web Studios](/img/sponsors/ninja-web-studios.svg)](https://ninjawebstudios.com/) -->
+<!-- ![Ninja Web Studios](/img/sponsors/ninja-web-studios.svg)](https://ninjawebstudios.com/) -->

@@ -1,11 +1,11 @@
 +++
-title = "IoT Networks and Security"
+title = "CANCELLED - IoT Networks and Security"
 date = 2025-03-07T00:05:06-06:00
 draft = false
-sessionTime = "3:00 pm"
-location = "Room A"
+sessionTime = "Cancelled"
+location = "Cancelled"
 link = "sessions/iotSecurity"
-weight = 50
+weight = 299
 layout = "session"
 +++
 

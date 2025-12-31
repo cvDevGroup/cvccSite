@@ -87,6 +87,10 @@ a {
 .container p img{
   max-width: 49%;
 }
+.column p img{
+  max-width: 100%;
+
+}
 
 @media only screen and (max-width: 600px) {
   .container p img{

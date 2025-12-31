@@ -1,11 +1,11 @@
 +++
-title = "Accelerating Frontend Development: Rapid Prototyping with AI"
+title = "Accelerating Frontend Development: Rapid Prototyping with AI (Updated time)"
 date = 2025-03-07T00:05:06-06:00
 draft = false
-location = "Room B"
-sessionTime = "11:15 am"
+location = "Room A"
+sessionTime = "3:00 pm"
 link = "sessions/rapidPrototypeAi"
-weight = 21
+weight = 80
 layout = "session"
 +++
 
