@@ -153,3 +153,7 @@ a {
 .scheduleLine > div{
   border-bottom: 1px solid black;
 }
+
+.fullWidthPic{
+  max-width: 100%;
+}
