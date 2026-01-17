@@ -1,0 +1,38 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+
+  <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin: 2rem 0; align-items: flex-start;">
+    <div style="flex: 1; min-width: 250px;">
+      <h3>Registration Form</h3>
+      <div class="form-group">
+        <label class="form-label" for="attendee-name">Your Name</label>
+        <input class="form-input" type="text" id="attendee-name" placeholder="Enter your name" oninput="updateBadge(this.value)">
+      </div>
+    </div>
+
+    <div style="flex: 1; min-width: 250px;">
+      <h3>Badge Preview</h3>
+      <div id="badge-preview" style="width: 250px; height: 150px; background-color: #000; border-radius: 8px; padding: 0; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+        <div style="background-color: #000; color: #fff; padding: 1rem; text-align: center;">
+          <div id="badge-name" style="font-size: 1.5rem; font-weight: bold; min-height: 1.5rem;">Your Name</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  function updateBadge(name) {
+    const badgeName = document.getElementById('badge-name');
+    badgeName.textContent = name || 'Your Name';
+  }
+  </script>
+
+  <hr />
+
+  {{ range .Pages }}
+  <br/>
+    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+    {{ .Content }}
+  {{ end }}
+{{ end }}
