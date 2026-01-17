@@ -7,7 +7,9 @@
       <h3>Registration Form</h3>
       <div class="form-group">
         <label class="form-label" for="attendee-name">Your Name</label>
-        <input class="form-input" type="text" id="attendee-name" placeholder="Enter your name" oninput="updateBadge(this.value)">
+        <input class="form-input" type="text" id="attendee-name" placeholder="Enter your name" oninput="updateBadge('badge-name', this.value, 'Your Name')">
+        <label class="form-label" for="company-name">Your Company</label>
+        <input class="form-input" type="text" id="company-name" placeholder="Enter your company name" oninput="updateBadge('badge-company', this.value, 'Your Company Name')">
       </div>
     </div>
 
@@ -16,15 +18,15 @@
       <div id="badge-preview" style="width: 250px; height: 150px; background-color: #000; border-radius: 8px; padding: 0; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
         <div style="background-color: #000; color: #fff; padding: 1rem; text-align: center;">
           <div id="badge-name" style="font-size: 1.5rem; font-weight: bold; min-height: 1.5rem;">Your Name</div>
+          <div id="badge-company" style="font-size: 1rem; font-weight: bold; min-height: 1rem;">Your Company Name</div>
         </div>
       </div>
     </div>
   </div>
 
   <script>
-  function updateBadge(name) {
-    const badgeName = document.getElementById('badge-name');
-    badgeName.textContent = name || 'Your Name';
+  function updateBadge(targetId, value, defaultText) {
+    document.getElementById(targetId).textContent = value || defaultText;
   }
   </script>
 
