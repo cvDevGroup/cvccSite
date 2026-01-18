@@ -1,0 +1,10 @@
+{{ $title := .Get "title" }}
+<details class="accordion">
+  <summary class="accordion-header">
+    <span class="accordion-icon">&#9658;</span>
+    <strong>{{ $title }}</strong>
+  </summary>
+  <div class="accordion-body">
+    {{ .Inner | markdownify }}
+  </div>
+</details>

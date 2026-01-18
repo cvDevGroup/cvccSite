@@ -7,6 +7,25 @@
   <div class="container grid-xl">
 
     {{ partial "header.html" . }}
+  {{/* Global announcement banner - hidden if page has hideAnnouncement = true */}}
+  {{ if and site.Params.announcement (not .Params.hideAnnouncement) }}
+  <div class="announcement-banner-fullwidth">
+    <div class="announcement-content">
+      <strong>{{ site.Params.announcement }}</strong>
+      {{ with site.Params.announcementLink }}
+      <a class="btn btn-primary btn-lg"
+         href="{{ . }}"
+         target="_blank"
+         rel="noopener noreferrer"
+         style="color: black; margin-left: 1rem;"
+         onmouseover="this.style.color='white'"
+         onmouseout="this.style.color='black'">
+        {{ site.Params.announcementButtonText | default "Learn More" }} ↗
+      </a>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
   <!-- <main class="container grid-xl"> -->
   <main>
 
