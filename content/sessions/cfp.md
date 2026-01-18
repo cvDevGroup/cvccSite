@@ -1,11 +1,10 @@
 ---
 date: 2024-12-30
 draft: false
-title: Call For Speakers
+title: 'Call For Speakers is OPEN'
+externalLink: 'https://papercall.io/cvcc2026'
 weight: 100
 ---
-
-## [CFP is OPEN](https://papercall.io/cvcc2026)!
 
 Calling all Speakers and Presenters to submit a presentation [on papercall](https://papercall.io/cvcc2026)!
 

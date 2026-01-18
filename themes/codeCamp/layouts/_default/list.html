@@ -5,10 +5,14 @@
   {{ .Content }}
   <!-- <h3>This is end Content</h3> -->
   {{ range .Pages }}
-  <hr /> 
-  <br/> 
+  <hr />
+  <br/>
 
+    {{ if .Params.externalLink }}
+    <h2><a href="{{ .Params.externalLink }}" target="_blank" rel="noopener noreferrer">{{ .LinkTitle }} ↗</a></h2>
+    {{ else }}
     <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+    {{ end }}
     {{ .Content }}
 
   {{ end }}
