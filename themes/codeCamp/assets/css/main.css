@@ -198,3 +198,24 @@ details.accordion .accordion-body {
 details[open] .accordion-icon {
   transform: rotate(90deg);
 }
+
+/* Full-width announcement banner */
+.announcement-banner-fullwidth {
+  background: linear-gradient(135deg, #e8f4f8 0%, #d1e8f0 100%);
+  border-top: 2px solid #0077b6;
+  border-bottom: 2px solid #0077b6;
+  padding: 1rem 2rem;
+  margin: 0 -1rem 2rem -1rem;
+  text-align: center;
+  width: calc(100% + 2rem);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.announcement-banner-fullwidth .announcement-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 1.2rem;
+}
