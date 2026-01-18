@@ -1,4 +1,5 @@
-<div class="text-left" style="margin: 2rem 0;">
+{{ $marginBottom := .Get "marginBottom" | default "2rem" }}
+<div class="text-left" style="margin: 2rem 0 {{ $marginBottom }} 0;">
   <a class="btn btn-primary btn-lg"
      href="{{ .Get `href` }}"
      target="_blank"
