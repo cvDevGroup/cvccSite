@@ -61,7 +61,8 @@
           Sponsored By:
         </p>
         <div class="columns">
-          {{ range (where .Site.RegularPages "Section" "sponsors") }} 
+          {{ $section := site.GetPage "section" "sponsors" }}
+          {{ range $section.RegularPages }}
             <div class="column col-6 col-xs-12" style="vertical-align: middle">
                 <!-- <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2> -->
                 <!-- <div class="hero bg-gray"> -->

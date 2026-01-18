@@ -42,5 +42,10 @@ name = 'Tags'
 pageRef = '/tags'
 weight = 30
 
+[markup.goldmark.renderer]
+  unsafe = true # Allow HTML in md files
 
-
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.parser]
+      wrapStandAloneImageWithinParagraph = false
