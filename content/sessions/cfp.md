@@ -35,4 +35,4 @@ The CFP Formally closes on Feb 28th, 2026.
     - "The best way to learn is to teach" - _Frank Oppenheimer_
 {{< /accordion >}}
 
-#### [Submit a presentation today](https://papercall.io/cvcc2026)
+{{< external-button href="https://papercall.io/cvcc2026" text="Submit a presentation today" >}}
