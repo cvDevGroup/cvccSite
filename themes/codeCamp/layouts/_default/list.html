@@ -8,12 +8,21 @@
   <hr />
   <br/>
 
-    {{ if .Params.externalLink }}
+    {{ if .Params.accordion }}
+    <details class="accordion">
+      <summary class="accordion-header">
+        <span class="accordion-icon">&#9658;</span>
+        <h2>{{ .LinkTitle }}</h2>
+      </summary>
+      <div class="accordion-body">{{ .Content }}</div>
+    </details>
+    {{ else if .Params.externalLink }}
     <h2><a href="{{ .Params.externalLink }}" target="_blank" rel="noopener noreferrer">{{ .LinkTitle }} ↗</a></h2>
+    {{ .Content }}
     {{ else }}
     <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ end }}
     {{ .Content }}
+    {{ end }}
 
   {{ end }}
 {{ end }}
