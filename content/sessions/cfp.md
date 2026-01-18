@@ -13,7 +13,7 @@ Without presenters, a conference is just a bunch of nerds milling about without 
 
 If you're curious about presenting but are unsure, come talk to us on [Slack](https://bit.ly/cvdevgroup-slack-invite) or email [codecamp@cvdevgroup.org](mailto:codecamp@cvdevgroup.org) and we'll sort it out!
 
-The CFP Formally closes on Feb 28st, 2026.
+The CFP Formally closes on Feb 28th, 2026.
 
 ### Presentation FAQ:
 
