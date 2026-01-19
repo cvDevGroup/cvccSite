@@ -137,6 +137,7 @@ a {
 }
 
 .accordion .icon,
+.nav-accordion .icon,
 .btn .icon,
 .toast .icon,
 .menu .icon {
@@ -197,6 +198,21 @@ details.accordion .accordion-body {
 
 details[open] .accordion-icon {
   transform: rotate(90deg);
+}
+
+/* Mobile nav accordion - no background/border styling */
+details.nav-accordion {
+  border: none;
+  margin: 0;
+}
+
+details.nav-accordion .nav-accordion-header {
+  cursor: pointer;
+  list-style: none;
+}
+
+details.nav-accordion .nav-accordion-header::-webkit-details-marker {
+  display: none;
 }
 
 /* Full-width announcement banner */
