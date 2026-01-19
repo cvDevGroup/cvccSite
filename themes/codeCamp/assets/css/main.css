@@ -137,6 +137,7 @@ a {
 }
 
 .accordion .icon,
+.nav-accordion .icon,
 .btn .icon,
 .toast .icon,
 .menu .icon {
@@ -156,4 +157,81 @@ a {
 
 .fullWidthPic{
   max-width: 100%;
+}
+
+/* Accordion styling */
+details.accordion {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+details.accordion .accordion-header {
+  padding: 1rem;
+  background-color: #f7f7f7;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+details.accordion .accordion-header:hover {
+  background-color: #eee;
+}
+
+details.accordion .accordion-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+details.accordion .accordion-body {
+  padding: 1rem;
+  border-top: 1px solid #ddd;
+}
+
+.accordion-icon {
+  display: inline-block;
+  transition: transform 0.2s;
+  font-size: 0.8rem;
+}
+
+details[open] .accordion-icon {
+  transform: rotate(90deg);
+}
+
+/* Mobile nav accordion - no background/border styling */
+details.nav-accordion {
+  border: none;
+  margin: 0;
+}
+
+details.nav-accordion .nav-accordion-header {
+  cursor: pointer;
+  list-style: none;
+}
+
+details.nav-accordion .nav-accordion-header::-webkit-details-marker {
+  display: none;
+}
+
+/* Full-width announcement banner */
+.announcement-banner-fullwidth {
+  background: linear-gradient(135deg, #e8f4f8 0%, #d1e8f0 100%);
+  border-top: 2px solid #0077b6;
+  border-bottom: 2px solid #0077b6;
+  padding: 1rem 2rem;
+  margin: 0 -1rem 2rem -1rem;
+  text-align: center;
+  width: calc(100% + 2rem);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.announcement-banner-fullwidth .announcement-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 1.2rem;
 }
