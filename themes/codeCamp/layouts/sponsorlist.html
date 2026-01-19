@@ -1,14 +1,11 @@
 {{ define "main" }}
-<!-- <h3>This is begin list Content</h3> -->
-
   <h1>Proudly Sponsored By:</h1>
   <!-- {{ .Content }} -->
-  <!-- <h3>This is end Content</h3> -->
+
 <div class="columns">
-  {{ range .Pages }}
+    {{ range .RegularPages }}
     <div class="column col-4 col-xs-12" style="vertical-align: middle">
-        <!-- <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2> -->
-        <!-- <div class="hero bg-gray"> -->
+
             <a href='{{  .Param "sponsorLink" }}'>
 
         <div class="card" style="height: 10rem; vertical-align: middle">
@@ -21,20 +18,26 @@
               {{ end }}
             </div>
             <div class="card-header">
-            <div class="card-title h5">{{ .Title }}</div>
-            <!-- <div class="card-subtitle text-gray">...</div> -->
+            <div class="card-title h5"></div>
             </div>
             <div class="card-body">
-            
+            {{ .Title }}
             </div>
-            <!-- </div> -->
+
         </div>
     </div>
 </a>
 
     
   {{ end }}
-</div>
+</div><br/>
   {{ .Content }}
+<br/>
+<hr/>
+<br/>
+<H3>Past Sponsors</H3>
+{{ range .Sections }}
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
 
+{{ end }}
 {{ end }}

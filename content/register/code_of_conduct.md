@@ -2,6 +2,7 @@
 title = 'Code of Conduct'
 date = 2025-01-03
 draft = false
+accordion = true
 +++
 
 ## Code Of Conduct and Anti-Harassment Policy

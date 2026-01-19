@@ -2,14 +2,15 @@
 title = 'Home'
 date = 2024-01-01T08:00:00-07:00
 draft = false
-
 +++
 
 <!-- ## Back by popular demand
 
 We are excited to announce the 14th annual Chippewa Valley Code Camp! -->
 
-On **March 15th, 2025**, we will be bringing together the brightest minds in West-Central Wisconsin to celebrate our shared passion for creating and developing software!
+# Announcing CVCC 2026!
+
+On **March 14th, 2026**, we are once again bringing together the area's brightest minds in software development to celebrate our shared passion.
 
 ## Main Event Details:
 
@@ -27,7 +28,7 @@ Parking in lots on College Drive - labeled P1 and P9 below.
 
 [![CVTC Campus Map](/img/cvtcCampus.jpg)](/img/cvtcCampus.jpg)
 
-### Wi-Fi
+<!-- ### Wi-Fi
 
 CVTCEvents - open network  
 
@@ -47,4 +48,4 @@ Pizza (gratis) and beer (non-gratis) in the back Event Room at Growler Guys
 
 [Growler Guys](https://thegrowlerguys.com/locations/eau-claire-wisconsin/)  
 2832 London Road  
-Eau Claire, WI
+Eau Claire, WI -->

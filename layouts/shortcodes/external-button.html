@@ -1,0 +1,12 @@
+{{ $marginBottom := .Get "marginBottom" | default "2rem" }}
+<div class="text-left" style="margin: 2rem 0 {{ $marginBottom }} 0;">
+  <a class="btn btn-primary btn-lg"
+     href="{{ .Get `href` }}"
+     target="_blank"
+     rel="noopener noreferrer"
+     style="color: black;"
+     onmouseover="this.style.color='white'"
+     onmouseout="this.style.color='black'">
+    {{ .Get "text" }} ↗
+  </a>
+</div>

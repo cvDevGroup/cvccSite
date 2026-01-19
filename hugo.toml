@@ -42,5 +42,17 @@ name = 'Tags'
 pageRef = '/tags'
 weight = 30
 
+[markup.goldmark.renderer]
+  unsafe = true # Allow HTML in md files
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.parser]
+      wrapStandAloneImageWithinParagraph = false
 
+[params]
+  # Site-wide announcement banner (appears on all pages unless hideAnnouncement = true in page front matter)
+  announcement = '2026 Registration is Now Open!'
+  announcementLink = 'https://www.eventbrite.com/e/chippewa-valley-code-camp-2026-tickets-1980783904981'
+  announcementButtonText = 'Register on Eventbrite'
+  announcementConfetti = true  # Set to false to disable confetti animation
