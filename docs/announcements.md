@@ -26,6 +26,7 @@ Add the following to `hugo.toml` under the `[params]` section:
 | `announcement` | Yes | The main announcement text displayed in the banner |
 | `announcementLink` | No | URL for the call-to-action button. If omitted, no button is shown |
 | `announcementButtonText` | No | Text for the button. Defaults to "Learn More" if not specified |
+| `announcementConfetti` | No | Set to `true` to enable a celebratory confetti animation on page load |
 
 ### Example
 
@@ -34,7 +35,17 @@ Add the following to `hugo.toml` under the `[params]` section:
   announcement = 'Registration is Now Open!'
   announcementLink = 'https://www.eventbrite.com/e/example-event'
   announcementButtonText = 'Register on Eventbrite'
+  announcementConfetti = true
 ```
+
+## Confetti Animation
+
+When `announcementConfetti = true`, a celebratory confetti animation will spray from both sides of the banner when the page loads.
+
+- The animation plays once automatically on page load
+- Clicking anywhere on the banner (except the button) will replay the animation
+- The confetti is contained within the banner area
+- The animation uses colors that complement the site's theme
 
 ## Hiding the Announcement on Specific Pages
 

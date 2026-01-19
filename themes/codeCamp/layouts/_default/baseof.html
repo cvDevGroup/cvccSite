@@ -10,6 +10,9 @@
   {{/* Global announcement banner - hidden if page has hideAnnouncement = true */}}
   {{ if and site.Params.announcement (not .Params.hideAnnouncement) }}
   <div class="announcement-banner-fullwidth">
+    {{ if site.Params.announcementConfetti }}
+    <canvas id="confetti-canvas"></canvas>
+    {{ end }}
     <div class="announcement-content">
       <strong>{{ site.Params.announcement }}</strong>
       {{ with site.Params.announcementLink }}
@@ -25,6 +28,11 @@
       {{ end }}
     </div>
   </div>
+  {{ if site.Params.announcementConfetti }}
+  {{ with resources.Get "js/confetti.js" }}
+  <script src="{{ .RelPermalink }}"></script>
+  {{ end }}
+  {{ end }}
   {{ end }}
   <!-- <main class="container grid-xl"> -->
   <main>
