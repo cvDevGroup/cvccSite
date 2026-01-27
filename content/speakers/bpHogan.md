@@ -5,7 +5,8 @@ draft: false
 weight: 4
 ---
 
-Brian Hogan is a technical content expert, educator, software developer, and author of 13 technical books. He currently leads documentation at Tailscale and has run content programs at Temporal and DigitalOcean.
+A technical content expert, software developer, teacher, and musician. The author of several books including [Write Better with Vale](https://thevalebook.com/), [tmux 3](https://tmuxbook.com), [Small, Sharp Software Tools](https://smallsharpsoftwaretools.com/), and [Exercises For Programmers](https://pragprog.com/titles/bhwb/exercises-for-programmers/).
+
+When he's not writing or teaching, He's [making music](https://bphogan.com/music/). 
 
 ![Brian P. Hogan](/img/speakers/bpHogan.jpg)
-
