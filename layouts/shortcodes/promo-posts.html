@@ -29,13 +29,49 @@
     {{ end }}
 
     {{ if $showPost }}
-    <div class="promo-post">
-      <h3>{{ .title }}</h3>
+    {{ $postId := .id }}
+    {{ $hasVariables := and .variables (gt (len .variables) 0) }}
+    <div class="promo-post" data-post-id="{{ $postId }}">
+      <div class="promo-post-header">
+        <h3>{{ .title }}</h3>
+        {{ if $hasVariables }}
+        <button class="btn btn-customize" onclick="openCustomizeForm('{{ $postId }}')">Customize</button>
+        {{ end }}
+      </div>
       <div class="promo-post-content">
-        <pre><code>{{ .content | strings.TrimSuffix "\n" }}</code></pre>
-        <button class="btn btn-copy" onclick="copyToClipboard(this)" data-content="{{ .content | htmlEscape }}">Copy to Clipboard</button>
+        <pre><code id="content-{{ $postId }}">{{ .content | strings.TrimSuffix "\n" }}</code></pre>
+        <div class="promo-post-actions">
+          <button class="btn btn-copy" onclick="copyToClipboard(this, '{{ $postId }}')" data-original-content="{{ .content | htmlEscape }}">Copy to Clipboard</button>
+        </div>
       </div>
     </div>
+    {{ if $hasVariables }}
+    <div class="modal-overlay" id="modal-{{ $postId }}" onclick="closeModalOnOverlay(event, '{{ $postId }}')">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <div class="modal-header">
+          <strong>Customize: {{ .title }}</strong>
+          <button class="btn-close" onclick="closeCustomizeForm('{{ $postId }}')">&times;</button>
+        </div>
+        <div class="modal-body">
+          {{ range .variables }}
+          <div class="form-field">
+            <label for="var-{{ $postId }}-{{ .key | urlize }}">{{ .label }}</label>
+            <input
+              type="text"
+              id="var-{{ $postId }}-{{ .key | urlize }}"
+              data-key="{{ .key }}"
+              placeholder="{{ with .placeholder }}{{ . }}{{ else }}{{ .key }}{{ end }}"
+            />
+          </div>
+          {{ end }}
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" onclick="applyCustomizations('{{ $postId }}')">Apply</button>
+          <button class="btn btn-secondary" onclick="resetCustomizations('{{ $postId }}')">Reset</button>
+        </div>
+      </div>
+    </div>
+    {{ end }}
     {{ end }}
   {{ end }}
 {{ else }}

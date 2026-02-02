@@ -26,6 +26,19 @@ Edit `content/promo_kit/posts.yaml` to add or modify social media posts. Each po
 |-------|-------------|
 | `startDate` | Post won't appear before this date (format: `YYYY-MM-DD`) |
 | `endDate` | Post won't appear after this date (format: `YYYY-MM-DD`) |
+| `variables` | Array of customizable placeholders (see below) |
+
+### Variables
+
+Add a `variables` array to enable a "Customize" button that lets users fill in placeholder values before copying.
+
+Each variable has:
+
+| Field | Description |
+|-------|-------------|
+| `key` | The placeholder text in content (e.g., `[Name]`) |
+| `label` | Form field label shown to user |
+| `placeholder` | Input placeholder text (optional)
 
 ## Example Post
 
@@ -64,6 +77,29 @@ posts:
       Only one week until CVCC 2026!
       #CVCC2026
 ```
+
+## Example with Variables
+
+```yaml
+posts:
+  - id: email-blurb
+    title: "Email/Newsletter Blurb"
+    platform: "email"
+    variables:
+      - key: "[Name]"
+        label: "Recipient Name"
+        placeholder: "e.g., John"
+      - key: "[Company]"
+        label: "Company Name"
+        placeholder: "e.g., Acme Inc."
+    content: |
+      Hi [Name],
+
+      I wanted to share info about CVCC 2026 with the team at [Company].
+      ...
+```
+
+When variables are defined, a "Customize" button appears. Users can fill in the form, click "Apply", and the placeholders are replaced in the displayed content before copying.
 
 ## Date Filtering Logic
 

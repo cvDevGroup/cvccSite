@@ -3,6 +3,11 @@
 # Posts will only appear if:
 #   - startDate is not set OR current date >= startDate
 #   - endDate is not set OR current date <= endDate
+#
+# Variables: Add a 'variables' array to enable a customization form
+#   - key: The placeholder text in content (e.g., "[Name]")
+#   - label: Form field label
+#   - placeholder: Input placeholder text (optional)
 
 posts:
   - id: short-general
@@ -39,6 +44,10 @@ posts:
   - id: email-blurb
     title: "Email/Newsletter Blurb"
     platform: "email"
+    variables:
+      - key: "[Name]"
+        label: "Recipient Name"
+        placeholder: "e.g., John"
     content: |
       Subject: Free Tech Conference - Chippewa Valley Code Camp 2026
 

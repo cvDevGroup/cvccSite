@@ -69,14 +69,87 @@ Copy and paste these ready-to-use posts. Feel free to customize!
 {{< promo-posts >}}
 
 <script>
-function copyToClipboard(button) {
-  const content = button.getAttribute('data-content');
-  // Decode HTML entities
-  const textarea = document.createElement('textarea');
-  textarea.innerHTML = content;
-  const decodedContent = textarea.value;
+function openCustomizeForm(postId) {
+  const modal = document.getElementById('modal-' + postId);
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
 
-  navigator.clipboard.writeText(decodedContent).then(() => {
+function closeCustomizeForm(postId) {
+  const modal = document.getElementById('modal-' + postId);
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+function closeModalOnOverlay(event, postId) {
+  if (event.target.classList.contains('modal-overlay')) {
+    closeCustomizeForm(postId);
+  }
+}
+
+function applyCustomizations(postId) {
+  const modal = document.getElementById('modal-' + postId);
+  const contentEl = document.getElementById('content-' + postId);
+  const copyBtn = document.querySelector(`[data-post-id="${postId}"] .btn-copy`);
+
+  if (!modal || !contentEl || !copyBtn) return;
+
+  // Get original content
+  let content = decodeHtmlEntities(copyBtn.getAttribute('data-original-content'));
+
+  // Apply each variable substitution
+  const inputs = modal.querySelectorAll('input[data-key]');
+  inputs.forEach(input => {
+    const key = input.getAttribute('data-key');
+    const value = input.value.trim();
+    if (value) {
+      content = content.split(key).join(value);
+    }
+  });
+
+  // Update displayed content
+  contentEl.textContent = content.replace(/\n$/, '');
+
+  // Close the modal
+  closeCustomizeForm(postId);
+}
+
+function resetCustomizations(postId) {
+  const modal = document.getElementById('modal-' + postId);
+  const contentEl = document.getElementById('content-' + postId);
+  const copyBtn = document.querySelector(`[data-post-id="${postId}"] .btn-copy`);
+
+  if (!modal || !contentEl || !copyBtn) return;
+
+  // Clear all inputs
+  const inputs = modal.querySelectorAll('input[data-key]');
+  inputs.forEach(input => {
+    input.value = '';
+  });
+
+  // Restore original content
+  const originalContent = decodeHtmlEntities(copyBtn.getAttribute('data-original-content'));
+  contentEl.textContent = originalContent.replace(/\n$/, '');
+
+  // Close the modal
+  closeCustomizeForm(postId);
+}
+
+function decodeHtmlEntities(text) {
+  const textarea = document.createElement('textarea');
+  textarea.innerHTML = text;
+  return textarea.value;
+}
+
+function copyToClipboard(button, postId) {
+  const contentEl = document.getElementById('content-' + postId);
+  const content = contentEl ? contentEl.textContent : '';
+
+  navigator.clipboard.writeText(content).then(() => {
     const originalText = button.textContent;
     button.textContent = 'Copied!';
     button.classList.add('btn-copied');
