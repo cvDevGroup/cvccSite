@@ -36,6 +36,11 @@ name = 'Past Camps'
 pageRef = '/past_camps'
 weight = 16
 
+[[menus.topNav]]
+name = 'Promo Kit'
+pageRef = '/promo_kit'
+weight = 17
+
 
 [[menus.footer]]
 name = 'Tags'

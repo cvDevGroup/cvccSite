@@ -250,3 +250,171 @@ details.nav-accordion .nav-accordion-header::-webkit-details-marker {
   pointer-events: none;
   z-index: 1;
 }
+
+/* Promo Kit Styles */
+.promo-assets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 1.5rem 0;
+}
+
+.promo-asset {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #f7f7f7;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.promo-logo {
+  max-width: 300px;
+  height: auto;
+}
+
+.promo-logo-round {
+  max-width: 150px;
+  height: auto;
+}
+
+.color-swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.color-swatch {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 140px;
+  height: 100px;
+  padding: 0.5rem;
+  border-radius: 8px;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.color-swatch .color-name {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.color-swatch .color-hex {
+  font-family: monospace;
+  font-size: 0.85rem;
+}
+
+.promo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.promo-gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Button styles for promo kit */
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-primary {
+  background-color: #0077b6;
+  color: white !important;
+}
+
+.btn-primary:hover {
+  background-color: #005a8c;
+}
+
+@media only screen and (max-width: 600px) {
+  .promo-assets {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .promo-asset {
+    width: 100%;
+  }
+
+  .color-swatches {
+    flex-direction: column;
+  }
+
+  .color-swatch {
+    width: 100%;
+  }
+}
+
+/* Promo Posts Styles */
+.promo-post {
+  margin: 1.5rem 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.promo-post h3 {
+  margin: 0;
+  padding: 1rem;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ddd;
+  font-size: 1.1rem;
+}
+
+.promo-post-content {
+  padding: 1rem;
+}
+
+.promo-post-content pre {
+  margin: 0 0 1rem 0;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.promo-post-content code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.btn-copy {
+  background-color: #9c4500;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.btn-copy:hover {
+  background-color: #7a3600;
+}
+
+.btn-copied {
+  background-color: #28a745 !important;
+}

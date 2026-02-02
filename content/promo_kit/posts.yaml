@@ -1,0 +1,74 @@
+# Social Media Posts for Promo Kit
+# Optional fields: startDate, endDate (format: YYYY-MM-DD)
+# Posts will only appear if:
+#   - startDate is not set OR current date >= startDate
+#   - endDate is not set OR current date <= endDate
+
+posts:
+  - id: short-general
+    title: "Short Post (Twitter/X, Mastodon, Bluesky)"
+    platform: "short"
+    content: |
+      Chippewa Valley Code Camp is back! Join us March 14, 2026 in Eau Claire, WI for a FREE day of tech talks, workshops, and networking.
+
+      Register now: chippewavalleycodecamp.com
+
+      #CVCC2026 #CodeCamp #WisconsinTech #Developer
+
+  - id: medium-general
+    title: "Medium Post (LinkedIn, Facebook)"
+    platform: "medium"
+    content: |
+      Calling all developers, tech enthusiasts, and lifelong learners!
+
+      Chippewa Valley Code Camp returns on March 14, 2026. This FREE community-driven conference features:
+
+      - Expert-led sessions on modern development practices
+      - Hands-on workshops
+      - Networking with local tech professionals
+      - Free breakfast and lunch!
+
+      Whether you're a seasoned developer or just starting out, there's something for everyone.
+
+      Location: CVTC Business Campus, Eau Claire, WI
+
+      Register today: chippewavalleycodecamp.com
+
+      #CVCC2026 #CodeCamp #WisconsinTech #EauClaire #Developer #TechCommunity
+
+  - id: email-blurb
+    title: "Email/Newsletter Blurb"
+    platform: "email"
+    content: |
+      Subject: Free Tech Conference - Chippewa Valley Code Camp 2026
+
+      Hi [Name],
+
+      Mark your calendar for March 14, 2026! Chippewa Valley Code Camp is returning to CVTC Business Campus in Eau Claire, WI.
+
+      This FREE, community-driven event brings together developers, designers, and tech enthusiasts for a full day of learning and networking. Enjoy expert-led sessions, hands-on workshops, complimentary meals, and great conversations with fellow technologists.
+
+      Registration is open now at chippewavalleycodecamp.com
+
+      Hope to see you there!
+
+  # Example of time-limited posts:
+  # - id: early-bird
+  #   title: "Early Bird Announcement"
+  #   platform: "short"
+  #   startDate: "2026-01-01"
+  #   endDate: "2026-02-15"
+  #   content: |
+  #     Early bird registration is open for CVCC 2026!
+  #     Be among the first to secure your spot.
+  #     chippewavalleycodecamp.com #CVCC2026
+
+  # - id: last-chance
+  #   title: "Last Chance to Register"
+  #   platform: "short"
+  #   startDate: "2026-03-07"
+  #   endDate: "2026-03-13"
+  #   content: |
+  #     Only one week until CVCC 2026! Last chance to register.
+  #     Don't miss out on this FREE tech conference.
+  #     chippewavalleycodecamp.com #CVCC2026

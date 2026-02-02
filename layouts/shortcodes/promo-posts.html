@@ -1,0 +1,43 @@
+{{/* Render social media posts from posts.yaml in the page bundle with date filtering */}}
+{{ $now := now }}
+{{ $posts := slice }}
+
+{{ with .Page.Resources.GetMatch "posts.yaml" }}
+  {{ $data := . | transform.Unmarshal }}
+  {{ $posts = $data.posts }}
+{{ end }}
+
+{{ with $posts }}
+  {{ range . }}
+    {{/* Check date constraints */}}
+    {{ $showPost := true }}
+
+    {{ with .startDate }}
+      {{ $start := time . }}
+      {{ if $now.Before $start }}
+        {{ $showPost = false }}
+      {{ end }}
+    {{ end }}
+
+    {{ with .endDate }}
+      {{ $end := time . }}
+      {{/* Add 24 hours to include the full end date */}}
+      {{ $endPlusDay := $end.AddDate 0 0 1 }}
+      {{ if $now.After $endPlusDay }}
+        {{ $showPost = false }}
+      {{ end }}
+    {{ end }}
+
+    {{ if $showPost }}
+    <div class="promo-post">
+      <h3>{{ .title }}</h3>
+      <div class="promo-post-content">
+        <pre><code>{{ .content | strings.TrimSuffix "\n" }}</code></pre>
+        <button class="btn btn-copy" onclick="copyToClipboard(this)" data-content="{{ .content | htmlEscape }}">Copy to Clipboard</button>
+      </div>
+    </div>
+    {{ end }}
+  {{ end }}
+{{ else }}
+  <p>No promotional posts available at this time.</p>
+{{ end }}
