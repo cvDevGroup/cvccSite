@@ -92,15 +92,6 @@ function copyToClipboard(button) {
 
 ---
 
-## Hashtags
-
-Use these hashtags when posting about the event:
-
-**Primary:** `#CVCC2026`
-**Secondary:** `#ChippewaValleyCodeCamp` `#CodeCamp` `#WisconsinTech` `#EauClaire` `#Developer` `#TechCommunity`
-
----
-
 ## Photos from Past Events
 
 Feel free to use these photos from previous camps in your promotional materials.
