@@ -22,6 +22,7 @@ posts:
     section: "Attendee Posts"
     title: "Attendee Post: The Hype Builder"
     platform: "short"
+    endDate: "2026-03-14"
     content: |
       I'm going to Chippewa Valley Code Camp 2026! A full day of tech sessions, hands-on workshops, free food, and an afterparty — all completely FREE. March 14 in Eau Claire, WI. Come with me!
 
@@ -31,6 +32,7 @@ posts:
     section: "Attendee Posts"
     title: "Attendee Post: Invite a Friend"
     platform: "short"
+    endDate: "2026-03-14"
     content: |
       Know anyone in tech (or curious about tech)? Chippewa Valley Code Camp is March 14 in Eau Claire and it's totally free — sessions, workshops, breakfast, lunch, everything. Tag someone who should come with you!
 
@@ -40,6 +42,7 @@ posts:
     section: "Attendee Posts"
     title: "Attendee Post: Can't Beat Free"
     platform: "short"
+    endDate: "2026-03-14"
     content: |
       Free breakfast. Free lunch. Free workshops. Free tech talks. Free networking. Free afterparty. Chippewa Valley Code Camp 2026 is March 14 in Eau Claire, WI and I'll be there. What's your excuse?
 
@@ -49,6 +52,7 @@ posts:
     section: "Attendee Posts"
     title: "Attendee Post: Countdown"
     platform: "short"
+    endDate: "2026-03-14"
     content: |
       Counting down the days until Chippewa Valley Code Camp 2026! March 14 at CVTC in Eau Claire — a full day of learning, connecting, and geeking out with the local tech community. Did I mention it's free?
 
@@ -58,6 +62,7 @@ posts:
     section: "Attendee Posts"
     title: "Attendee Post: Community Shoutout"
     platform: "short"
+    endDate: "2026-03-14"
     content: |
       One of my favorite things about the Chippewa Valley tech scene is that events like Code Camp exist. A free, community-run conference with real talks, real workshops, and real connections. March 14 in Eau Claire — hope to see you there!
 
@@ -73,6 +78,7 @@ posts:
     section: "Attendee Posts"
     title: "Attendee Post: Personalized by Role"
     platform: "medium"
+    endDate: "2026-03-14"
     variables:
       - key: "[Role]"
         label: "Your Role / Title"
@@ -91,6 +97,7 @@ posts:
     section: "Attendee Posts"
     title: "Attendee Post: Why I'm Going"
     platform: "medium"
+    endDate: "2026-03-14"
     variables:
       - key: "[Reason]"
         label: "Why Are You Going?"
@@ -109,6 +116,7 @@ posts:
     section: "Attendee Posts"
     title: "Attendee Post: Personal Invite"
     platform: "medium"
+    endDate: "2026-03-14"
     variables:
       - key: "[Team]"
         label: "Who Are You Inviting?"
@@ -127,6 +135,7 @@ posts:
     section: "Attendee Posts"
     title: "Attendee Post: Personal Countdown"
     platform: "short"
+    endDate: "2026-03-14"
     variables:
       - key: "[Days]"
         label: "Days Until the Event"
@@ -145,6 +154,7 @@ posts:
     section: "Attendee Posts"
     title: "Attendee Post: Past Experience"
     platform: "medium"
+    endDate: "2026-03-14"
     variables:
       - key: "[Favorite]"
         label: "Favorite Thing From a Past CVCC"
