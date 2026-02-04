@@ -4,80 +4,222 @@
 #   - startDate is not set OR current date >= startDate
 #   - endDate is not set OR current date <= endDate
 #
+# section: Groups posts under a heading (e.g., "Attendee Posts")
+#
 # Variables: Add a 'variables' array to enable a customization form
 #   - key: The placeholder text in content (e.g., "[Name]")
 #   - label: Form field label
 #   - placeholder: Input placeholder text (optional)
 
 posts:
-  - id: short-general
-    title: "Short Post (Twitter/X, Mastodon, Bluesky)"
+
+  # =============================================
+  # ATTENDEE POSTS: Event Excitement & Registration
+  # Shareable posts for anyone attending CVCC 2026
+  # =============================================
+
+  - id: attendee-hype
+    section: "Attendee Posts"
+    title: "Attendee Post: The Hype Builder"
     platform: "short"
     content: |
-      Chippewa Valley Code Camp is back! Join us March 14, 2026 in Eau Claire, WI for a FREE day of tech talks, workshops, and networking.
+      I'm going to Chippewa Valley Code Camp 2026! A full day of tech sessions, hands-on workshops, free food, and an afterparty — all completely FREE. March 14 in Eau Claire, WI. Come with me!
 
-      Register now: chippewavalleycodecamp.com
+      Register: chippewavalleycodecamp.com
 
-      #CVCC2026 #CodeCamp #WisconsinTech #Developer
+  - id: attendee-invite
+    section: "Attendee Posts"
+    title: "Attendee Post: Invite a Friend"
+    platform: "short"
+    content: |
+      Know anyone in tech (or curious about tech)? Chippewa Valley Code Camp is March 14 in Eau Claire and it's totally free — sessions, workshops, breakfast, lunch, everything. Tag someone who should come with you!
 
-  - id: medium-general
-    title: "Medium Post (LinkedIn, Facebook)"
+      Sign up: chippewavalleycodecamp.com
+
+  - id: attendee-free
+    section: "Attendee Posts"
+    title: "Attendee Post: Can't Beat Free"
+    platform: "short"
+    content: |
+      Free breakfast. Free lunch. Free workshops. Free tech talks. Free networking. Free afterparty. Chippewa Valley Code Camp 2026 is March 14 in Eau Claire, WI and I'll be there. What's your excuse?
+
+      Register: chippewavalleycodecamp.com
+
+  - id: attendee-countdown
+    section: "Attendee Posts"
+    title: "Attendee Post: Countdown"
+    platform: "short"
+    content: |
+      Counting down the days until Chippewa Valley Code Camp 2026! March 14 at CVTC in Eau Claire — a full day of learning, connecting, and geeking out with the local tech community. Did I mention it's free?
+
+      Grab your spot: chippewavalleycodecamp.com
+
+  - id: attendee-community
+    section: "Attendee Posts"
+    title: "Attendee Post: Community Shoutout"
+    platform: "short"
+    content: |
+      One of my favorite things about the Chippewa Valley tech scene is that events like Code Camp exist. A free, community-run conference with real talks, real workshops, and real connections. March 14 in Eau Claire — hope to see you there!
+
+      Sign up: chippewavalleycodecamp.com
+
+  # =============================================
+  # ATTENDEE POSTS: Customizable (with Variables)
+  # These posts use form fields so attendees can
+  # personalize before sharing
+  # =============================================
+
+  - id: attendee-custom-role
+    section: "Attendee Posts"
+    title: "Attendee Post: Personalized by Role"
     platform: "medium"
-    content: |
-      Calling all developers, tech enthusiasts, and lifelong learners!
-
-      Chippewa Valley Code Camp returns on March 14, 2026. This FREE community-driven conference features:
-
-      - Expert-led sessions on modern development practices
-      - Hands-on workshops
-      - Networking with local tech professionals
-      - Free breakfast and lunch!
-
-      Whether you're a seasoned developer or just starting out, there's something for everyone.
-
-      Location: CVTC Business Campus, Eau Claire, WI
-
-      Register today: chippewavalleycodecamp.com
-
-      #CVCC2026 #CodeCamp #WisconsinTech #EauClaire #Developer #TechCommunity
-
-  - id: email-blurb
-    title: "Email/Newsletter Blurb"
-    platform: "email"
     variables:
-      - key: "[Name]"
-        label: "Recipient Name"
-        placeholder: "e.g., John"
+      - key: "[Role]"
+        label: "Your Role / Title"
+        placeholder: "e.g., frontend developer, data analyst, student"
+      - key: "[Topic]"
+        label: "Topic You're Excited About"
+        placeholder: "e.g., AI, web development, cybersecurity"
     content: |
-      Subject: Free Tech Conference - Chippewa Valley Code Camp 2026
+      As a [Role], I'm always looking for ways to grow — and Chippewa Valley Code Camp 2026 is exactly that. I'm especially excited about the [Topic] sessions.
 
-      Hi [Name],
+      March 14 in Eau Claire, WI. Completely free. Sessions, workshops, meals, and an afterparty.
 
-      Mark your calendar for March 14, 2026! Chippewa Valley Code Camp is returning to CVTC Business Campus in Eau Claire, WI.
+      Register: chippewavalleycodecamp.com
 
-      This FREE, community-driven event brings together developers, designers, and tech enthusiasts for a full day of learning and networking. Enjoy expert-led sessions, hands-on workshops, complimentary meals, and great conversations with fellow technologists.
+  - id: attendee-custom-whyigo
+    section: "Attendee Posts"
+    title: "Attendee Post: Why I'm Going"
+    platform: "medium"
+    variables:
+      - key: "[Reason]"
+        label: "Why Are You Going?"
+        placeholder: "e.g., to learn something new, to meet other developers, to get out of my comfort zone"
+      - key: "[Year]"
+        label: "How Many Years Attended"
+        placeholder: "e.g., first, second, third"
+    content: |
+      This will be my [Year] year at Chippewa Valley Code Camp and I keep coming back because [Reason].
 
-      Registration is open now at chippewavalleycodecamp.com
+      CVCC 2026 is March 14 at CVTC in Eau Claire — a free, full-day tech conference with sessions, workshops, food, and great people.
 
-      Hope to see you there!
+      Join me: chippewavalleycodecamp.com
 
-  # Example of time-limited posts:
-  # - id: early-bird
-  #   title: "Early Bird Announcement"
-  #   platform: "short"
-  #   startDate: "2026-01-01"
-  #   endDate: "2026-02-15"
-  #   content: |
-  #     Early bird registration is open for CVCC 2026!
-  #     Be among the first to secure your spot.
-  #     chippewavalleycodecamp.com #CVCC2026
+  - id: attendee-custom-invite
+    section: "Attendee Posts"
+    title: "Attendee Post: Personal Invite"
+    platform: "medium"
+    variables:
+      - key: "[Team]"
+        label: "Who Are You Inviting?"
+        placeholder: "e.g., my team, our meetup group, fellow students, coworkers"
+      - key: "[Skill]"
+        label: "A Skill to Learn There"
+        placeholder: "e.g., Rust, cloud architecture, prompt engineering"
+    content: |
+      Trying to get [Team] to come to Chippewa Valley Code Camp 2026 with me. Free tech conference on March 14 in Eau Claire — great sessions, hands-on workshops, and a chance to dig into things like [Skill].
 
-  # - id: last-chance
-  #   title: "Last Chance to Register"
-  #   platform: "short"
-  #   startDate: "2026-03-07"
-  #   endDate: "2026-03-13"
-  #   content: |
-  #     Only one week until CVCC 2026! Last chance to register.
-  #     Don't miss out on this FREE tech conference.
-  #     chippewavalleycodecamp.com #CVCC2026
+      Did I mention free breakfast and lunch?
+
+      Sign up: chippewavalleycodecamp.com
+
+  - id: attendee-custom-countdown
+    section: "Attendee Posts"
+    title: "Attendee Post: Personal Countdown"
+    platform: "short"
+    variables:
+      - key: "[Days]"
+        label: "Days Until the Event"
+        placeholder: "e.g., 30, 14, 7, 2"
+      - key: "[Session]"
+        label: "Session or Topic You're Excited About"
+        placeholder: "e.g., the keynote, the Go workshop, the AI session"
+    content: |
+      [Days] days until Chippewa Valley Code Camp 2026! Can't wait for [Session].
+
+      March 14 at CVTC in Eau Claire, WI. Free registration, free food, and a full day of tech. Come hang out!
+
+      Register: chippewavalleycodecamp.com
+
+  - id: attendee-custom-testimonial
+    section: "Attendee Posts"
+    title: "Attendee Post: Past Experience"
+    platform: "medium"
+    variables:
+      - key: "[Favorite]"
+        label: "Favorite Thing From a Past CVCC"
+        placeholder: "e.g., the networking, the workshops, meeting other developers"
+      - key: "[Learned]"
+        label: "Something You Learned or Took Away"
+        placeholder: "e.g., a new framework, career advice, how to contribute to open source"
+    content: |
+      My favorite part of past Chippewa Valley Code Camps has been [Favorite]. Last time I walked away with [Learned] and I'm still using it.
+
+      CVCC 2026 is March 14 in Eau Claire. Free to attend, free food, and always worth the trip.
+
+      Register: chippewavalleycodecamp.com
+
+  # =============================================
+  # ATTENDEE POSTS: Help Spread the Call for Speakers
+  # Shareable posts to help recruit presenters
+  # CFP closes Feb 19 — submit at papercall.io/cvcc2026
+  # =============================================
+
+  - id: attendee-cfp-nudge
+    section: "Call for Speakers Posts"
+    title: "Attendee CFP Post: Know a Great Speaker?"
+    platform: "short"
+    endDate: "2026-02-19"
+    content: |
+      Know someone who'd give a great tech talk? Chippewa Valley Code Camp 2026 is looking for speakers! Any topic, any experience level — first-time presenters welcome.
+
+      Tag someone who should submit before Feb 19: papercall.io/cvcc2026
+
+  - id: attendee-cfp-encourage
+    section: "Call for Speakers Posts"
+    title: "Attendee CFP Post: You Should Present"
+    platform: "short"
+    endDate: "2026-02-19"
+    content: |
+      That thing you explained to a coworker last week? That side project you won't stop talking about? That tool that changed your workflow? That's a conference talk.
+
+      Chippewa Valley Code Camp wants to hear it. No experience required. CFP closes Feb 19.
+
+      Submit: papercall.io/cvcc2026
+
+  - id: attendee-cfp-imposter
+    section: "Call for Speakers Posts"
+    title: "Attendee CFP Post: Fight Imposter Syndrome"
+    platform: "short"
+    endDate: "2026-02-19"
+    content: |
+      PSA: You don't need to be an expert to present at a conference. Some of the best talks come from people who recently learned something and want to share it.
+
+      Chippewa Valley Code Camp 2026 is looking for speakers. All topics, all levels.
+
+      CFP closes Feb 19: papercall.io/cvcc2026
+
+  - id: attendee-cfp-lastchance
+    section: "Call for Speakers Posts"
+    title: "Attendee CFP Post: Deadline Reminder"
+    platform: "short"
+    startDate: "2026-02-14"
+    endDate: "2026-02-19"
+    content: |
+      The Call for Speakers at Chippewa Valley Code Camp 2026 closes Feb 19 — that's almost here! If you've been on the fence about submitting a talk, this is your sign.
+
+      Any topic. Any experience level. A supportive, welcoming audience.
+
+      Submit now: papercall.io/cvcc2026
+
+  - id: attendee-cfp-learning
+    section: "Call for Speakers Posts"
+    title: "Attendee CFP Post: Best Way to Learn"
+    platform: "medium"
+    endDate: "2026-02-19"
+    content: |
+      "The best way to learn is to teach." I've always found that to be true, and Chippewa Valley Code Camp is a perfect place to put it into practice.
+
+      They're looking for speakers for their free tech conference on March 14 in Eau Claire, WI. No formal qualifications needed — just a topic you care about.
+
+      Submit a talk by Feb 19: papercall.io/cvcc2026

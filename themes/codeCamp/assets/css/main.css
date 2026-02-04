@@ -180,7 +180,8 @@ details.accordion .accordion-header:hover {
   background-color: #eee;
 }
 
-details.accordion .accordion-header h2 {
+details.accordion .accordion-header h2,
+details.accordion .accordion-header h3 {
   margin: 0;
   font-size: 1.2rem;
 }
@@ -188,6 +189,7 @@ details.accordion .accordion-header h2 {
 details.accordion .accordion-body {
   padding: 1rem;
   border-top: 1px solid #ddd;
+  overflow-y: auto;
 }
 
 .accordion-icon {
@@ -252,6 +254,55 @@ details.nav-accordion .nav-accordion-header::-webkit-details-marker {
 }
 
 /* Promo Kit Styles */
+.promo-hero {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.promo-hero-text {
+  flex: 1;
+}
+
+.promo-hero-logos {
+  flex-shrink: 0;
+}
+
+.promo-hero-logos h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.promo-logos-compact {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem;
+  background: #f7f7f7;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin: 1rem 0;
+  max-width: 520px;
+}
+
+.promo-logo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.promo-logo-item img {
+  max-height: 60px;
+  width: auto;
+}
+
+.btn-sm {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+}
+
 .promo-assets {
   display: flex;
   flex-wrap: wrap;
@@ -337,15 +388,28 @@ details.nav-accordion .nav-accordion-header::-webkit-details-marker {
 }
 
 .btn-primary {
-  background-color: #0077b6;
+  background-color: #006a9f;
   color: white !important;
 }
 
 .btn-primary:hover {
-  background-color: #005a8c;
+  background-color: #005280;
 }
 
 @media only screen and (max-width: 600px) {
+  .promo-hero {
+    flex-direction: column;
+  }
+
+  .promo-logos-compact {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .promo-posts-grid {
+    grid-template-columns: 1fr;
+  }
+
   .promo-assets {
     flex-direction: column;
     align-items: stretch;
@@ -364,9 +428,31 @@ details.nav-accordion .nav-accordion-header::-webkit-details-marker {
   }
 }
 
+/* Promo Section Navigation */
+.promo-section-nav {
+  text-align: center;
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+
+.promo-section-nav a {
+  font-weight: 500;
+}
+
+.accordion-body .promo-posts-grid {
+  margin: 0;
+}
+
 /* Promo Posts Styles */
-.promo-post {
+.promo-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
   margin: 1.5rem 0;
+}
+
+.promo-post {
+  margin: 0;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
@@ -407,7 +493,7 @@ details.nav-accordion .nav-accordion-header::-webkit-details-marker {
 }
 
 .btn-copy {
-  background-color: #9c4500;
+  background-color: #8a3c00;
   color: white;
   border: none;
   padding: 0.5rem 1rem;
@@ -418,11 +504,11 @@ details.nav-accordion .nav-accordion-header::-webkit-details-marker {
 }
 
 .btn-copy:hover {
-  background-color: #7a3600;
+  background-color: #6e2f00;
 }
 
 .btn-copied {
-  background-color: #28a745 !important;
+  background-color: #1e7e34 !important;
 }
 
 .promo-post-actions {
@@ -432,7 +518,7 @@ details.nav-accordion .nav-accordion-header::-webkit-details-marker {
 }
 
 .btn-customize {
-  background-color: #0077b6;
+  background-color: #006a9f;
   color: white;
   border: none;
   padding: 0.5rem 1rem;
@@ -443,7 +529,7 @@ details.nav-accordion .nav-accordion-header::-webkit-details-marker {
 }
 
 .btn-customize:hover {
-  background-color: #005a8c;
+  background-color: #005280;
 }
 
 /* Modal Styles */
@@ -529,9 +615,17 @@ details.nav-accordion .nav-accordion-header::-webkit-details-marker {
 }
 
 .modal-body .form-field input:focus {
-  outline: none;
-  border-color: #0077b6;
-  box-shadow: 0 0 0 2px rgba(0, 119, 182, 0.2);
+  outline: 2px solid #006a9f;
+  outline-offset: 1px;
+  border-color: #006a9f;
+}
+
+.btn:focus-visible,
+.btn-copy:focus-visible,
+.btn-customize:focus-visible,
+.btn-close:focus-visible {
+  outline: 2px solid #006a9f;
+  outline-offset: 2px;
 }
 
 .modal-footer {
@@ -543,7 +637,7 @@ details.nav-accordion .nav-accordion-header::-webkit-details-marker {
 }
 
 .btn-secondary {
-  background-color: #6c757d;
+  background-color: #5a6268;
   color: white;
   border: none;
   padding: 0.5rem 1rem;
@@ -554,5 +648,32 @@ details.nav-accordion .nav-accordion-header::-webkit-details-marker {
 }
 
 .btn-secondary:hover {
-  background-color: #545b62;
+  background-color: #484e53;
+}
+
+/* Back to top button */
+#back-to-top {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, background-color 0.2s;
+  z-index: 999;
+}
+
+#back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#back-to-top:hover {
+  background-color: #444;
 }
