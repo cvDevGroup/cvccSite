@@ -48,13 +48,23 @@
     {{ end }}
   {{ end }}
 
-  {{/* Jump-link navigation */}}
-  <nav class="promo-section-nav">
-    {{ range $i, $sectionName := $sections }}
-      {{ if $i }} | {{ end }}
-      <a href="#{{ $sectionName | urlize }}">{{ $sectionName }}</a>
-    {{ end }}
-  </nav>
+  <div id="promo-posts-wrapper" class="theme-clean">
+
+  <div class="promo-toolbar">
+    {{/* Jump-link navigation */}}
+    <nav class="promo-section-nav">
+      {{ range $i, $sectionName := $sections }}
+        {{ if $i }} | {{ end }}
+        <a href="#{{ $sectionName | urlize }}">{{ $sectionName }}</a>
+      {{ end }}
+    </nav>
+
+    {{/* Theme toggle */}}
+    <div class="promo-theme-toggle">
+      <button class="promo-theme-btn active" data-theme="clean" onclick="setPostTheme('clean')">Clean</button>
+      <button class="promo-theme-btn" data-theme="terminal" onclick="setPostTheme('terminal')">Terminal</button>
+    </div>
+  </div>
 
   {{/* Render each section as an accordion */}}
   {{ range $sectionName := $sections }}
@@ -117,6 +127,21 @@
       </div>
     </details>
   {{ end }}
+
+  </div>
+
+  <script>
+  function setPostTheme(theme) {
+    var wrapper = document.getElementById('promo-posts-wrapper');
+    wrapper.classList.remove('theme-clean', 'theme-terminal');
+    wrapper.classList.add('theme-' + theme);
+    var btns = document.querySelectorAll('.promo-theme-btn');
+    btns.forEach(function(btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-theme') === theme);
+    });
+  }
+  </script>
+
 {{ else }}
   <p>No promotional posts available at this time.</p>
 {{ end }}

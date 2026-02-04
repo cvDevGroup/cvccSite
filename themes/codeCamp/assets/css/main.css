@@ -396,7 +396,7 @@ details.nav-accordion .nav-accordion-header::-webkit-details-marker {
   background-color: #005280;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .promo-hero {
     flex-direction: column;
   }
@@ -404,10 +404,6 @@ details.nav-accordion .nav-accordion-header::-webkit-details-marker {
   .promo-logos-compact {
     flex-direction: column;
     max-width: 100%;
-  }
-
-  .promo-posts-grid {
-    grid-template-columns: 1fr;
   }
 
   .promo-assets {
@@ -430,8 +426,6 @@ details.nav-accordion .nav-accordion-header::-webkit-details-marker {
 
 /* Promo Section Navigation */
 .promo-section-nav {
-  text-align: center;
-  margin: 1rem 0;
   font-size: 1.1rem;
 }
 
@@ -443,6 +437,47 @@ details.nav-accordion .nav-accordion-header::-webkit-details-marker {
   margin: 0;
 }
 
+/* Promo Toolbar */
+.promo-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+/* Theme Toggle */
+.promo-theme-toggle {
+  display: flex;
+  gap: 0;
+  flex-shrink: 0;
+}
+
+.promo-theme-btn {
+  background-color: #e9ecef;
+  color: #495057;
+  border: 1px solid #ced4da;
+  padding: 0.4rem 1.2rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.promo-theme-btn:first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+.promo-theme-btn:last-child {
+  border-radius: 0 4px 4px 0;
+  border-left: none;
+}
+
+.promo-theme-btn.active {
+  background-color: #006a9f;
+  color: white;
+  border-color: #006a9f;
+}
+
 /* Promo Posts Styles */
 .promo-posts-grid {
   display: grid;
@@ -451,9 +486,19 @@ details.nav-accordion .nav-accordion-header::-webkit-details-marker {
   margin: 1.5rem 0;
 }
 
+@media only screen and (max-width: 768px) {
+  .promo-posts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .promo-post-content pre {
+    font-size: 0.85rem;
+    padding: 0.75rem;
+  }
+}
+
 .promo-post {
   margin: 0;
-  border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
 }
@@ -462,8 +507,6 @@ details.nav-accordion .nav-accordion-header::-webkit-details-marker {
   display: flex;
   align-items: center;
   padding: 1rem;
-  background-color: #f7f7f7;
-  border-bottom: 1px solid #ddd;
   gap: 1rem;
 }
 
@@ -479,7 +522,6 @@ details.nav-accordion .nav-accordion-header::-webkit-details-marker {
 .promo-post-content pre {
   margin: 0 0 1rem 0;
   padding: 1rem;
-  background-color: #f9f9f9;
   border-radius: 4px;
   overflow-x: auto;
   white-space: pre-wrap;
@@ -493,8 +535,6 @@ details.nav-accordion .nav-accordion-header::-webkit-details-marker {
 }
 
 .btn-copy {
-  background-color: #8a3c00;
-  color: white;
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 4px;
@@ -503,8 +543,155 @@ details.nav-accordion .nav-accordion-header::-webkit-details-marker {
   transition: background-color 0.2s;
 }
 
-.btn-copy:hover {
-  background-color: #6e2f00;
+/* Clean Theme (default) */
+.theme-clean .promo-post {
+  border: 1px solid #ddd;
+  border-left: 4px solid #006a9f;
+  background-color: #fff;
+}
+
+.theme-clean .promo-post-header {
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ddd;
+}
+
+.theme-clean .promo-post-header h3 {
+  color: #222;
+}
+
+.theme-clean .promo-post-content {
+  color: #333;
+}
+
+.theme-clean .promo-post-content pre {
+  background: #f9f9f9;
+  color: #333;
+}
+
+.theme-clean .promo-post-content pre code {
+  background: #f9f9f9;
+  color: #333;
+}
+
+.theme-clean .btn-copy {
+  background-color: #006a9f;
+  color: white;
+}
+
+.theme-clean .btn-copy:hover {
+  background-color: #005280;
+}
+
+.theme-clean .btn-customize {
+  background-color: #e9ecef;
+  color: #333;
+  border: 1px solid #ced4da;
+}
+
+.theme-clean .btn-customize:hover {
+  background-color: #dde1e5;
+}
+
+/* Terminal Theme */
+.theme-terminal .promo-post {
+  border: 1px solid #313244;
+  background-color: #1e1e2e;
+}
+
+.theme-terminal .promo-post-header {
+  background-color: #181825;
+  border-bottom: 1px solid #313244;
+}
+
+.theme-terminal .promo-post-header h3 {
+  color: #cdd6f4;
+}
+
+.theme-terminal .promo-post-content {
+  color: #cdd6f4;
+}
+
+.theme-terminal .promo-post-content pre {
+  background: #11111b;
+  color: #cdd6f4;
+}
+
+.theme-terminal .promo-post-content pre code {
+  background: #11111b;
+  color: #cdd6f4;
+}
+
+.theme-terminal .btn-copy {
+  background-color: #2b7a78;
+  color: #cdd6f4;
+}
+
+.theme-terminal .btn-copy:hover {
+  background-color: #1f5f5d;
+}
+
+.theme-terminal .btn-customize {
+  background-color: #313244;
+  color: #cdd6f4;
+  border: 1px solid #45475a;
+}
+
+.theme-terminal .btn-customize:hover {
+  background-color: #45475a;
+}
+
+/* Clean theme accordions */
+.theme-clean details.accordion {
+  border-color: #ddd;
+}
+
+.theme-clean details.accordion .accordion-header {
+  background-color: #f7f7f7;
+  color: #222;
+}
+
+.theme-clean details.accordion .accordion-header:hover {
+  background-color: #eee;
+}
+
+.theme-clean details.accordion .accordion-body {
+  border-top-color: #ddd;
+  background-color: #fff;
+}
+
+.theme-clean .accordion-icon {
+  color: #222;
+}
+
+/* Terminal theme accordions */
+.theme-terminal details.accordion {
+  border-color: #313244;
+}
+
+.theme-terminal details.accordion .accordion-header {
+  background-color: #181825;
+  color: #cdd6f4;
+}
+
+.theme-terminal details.accordion .accordion-header:hover {
+  background-color: #1e1e2e;
+}
+
+.theme-terminal details.accordion .accordion-header h3 {
+  color: #cdd6f4;
+}
+
+.theme-terminal details.accordion .accordion-body {
+  border-top-color: #313244;
+  background-color: #1e1e2e;
+}
+
+.theme-terminal .accordion-icon {
+  color: #cdd6f4;
+}
+
+.theme-terminal .promo-section-nav a {
+  color: #89b4fa;
 }
 
 .btn-copied {
