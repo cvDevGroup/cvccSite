@@ -12,10 +12,23 @@ Help us spread the word about Chippewa Valley Code Camp 2026!
 Here you'll find logos and ready-to-use social media content to help promote our wonderful event.
 
 **Chippewa Valley Code Camp 2026**<br>
-**Date:** Saturday, March 14th, 2026<br>
+**Time:** Saturday, March 14th, 2026 @ 9am<br>
 **Location:** CVTC Business Campus, 620 W. Clairemont Avenue, Eau Claire, WI 54701<br>
-**Website:** [chippewavalleycodecamp.com](https://chippewavalleycodecamp.com)<br>
-**Registration:** [Eventbrite](https://www.eventbrite.com/e/chippewa-valley-code-camp-2026-tickets-1980783904981)
+
+---
+
+<h2 style="text-align: center;">Share on Social Media:</h2>
+
+- **Official Site:** [chippewavalleycodecamp.com](https://chippewavalleycodecamp.com)<br>
+- [Register for CVCC on EventBrite](https://www.eventbrite.com/e/chippewa-valley-code-camp-2026-tickets-1980783904981)
+- [LinkedIn Event](https://www.linkedin.com/posts/cvdevgroup_code-camp-is-back-were-gearing-up-to-once-activity-7420352050158391296-7Clq)
+- [Facebook Post](https://www.facebook.com/cvdevgroup/posts/pfbid038FBhRhLy6o5VPSTAfk1X2j22z9EQVZGBAFupwF3cG2rzcMNjxNgxnQjJwZDu9ecZl)
+- [VolumeOne Event](https://volumeone.org/events/2026/03/14/588133-chippewa-valley-code-camp-2026)
+- [Official Call for Speakers on papercall.io](https://www.papercall.io/cvcc2026)
+- [Sponsorship Program PDF](https://chippewavalleycodecamp.com/fil/cvcc-2026-Sponsorship-Program.pdf)
+
+---
+
 
   </div>
   <div class="promo-hero-logos">
@@ -33,9 +46,12 @@ Here you'll find logos and ready-to-use social media content to help promote our
   </div>
 </div>
 
----
+--- 
 
 <h2 style="text-align: center;">Social Media Content</h2>
+
+
+
 <p style="text-align: center;">Copy and paste these ready-to-use posts. Feel free to customize!</p>
 
 {{< promo-posts >}}

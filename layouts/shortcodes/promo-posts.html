@@ -89,9 +89,9 @@
               </div>
               <div class="promo-post-content">
                 <pre><code id="content-{{ $postId }}">{{ .content | strings.TrimSuffix "\n" }}</code></pre>
-                <div class="promo-post-actions">
+                <!-- <div class="promo-post-actions">
                   <button class="btn btn-copy" onclick="copyToClipboard(this, '{{ $postId }}')" data-original-content="{{ .content | htmlEscape }}">Copy to Clipboard</button>
-                </div>
+                </div> -->
               </div>
             </div>
             {{ if $hasVariables }}
