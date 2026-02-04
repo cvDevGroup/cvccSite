@@ -20,7 +20,7 @@ posts:
 
   - id: attendee-hype
     section: "Attendee Posts"
-    title: "Attendee Post: The Hype Builder"
+    title: "The Hype Builder"
     platform: "short"
     endDate: "2026-03-14"
     content: |
@@ -30,7 +30,7 @@ posts:
 
   - id: attendee-invite
     section: "Attendee Posts"
-    title: "Attendee Post: Invite a Friend"
+    title: "Invite a Friend"
     platform: "short"
     endDate: "2026-03-14"
     content: |
@@ -40,7 +40,7 @@ posts:
 
   - id: attendee-free
     section: "Attendee Posts"
-    title: "Attendee Post: Can't Beat Free"
+    title: "Can't Beat Free"
     platform: "short"
     endDate: "2026-03-14"
     content: |
@@ -50,7 +50,7 @@ posts:
 
   - id: attendee-countdown
     section: "Attendee Posts"
-    title: "Attendee Post: Countdown"
+    title: "Countdown"
     platform: "short"
     endDate: "2026-03-14"
     content: |
@@ -60,7 +60,7 @@ posts:
 
   - id: attendee-community
     section: "Attendee Posts"
-    title: "Attendee Post: Community Shoutout"
+    title: "Community Shoutout"
     platform: "short"
     endDate: "2026-03-14"
     content: |
@@ -76,7 +76,7 @@ posts:
 
   - id: attendee-custom-role
     section: "Attendee Posts"
-    title: "Attendee Post: Personalized by Role"
+    title: "Personalized by Role"
     platform: "medium"
     endDate: "2026-03-14"
     variables:
@@ -95,7 +95,7 @@ posts:
 
   - id: attendee-custom-whyigo
     section: "Attendee Posts"
-    title: "Attendee Post: Why I'm Going"
+    title: "Why I'm Going"
     platform: "medium"
     endDate: "2026-03-14"
     variables:
@@ -114,7 +114,7 @@ posts:
 
   - id: attendee-custom-invite
     section: "Attendee Posts"
-    title: "Attendee Post: Personal Invite"
+    title: "Personal Invite"
     platform: "medium"
     endDate: "2026-03-14"
     variables:
@@ -133,7 +133,7 @@ posts:
 
   - id: attendee-custom-countdown
     section: "Attendee Posts"
-    title: "Attendee Post: Personal Countdown"
+    title: "Personal Countdown"
     platform: "short"
     endDate: "2026-03-14"
     variables:
@@ -152,7 +152,7 @@ posts:
 
   - id: attendee-custom-testimonial
     section: "Attendee Posts"
-    title: "Attendee Post: Past Experience"
+    title: "Past Experience"
     platform: "medium"
     endDate: "2026-03-14"
     variables:
@@ -177,7 +177,7 @@ posts:
 
   - id: attendee-cfp-nudge
     section: "Call for Speakers Posts"
-    title: "Attendee CFP Post: Know a Great Speaker?"
+    title: "Know a Great Speaker?"
     platform: "short"
     endDate: "2026-02-19"
     content: |
@@ -187,7 +187,7 @@ posts:
 
   - id: attendee-cfp-encourage
     section: "Call for Speakers Posts"
-    title: "Attendee CFP Post: You Should Present"
+    title: "You Should Present"
     platform: "short"
     endDate: "2026-02-19"
     content: |
@@ -199,7 +199,7 @@ posts:
 
   - id: attendee-cfp-imposter
     section: "Call for Speakers Posts"
-    title: "Attendee CFP Post: Fight Imposter Syndrome"
+    title: "Fight Imposter Syndrome"
     platform: "short"
     endDate: "2026-02-19"
     content: |
@@ -211,7 +211,7 @@ posts:
 
   - id: attendee-cfp-lastchance
     section: "Call for Speakers Posts"
-    title: "Attendee CFP Post: Deadline Reminder"
+    title: "Deadline Reminder"
     platform: "short"
     startDate: "2026-02-14"
     endDate: "2026-02-19"
