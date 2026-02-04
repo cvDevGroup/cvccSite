@@ -6,36 +6,11 @@ theme='codeCamp'
 
 sectionPagesMenu = 'main'
 
-[[menus.topNav]]
-name = 'Sessions'
-pageRef = '/Sessions'
-weight = 11
-
-[[menus.topNav]]
-name = 'Speakers'
-pageRef = '/Speakers'
-weight = 12
-
-[[menus.topNav]]
-name = 'Register'
-pageRef = 'https://www.eventbrite.com/e/chippewa-valley-code-camp-2025-tickets-1128422765869'
-weight = 13
-
-[[menus.topNav]]
-name = 'Schedule'
-pageRef = '/Schedule'
-weight = 14
-
-[[menus.topNav]]
-name = 'Sponsors'
-pageRef = '/Sponsors'
-weight = 15
-
-[[menus.topNav]]
-name = 'Past Camps'
-pageRef = '/past_camps'
-weight = 16
-
+# Promo_kit is a leaf bundle (index.md instead of _index.md) so the sectionPagesMenu does not automatically pick it up.
+[[menus.main]]
+name = 'Promo Kit'
+url = '/promo_kit/'
+weight = 17
 
 [[menus.footer]]
 name = 'Tags'

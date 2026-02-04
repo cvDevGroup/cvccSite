@@ -1,0 +1,147 @@
+{{/* Render social media posts from posts.yaml in the page bundle, grouped by section */}}
+{{ $now := now }}
+{{ $posts := slice }}
+
+{{ with .Page.Resources.GetMatch "posts.yaml" }}
+  {{ $data := . | transform.Unmarshal }}
+  {{ $posts = $data.posts }}
+{{ end }}
+
+{{/* Filter posts by date constraints */}}
+{{ $visiblePosts := slice }}
+{{ range $posts }}
+  {{ $showPost := true }}
+
+  {{ with .startDate }}
+    {{ $start := time . }}
+    {{ if $now.Before $start }}
+      {{ $showPost = false }}
+    {{ end }}
+  {{ end }}
+
+  {{ with .endDate }}
+    {{ $end := time . }}
+    {{ $endPlusDay := $end.AddDate 0 0 1 }}
+    {{ if $now.After $endPlusDay }}
+      {{ $showPost = false }}
+    {{ end }}
+  {{ end }}
+
+  {{ if $showPost }}
+    {{ $visiblePosts = $visiblePosts | append . }}
+  {{ end }}
+{{ end }}
+
+{{ with $visiblePosts }}
+  {{/* Build ordered list of unique section names */}}
+  {{ $sections := slice }}
+  {{ range . }}
+    {{ $sec := .section | default "Other" }}
+    {{ $found := false }}
+    {{ range $sections }}
+      {{ if eq . $sec }}
+        {{ $found = true }}
+      {{ end }}
+    {{ end }}
+    {{ if not $found }}
+      {{ $sections = $sections | append $sec }}
+    {{ end }}
+  {{ end }}
+
+  <div id="promo-posts-wrapper" class="theme-clean">
+
+  <div class="promo-toolbar">
+    {{/* Jump-link navigation */}}
+    <nav class="promo-section-nav">
+      {{ range $i, $sectionName := $sections }}
+        {{ if $i }} | {{ end }}
+        <a href="#{{ $sectionName | urlize }}">{{ $sectionName }}</a>
+      {{ end }}
+    </nav>
+
+    {{/* Theme toggle */}}
+    <div class="promo-theme-toggle">
+      <button class="promo-theme-btn active" data-theme="clean" onclick="setPostTheme('clean')">Clean</button>
+      <button class="promo-theme-btn" data-theme="terminal" onclick="setPostTheme('terminal')">Terminal</button>
+    </div>
+  </div>
+
+  {{/* Render each section as an accordion */}}
+  {{ range $sectionName := $sections }}
+    <details class="accordion" id="{{ $sectionName | urlize }}" open>
+      <summary class="accordion-header">
+        <span class="accordion-icon">&#9654;</span>
+        <h3>{{ $sectionName }}</h3>
+      </summary>
+      <div class="accordion-body">
+        <div class="promo-posts-grid">
+        {{ range $visiblePosts }}
+          {{ $sec := .section | default "Other" }}
+          {{ if eq $sec $sectionName }}
+            {{ $postId := .id }}
+            {{ $hasVariables := and .variables (gt (len .variables) 0) }}
+            <div class="promo-post" data-post-id="{{ $postId }}">
+              <div class="promo-post-header">
+                <h3>{{ .title }}</h3>
+                {{ if $hasVariables }}
+                <button class="btn btn-customize" onclick="openCustomizeForm('{{ $postId }}')">Customize</button>
+                {{ end }}
+              </div>
+              <div class="promo-post-content">
+                <pre><code id="content-{{ $postId }}">{{ .content | strings.TrimSuffix "\n" }}</code></pre>
+                <!-- <div class="promo-post-actions">
+                  <button class="btn btn-copy" onclick="copyToClipboard(this, '{{ $postId }}')" data-original-content="{{ .content | htmlEscape }}">Copy to Clipboard</button>
+                </div> -->
+              </div>
+            </div>
+            {{ if $hasVariables }}
+            <div class="modal-overlay" id="modal-{{ $postId }}" onclick="closeModalOnOverlay(event, '{{ $postId }}')">
+              <div class="modal-content" onclick="event.stopPropagation()">
+                <div class="modal-header">
+                  <strong>Customize: {{ .title }}</strong>
+                  <button class="btn-close" onclick="closeCustomizeForm('{{ $postId }}')">&times;</button>
+                </div>
+                <div class="modal-body">
+                  {{ range .variables }}
+                  <div class="form-field">
+                    <label for="var-{{ $postId }}-{{ .key | urlize }}">{{ .label }}</label>
+                    <input
+                      type="text"
+                      id="var-{{ $postId }}-{{ .key | urlize }}"
+                      data-key="{{ .key }}"
+                      placeholder="{{ with .placeholder }}{{ . }}{{ else }}{{ .key }}{{ end }}"
+                    />
+                  </div>
+                  {{ end }}
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-primary" onclick="applyCustomizations('{{ $postId }}')">Apply</button>
+                  <button class="btn btn-secondary" onclick="resetCustomizations('{{ $postId }}')">Reset</button>
+                </div>
+              </div>
+            </div>
+            {{ end }}
+          {{ end }}
+        {{ end }}
+        </div>
+      </div>
+    </details>
+  {{ end }}
+
+  </div>
+
+  <script>
+  function setPostTheme(theme) {
+    var wrapper = document.getElementById('promo-posts-wrapper');
+    wrapper.classList.remove('theme-clean', 'theme-terminal');
+    wrapper.classList.add('theme-' + theme);
+    var btns = document.querySelectorAll('.promo-theme-btn');
+    btns.forEach(function(btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-theme') === theme);
+    });
+  }
+  </script>
+
+{{ else }}
+  <p>No promotional posts available at this time.</p>
+{{ end }}
