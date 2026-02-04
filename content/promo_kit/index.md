@@ -152,4 +152,4 @@ Feel free to use these photos from previous camps in your promotional materials.
 
 ## Questions?
 
-Have questions about using these materials or want additional assets? Reach out at codecamp@cvdevgroup.org.
+Have questions about using these materials or want additional assets? Send an email to codecamp@cvdevgroup.org.
