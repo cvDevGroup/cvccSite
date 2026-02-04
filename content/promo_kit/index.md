@@ -142,7 +142,7 @@ function copyToClipboard(button, postId) {
 Feel free to use these photos from previous camps in your promotional materials.
 
 <div class="promo-gallery">
-  <img src="/img/2025/panel.jpg" alt="Panel discussion at CVCC 2025">
+  <img src="/img/2025/panel2.jpg" alt="Panel discussion at CVCC 2025">
   <img src="/img/2025/goWorkshop.jpg" alt="Go workshop at CVCC 2025">
   <img src="/img/2025/cvccCheers1.jpg" alt="Attendees at CVCC 2025">
   <img src="/img/2025/toddKeynote1.jpg" alt="Keynote at CVCC 2025">
