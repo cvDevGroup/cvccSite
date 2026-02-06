@@ -81,4 +81,6 @@ Base layout nees reworking
  
 
 
-THIS is a change
+Changes for first time setup:
+- Include instructions/links for configuring an IDE, downloading git, downloading hugo.
+    - Downloading hugo: [https://gohugo.io/installation/windows/](https://gohugo.io/installation/)
