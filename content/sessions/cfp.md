@@ -30,7 +30,7 @@ The CFP Formally closes on Feb 19th, 2026.
     - If it's something that excites you, others will appreciate it.
     - If the topic doesn't excite you... maybe pick something that does.
 - Is my topic appropriate for the audience?
-    - If you have doubts, [submit](https://papercall.io/cvcc2026) a rough idea, we can help you workshop it!
+    - If you have doubts, submit a rough idea, we can help you workshop it!
 - I don't know enough about the topic
     - "The best way to learn is to teach" - _Frank Oppenheimer_
 {{< /accordion >}}

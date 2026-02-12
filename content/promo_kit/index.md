@@ -24,7 +24,7 @@ Here you'll find logos and ready-to-use social media content to help promote our
 - [LinkedIn Event](https://www.linkedin.com/posts/cvdevgroup_code-camp-is-back-were-gearing-up-to-once-activity-7420352050158391296-7Clq)
 - [Facebook Post](https://www.facebook.com/cvdevgroup/posts/pfbid038FBhRhLy6o5VPSTAfk1X2j22z9EQVZGBAFupwF3cG2rzcMNjxNgxnQjJwZDu9ecZl)
 - [VolumeOne Event](https://volumeone.org/events/2026/03/14/588133-chippewa-valley-code-camp-2026)
-- [Official Call for Speakers on papercall.io](https://www.papercall.io/cvcc2026)
+- [Call for Speakers Email Submission](mailto:cfp@cvdevgroup.org?subject=Submission&body=Talk%20Title%3A%0A%0AElevator%20Pitch%3A%20Two%20sentences%20to%20sell%20your%20talk.%0A%0AFormat%2C%20Choose%20One%3A%20Regular%20(~40%20min)%20%2F%20Lightning%20(~5%20min)%20%2F%20Workshop%20(%3Ehour).%0A%0AAudience%20Level%3A%20Beginner%20%2F%20Intermediate%20%2F%20Advanced%0A%0ADescription%20(Markdown%20Preferred)%3A%0A%0ANotes%20(informational%20only%2C%20not%20published)%3A%0A%0ASpeaker%20Name%3A%0A%0ASpeaker%20URL%3A%0A%0AShirt%20Size%3A%0A%0ASpeaker%20Bio%3A)
 - [Sponsorship Program PDF](https://chippewavalleycodecamp.com/fil/cvcc-2026-Sponsorship-Program.pdf)
 
 ---
