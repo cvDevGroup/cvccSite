@@ -67,7 +67,7 @@ a {
 }
 
 #stickyLogo{
-  position:absolute;
+  position:fixed;
   top:20vh;
   right:0em;
   width: auto;
@@ -75,8 +75,7 @@ a {
   z-index: -1;
   opacity: 0.05;
   overflow:hidden;
-
-
+  max-width: 100%;
 }
 .stickyLogo img{
   /* opacity: 0.5; */
@@ -868,4 +867,14 @@ details.nav-accordion .nav-accordion-header::-webkit-details-marker {
 
 #back-to-top:hover {
   background-color: #444;
+}
+
+/* Sponsor card hover effect */
+.sponsor-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sponsor-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
 }
