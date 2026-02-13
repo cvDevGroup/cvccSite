@@ -6,7 +6,7 @@ title: 'Call For Speakers is OPEN'
 weight: 100
 ---
 
-Calling all Speakers and Presenters to submit a presentation ~~on papercall~~ via email to [cfp@cvdevgroup.org](mailto:cfp@cvdevgroup.org?subject=Submission&body=Talk%20Title%3A%0A%0AElevator%20Pitch%3A%20Two%20sentences%20to%20sell%20your%20talk.%0A%0AFormat%2C%20Choose%20One%3A%20Regular%20(~40%20min)%20%2F%20Lightning%20(~5%20min)%20%2F%20Workshop%20(%3Ehour).%0A%0AAudience%20Level%3A%20Beginner%20%2F%20Intermediate%20%2F%20Advanced%0A%0ADescription%20(Markdown%20Preferred)%3A%0A%0ANotes%20(informational%20only%2C%20not%20published)%3A%0A%0ASpeaker%20Name%3A%0A%0ASpeaker%20URL%3A%0A%0AShirt%20Size%3A%0A%0ASpeaker%20Bio%3A)!
+Calling all Speakers and Presenters to submit a presentation ~~on papercall~~ via email to [cfp@cvdevgroup.org](mailto:cfp@cvdevgroup.org?subject=Submission&body=Talk%20Title%3A%0A%0AElevator%20Pitch%3A%20Two%20sentences%20to%20sell%20your%20talk.%0A%0AFormat%2C%20Choose%20One%3A%20Regular%20(~40%20min)%20%2F%20Lightning%20(~5%20min)%20%2F%20Workshop%20(%3Ehour).%0A%0AAudience%20Level%3A%20Beginner%20%2F%20Intermediate%20%2F%20Advanced%0A%0ADescription%20(Markdown%20Preferred)%3A%0A%0ANotes%20(informational%20only%2C%20not%20published)%3A%0A%0ASpeaker%20Name%3A%0A%0ASpeaker%20URL%3A%0A%0AShirt%20Size%3A%0A%0ASpeaker%20Bio%3A%0A%0APlease%20attach%20a%20headshot%2C%20photo%2C%20or%20any%20kind%20of%20web-ready%20image%20to%20use%20with%20your%20bio%20(optional)%0A%0AAttach%20an%20image%20to%20display%20next%20to%20your%20presentation%20(optional))!
 
 Without presenters, a conference is just a bunch of nerds milling about without any central topics to discuss and learn about - it falls flat. 
 
@@ -37,7 +37,7 @@ The CFP Formally closes on Feb 19th, 2026.
 
 
 
-[Submit a Presenation to cfp@cvdevgroup.org Today!](mailto:cfp@cvdevgroup.org?subject=Submission&body=Talk%20Title%3A%0A%0AElevator%20Pitch%3A%20Two%20sentences%20to%20sell%20your%20talk.%0A%0AFormat%2C%20Choose%20One%3A%20Regular%20(~40%20min)%20%2F%20Lightning%20(~5%20min)%20%2F%20Workshop%20(%3Ehour).%0A%0AAudience%20Level%3A%20Beginner%20%2F%20Intermediate%20%2F%20Advanced%0A%0ADescription%20(Markdown%20Preferred)%3A%0A%0ANotes%20(informational%20only%2C%20not%20published)%3A%0A%0ASpeaker%20Name%3A%0A%0ASpeaker%20URL%3A%0A%0AShirt%20Size%3A%0A%0ASpeaker%20Bio%3A)
+[Submit a Presenation to cfp@cvdevgroup.org Today!](mailto:cfp@cvdevgroup.org?subject=Submission&body=Talk%20Title%3A%0A%0AElevator%20Pitch%3A%20Two%20sentences%20to%20sell%20your%20talk.%0A%0AFormat%2C%20Choose%20One%3A%20Regular%20(~40%20min)%20%2F%20Lightning%20(~5%20min)%20%2F%20Workshop%20(%3Ehour).%0A%0AAudience%20Level%3A%20Beginner%20%2F%20Intermediate%20%2F%20Advanced%0A%0ADescription%20(Markdown%20Preferred)%3A%0A%0ANotes%20(informational%20only%2C%20not%20published)%3A%0A%0ASpeaker%20Name%3A%0A%0ASpeaker%20URL%3A%0A%0AShirt%20Size%3A%0A%0ASpeaker%20Bio%3A%0A%0APlease%20attach%20a%20headshot%2C%20photo%2C%20or%20any%20kind%20of%20web-ready%20image%20to%20use%20with%20your%20bio%20(optional)%0A%0AAttach%20an%20image%20to%20display%20next%20to%20your%20presentation%20(optional))
 
 {{< accordion title="We require the following with your submission:" >}}
 - Talk Title:
@@ -50,4 +50,6 @@ The CFP Formally closes on Feb 19th, 2026.
 - Speaker URL:
 - Shirt Size:
 - Speaker Bio:
+- Please attach a headshot, photo, or any kind of web-ready image to use with your bio (optional)
+- Attach an image to display next to your presentation (optional)
 {{< /accordion >}}
