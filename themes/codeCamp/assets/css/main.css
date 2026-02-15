@@ -869,12 +869,43 @@ details.nav-accordion .nav-accordion-header::-webkit-details-marker {
   background-color: #444;
 }
 
-/* Sponsor card hover effect */
 .sponsor-card {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.4s ease, box-shadow 0.2s ease;
+  transform-style: preserve-3d;
+  perspective: 1000px;
 }
 
 .sponsor-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+  transform: rotateY(-15deg) rotateX(10deg) translateY(-8px) scale(1.02);
+  box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.sponsor-card:active {
+  transform: rotateY(180deg) scale(0.8);
+  transition: transform 0.3s ease;
+}
+
+/* Sponsor grid responsive - single column on mobile */
+@media (max-width: 768px) {
+  .columns .column.col-4 {
+    width: 100%;
+    flex: 0 0 100%;
+  }
+
+  /* Disable desktop hover animations on mobile */
+  .sponsor-card {
+    transform-style: flat;
+    perspective: none;
+  }
+
+  .sponsor-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .sponsor-card:active {
+    transform: scale(0.97);
+    box-shadow: 0 0 20px rgba(100, 150, 255, 0.5);
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+  }
 }
