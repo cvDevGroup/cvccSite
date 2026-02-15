@@ -60,12 +60,6 @@ a {
   display: none;
 }
 
-.callout{
-  /* -webkit-box-shadow: -1px 1px 5px 9px lightblue;
-  -moz-box-shadow: -1px 1px 5px 9px lightblue;
-  box-shadow: -1px 1px 5px 9px lightblue; */
-}
-
 #stickyLogo{
   position:fixed;
   top:20vh;
@@ -96,7 +90,6 @@ a {
     max-width: 100%;
   }
 }
-
 
 
 
@@ -395,34 +388,6 @@ details.nav-accordion .nav-accordion-header::-webkit-details-marker {
   background-color: #005280;
 }
 
-@media only screen and (max-width: 768px) {
-  .promo-hero {
-    flex-direction: column;
-  }
-
-  .promo-logos-compact {
-    flex-direction: column;
-    max-width: 100%;
-  }
-
-  .promo-assets {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .promo-asset {
-    width: 100%;
-  }
-
-  .color-swatches {
-    flex-direction: column;
-  }
-
-  .color-swatch {
-    width: 100%;
-  }
-}
-
 /* Promo Section Navigation */
 .promo-section-nav {
   font-size: 1.1rem;
@@ -483,22 +448,6 @@ details.nav-accordion .nav-accordion-header::-webkit-details-marker {
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   margin: 1.5rem 0;
-}
-
-@media only screen and (max-width: 768px) {
-  .promo-posts-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .promo-post-content pre {
-    font-size: 0.85rem;
-    padding: 0.75rem;
-  }
-
-  .promo-toolbar {
-    flex-direction: column;
-    align-items: center;
-  }
 }
 
 .promo-post {
@@ -885,8 +834,49 @@ details.nav-accordion .nav-accordion-header::-webkit-details-marker {
   transition: transform 0.3s ease;
 }
 
-/* Sponsor grid responsive - single column on mobile */
+/* Responsive - 768px and below */
 @media (max-width: 768px) {
+  .promo-hero {
+    flex-direction: column;
+  }
+
+  .promo-logos-compact {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .promo-assets {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .promo-asset {
+    width: 100%;
+  }
+
+  .color-swatches {
+    flex-direction: column;
+  }
+
+  .color-swatch {
+    width: 100%;
+  }
+
+  .promo-posts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .promo-post-content pre {
+    font-size: 0.85rem;
+    padding: 0.75rem;
+  }
+
+  .promo-toolbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Sponsor grid responsive - single column on mobile */
   .columns .column.col-4 {
     width: 100%;
     flex: 0 0 100%;
