@@ -7,6 +7,16 @@ layout= "sponsorlist"
 +++
 
 ---- 
+
+### Special Thanks to:
+
+- [Growler Guys](https://thegrowlerguys.com/locations/eau-claire-wisconsin/) for hosting the afterparty for free
+- [OfficeMax](https://www.officedepot.com/storelocator/wi/eau-claire/officemax-6348) for printing posters for free
+- [CVTC](https://cvtc.edu) for discounted venue
+- [Erberts & Gerberts](https://www.erbertandgerberts.com/locations/eau-claire-east-clairemont-ave/) for discounted lunch
+
+----
+
 <br/>
 
 ## [Sponsorships Available!](/fil/cvcc-2026-Sponsorship-Program.pdf) 
