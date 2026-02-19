@@ -18,11 +18,11 @@ On **March 14th, 2026**, we are once again bringing together the area's brightes
 
 - 8:30am - Breakfast, Registration Opens
 - 9:00am - Opening Remarks
-- 9:15am - Keynote by [Brian Hogan](/speakers/bphogan/)
+- 9:15am - Keynote by the magnanimous [Brian Hogan](/speakers/bphogan/)
 - 10:00am - Sessions Start
 - 12:00pm - Lunch
 - 3:00pm - Closing Remarks
-- 5:00pm - Afterparty at [Growler Guys](https://thegrowlerguys.com/locations/eau-claire-wisconsin/)
+- 4:30pm - Afterparty at [Growler Guys](https://thegrowlerguys.com/locations/eau-claire-wisconsin/)
 
 ### Venue
 

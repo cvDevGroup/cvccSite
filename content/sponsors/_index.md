@@ -11,9 +11,11 @@ layout= "sponsorlist"
 ### Special Thanks to:
 
 - [Growler Guys](https://thegrowlerguys.com/locations/eau-claire-wisconsin/) for hosting the afterparty for free
-- [OfficeMax](https://www.officedepot.com/storelocator/wi/eau-claire/officemax-6348) for printing posters for free
 - [CVTC](https://cvtc.edu) for discounted venue
 - [Erberts & Gerberts](https://www.erbertandgerberts.com/locations/eau-claire-east-clairemont-ave/) for discounted lunch
+
+
+ Chip in via [PayPal](https://www.paypal.com/donate/?hosted_button_id=4LHV8KQKSN4U8)
 
 ----
 
@@ -39,3 +41,4 @@ The event is free to attend, so all of our costs are met by sponsors. Here are s
 
 
 #### View our [2026 Sponsorship Program](/fil/cvcc-2026-Sponsorship-Program.pdf) or contact [codecamp@cvdevgroup.org](mailto:codecamp@cvdevgroup.org) for information.
+
