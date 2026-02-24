@@ -13,6 +13,8 @@ layout= "sponsorlist"
 - [Growler Guys](https://thegrowlerguys.com/locations/eau-claire-wisconsin/) for hosting the afterparty for free
 - [CVTC](https://cvtc.edu) for discounted venue
 - [Erberts & Gerberts](https://www.erbertandgerberts.com/locations/eau-claire-east-clairemont-ave/) for discounted lunch
+- [Mr. Collin Schindler](https://github.com/ceschindler) for chipping in!
+- [Festival Foods](https://www.festfoods.com) For chipping in on snacks! 
 
 
  Chip in via [PayPal](https://www.paypal.com/donate/?hosted_button_id=4LHV8KQKSN4U8)
