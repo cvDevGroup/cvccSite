@@ -1,0 +1,381 @@
+{{ define "title" }}CAMPFIRE — Admin Panel{{ end }}
+
+{{ define "head" }}
+  {{- with resources.Get "css/escape-room.css" }}
+    {{- if eq hugo.Environment "development" }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}">
+    {{- else }}
+      {{- with . | minify | fingerprint }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+      {{- end }}
+    {{- end }}
+  {{- end }}
+
+  <style>
+    /* ---- Admin-specific overrides ------------------------- */
+    body { overflow: auto; }
+    body::after { display: none; }
+
+    .admin-wrap {
+      max-width: 540px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+    .admin-title {
+      font-size: 20px;
+      letter-spacing: 0.2em;
+      color: var(--amber);
+      margin-bottom: 4px;
+    }
+    .admin-sub {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--green-dim);
+      margin-bottom: 32px;
+    }
+    .admin-section {
+      border: 1px solid #1a3a1a;
+      border-radius: 4px;
+      padding: 20px;
+      margin-bottom: 20px;
+      background: rgba(0,255,65,0.02);
+    }
+    .admin-section h2 {
+      font-size: 12px;
+      letter-spacing: 0.25em;
+      color: var(--green-dim);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+    .admin-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .admin-row:last-child { margin-bottom: 0; }
+    .admin-label {
+      font-size: 13px;
+      color: var(--white);
+      flex: 1;
+    }
+    .admin-value {
+      font-size: 13px;
+      color: var(--amber);
+      letter-spacing: 0.05em;
+      text-align: right;
+    }
+    .admin-input {
+      background: #0a0a0a;
+      border: 1px solid var(--green-dim);
+      border-radius: 2px;
+      color: var(--amber);
+      font-family: var(--font-mono);
+      font-size: 13px;
+      padding: 6px 10px;
+      width: 200px;
+      outline: none;
+    }
+    .admin-input:focus { border-color: var(--green); }
+
+    #pin-gate {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 60vh;
+      text-align: center;
+    }
+    #pin-gate h1 {
+      font-size: 18px;
+      letter-spacing: 0.2em;
+      color: var(--amber);
+      margin-bottom: 24px;
+    }
+    .pin-boxes {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .pin-box {
+      width: 48px;
+      height: 56px;
+      border: 2px solid var(--green-dim);
+      border-radius: 4px;
+      background: rgba(0,255,65,0.04);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: var(--green);
+    }
+    .pin-box.filled { border-color: var(--green); background: rgba(0,255,65,0.10); }
+    .pin-error { color: var(--red); font-size: 13px; min-height: 18px; }
+
+    .otp-capture-prefix {
+      color: var(--amber);
+      font-size: 15px;
+      letter-spacing: 0.1em;
+    }
+    .divider {
+      border: none;
+      border-top: 1px solid #1a3a1a;
+      margin: 28px 0;
+    }
+  </style>
+{{ end }}
+
+{{ define "main" }}
+
+<!-- PIN gate -->
+<div id="pin-gate">
+  <h1>⚙ ADMIN ACCESS</h1>
+  <p style="color: var(--green-dim); font-size: 12px; letter-spacing: 0.15em; margin-bottom: 24px;">
+    Enter admin PIN to continue
+  </p>
+  <div class="pin-boxes" id="pin-display">
+    <div class="pin-box" id="pd0"></div>
+    <div class="pin-box" id="pd1"></div>
+    <div class="pin-box" id="pd2"></div>
+    <div class="pin-box" id="pd3"></div>
+  </div>
+  <div class="pin-error" id="pin-error"></div>
+</div>
+
+<!-- Admin panel (hidden until PIN passed) -->
+<div id="admin-panel" style="display:none;">
+  <div class="admin-wrap">
+    <div class="admin-title">⚙ CAMPFIRE ADMIN</div>
+    <div class="admin-sub">CONFIGURATION &amp; RESET PANEL</div>
+
+    <div class="admin-section">
+      <h2>▸ Reset</h2>
+      <p style="font-size: 13px; color: var(--white); margin-bottom: 16px; line-height: 1.6;">
+        Use this between groups. Reloads the main game to the intro screen.<br>
+        Remember to re-hide Key B before the next group arrives.
+      </p>
+      <button class="btn" onclick="doReset()">↺ RESET GAME FOR NEXT GROUP</button>
+    </div>
+
+    <div class="admin-section">
+      <h2>▸ YubiKey Prefixes (read-only)</h2>
+      <p style="font-size: 12px; color: var(--green-dim); margin-bottom: 16px; line-height: 1.6;">
+        These are loaded from <code style="color:var(--amber);">config.js</code>.<br>
+        To change them, edit that file directly, then reload.
+      </p>
+      <div class="admin-row">
+        <span class="admin-label">Key A Prefix (Stage 1)</span>
+        <span class="admin-value" id="show-key-a">—</span>
+      </div>
+      <div class="admin-row">
+        <span class="admin-label">Key B Prefix (Stage 4)</span>
+        <span class="admin-value" id="show-key-b">—</span>
+      </div>
+      <div class="admin-row">
+        <span class="admin-label">Codeword (Stage 3)</span>
+        <span class="admin-value" id="show-codeword">—</span>
+      </div>
+      <div class="admin-row">
+        <span class="admin-label">Timer (seconds)</span>
+        <span class="admin-value" id="show-timer">—</span>
+      </div>
+    </div>
+
+    <div class="admin-section">
+      <h2>▸ Session Code Lookup</h2>
+      <p style="font-size: 12px; color: var(--green-dim); margin-bottom: 16px; line-height: 1.6;">
+        Find the session code in the bottom-left corner of the game screen.<br>
+        Enter it below to reveal which credentials are active for that session.
+      </p>
+      <div style="display:flex; gap:10px; align-items:center; margin-bottom:16px;">
+        <input id="session-lookup-input" class="admin-input"
+               type="text" maxlength="1" placeholder="A"
+               autocomplete="off" autocorrect="off" autocapitalize="characters"
+               style="width:60px; text-align:center; font-size:22px; letter-spacing:0.1em;" />
+        <button class="btn" onclick="lookupSession()">LOOK UP</button>
+      </div>
+      <div id="session-lookup-result"></div>
+    </div>
+
+    <div class="admin-section">
+      <h2>▸ Live OTP Capture</h2>
+      <p style="font-size: 12px; color: var(--green-dim); margin-bottom: 12px; line-height: 1.6;">
+        Click the box below, then touch a YubiKey to capture its OTP prefix.<br>
+        Copy the first 12 characters into <code style="color:var(--amber);">config.js</code>.
+      </p>
+
+      <div style="margin-bottom: 12px;">
+        <label style="font-size: 11px; letter-spacing: 0.15em; color: var(--green-dim); display:block; margin-bottom: 6px;">
+          KEY LABEL (optional)
+        </label>
+        <input id="otp-label" class="admin-input" type="text"
+               placeholder="e.g. Key A" autocomplete="off" style="width: 160px;" />
+      </div>
+
+      <p style="font-size: 12px; color: var(--amber); margin-bottom: 8px;">
+        Click here then touch the key:
+      </p>
+      <input id="otp-capture-input" class="admin-input"
+             type="text" autocomplete="off" autocorrect="off"
+             autocapitalize="none" spellcheck="false"
+             placeholder="(click here, then touch key)"
+             style="width: 100%; margin-bottom: 12px;" />
+
+      <div id="otp-results"></div>
+    </div>
+
+    <div class="admin-section">
+      <h2>▸ Pre-Event Checklist</h2>
+      <ol style="font-size: 13px; color: var(--white); line-height: 2; padding-left: 20px;">
+        <li>Capture OTP prefixes for each YubiKey using the tool above.</li>
+        <li>Update <code style="color:var(--amber);">static/escape-room/config.js</code> with <code style="color:var(--amber);">KEY_A_PREFIX</code> and <code style="color:var(--amber);">KEY_B_PREFIX</code>.</li>
+        <li>Confirm <code style="color:var(--amber);">CODEWORD</code> and <code style="color:var(--amber);">ENCODED_MESSAGE</code> match in config.</li>
+        <li>Print Volunteer Roster and Cipher Wheel props.</li>
+        <li>Label YubiKeys with volunteer names.</li>
+        <li>Hide Key B (under table, lockbox, envelope).</li>
+        <li>Put sticky note with credentials on the desk.</li>
+        <li>Open the game URL in Safari, set to fullscreen (Guided Access).</li>
+        <li>Test full run-through with a volunteer.</li>
+      </ol>
+    </div>
+
+    <hr class="divider" />
+
+    <div style="text-align: center;">
+      <a href="/escape-room/" class="btn btn-amber">← BACK TO GAME</a>
+    </div>
+  </div>
+</div>
+
+<script src="/escape-room/config.js"></script>
+<script>
+let pinBuffer = '';
+
+document.addEventListener('keydown', handlePinKey);
+
+function handlePinKey(e) {
+  if (document.getElementById('pin-gate').style.display === 'none') return;
+  if (e.target === document.getElementById('otp-capture-input')) return;
+
+  if (/^[0-9]$/.test(e.key) && pinBuffer.length < 4) {
+    pinBuffer += e.key;
+    updatePinDisplay();
+    if (pinBuffer.length === 4) setTimeout(checkPin, 100);
+  } else if (e.key === 'Backspace') {
+    pinBuffer = pinBuffer.slice(0, -1);
+    updatePinDisplay();
+    document.getElementById('pin-error').textContent = '';
+  }
+}
+
+function updatePinDisplay() {
+  for (let i = 0; i < 4; i++) {
+    const box = document.getElementById(`pd${i}`);
+    const filled = i < pinBuffer.length;
+    box.textContent = filled ? '●' : '';
+    box.classList.toggle('filled', filled);
+  }
+}
+
+function checkPin() {
+  if (pinBuffer === CONFIG.ADMIN_PIN) {
+    document.getElementById('pin-gate').style.display = 'none';
+    document.getElementById('admin-panel').style.display = 'block';
+    loadAdminValues();
+    document.removeEventListener('keydown', handlePinKey);
+  } else {
+    document.getElementById('pin-error').textContent = '✗ Incorrect PIN';
+    pinBuffer = '';
+    updatePinDisplay();
+    setTimeout(() => { document.getElementById('pin-error').textContent = ''; }, 1500);
+  }
+}
+
+function loadAdminValues() {
+  setText('show-key-a',    CONFIG.KEY_A_PREFIX  || '(not set)');
+  setText('show-key-b',    CONFIG.KEY_B_PREFIX  || '(not set)');
+  setText('show-codeword', CONFIG.CODEWORD      || '(not set)');
+  setText('show-timer',    CONFIG.TIMER_SECONDS + 's (' + Math.floor(CONFIG.TIMER_SECONDS/60) + ' min)');
+}
+
+function setText(id, val) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = val;
+}
+
+function lookupSession() {
+  const input = document.getElementById('session-lookup-input');
+  const resultEl = document.getElementById('session-lookup-result');
+  const code = input.value.trim().toUpperCase();
+  const idx = code.charCodeAt(0) - 65; // A→0, B→1, C→2, D→3
+  const creds = CONFIG.LOGIN_CREDENTIALS;
+
+  if (!code || isNaN(idx) || idx < 0 || idx >= creds.length) {
+    resultEl.innerHTML = '<div style="color:var(--red);font-size:13px;">✗ Invalid session code. Enter A, B, C, or D.</div>';
+    return;
+  }
+
+  const cred = creds[idx];
+  resultEl.innerHTML = `
+    <div style="border:1px solid #1a3a1a; border-radius:3px; padding:12px 14px;">
+      <div style="font-size:10px; color:var(--green-dim); letter-spacing:0.15em; margin-bottom:12px;">
+        SESSION ${code} — ACTIVE CREDENTIALS
+      </div>
+      <div class="admin-row">
+        <span class="admin-label">Name</span>
+        <span class="admin-value">${cred.name}</span>
+      </div>
+      <div class="admin-row">
+        <span class="admin-label">Email</span>
+        <span class="admin-value">${cred.email}</span>
+      </div>
+      <div class="admin-row" style="margin-bottom:0;">
+        <span class="admin-label">Password</span>
+        <span class="admin-value">${cred.password}</span>
+      </div>
+    </div>
+  `;
+}
+
+const otpInput = document.getElementById('otp-capture-input');
+const otpResults = document.getElementById('otp-results');
+let captureHistory = [];
+
+otpInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    const otp = otpInput.value.trim();
+    otpInput.value = '';
+    if (otp.length >= 12) {
+      const label = document.getElementById('otp-label').value.trim() || 'Key';
+      const prefix = otp.slice(0, 12);
+      captureHistory.unshift({ label, prefix, full: otp, ts: new Date().toLocaleTimeString() });
+      renderCaptureHistory();
+    }
+  }
+});
+
+function renderCaptureHistory() {
+  if (captureHistory.length === 0) { otpResults.innerHTML = ''; return; }
+  otpResults.innerHTML = captureHistory.map(entry => `
+    <div style="margin-bottom:12px; border: 1px solid #1a3a1a; border-radius:3px; padding: 10px 14px;">
+      <div style="font-size:10px; color: var(--green-dim); letter-spacing:0.15em; margin-bottom:4px;">
+        ${entry.ts} — ${entry.label}
+      </div>
+      <div style="font-size:11px; color:#446644; margin-bottom:4px;">Full OTP:</div>
+      <div style="font-size:12px; color: #667766; word-break:break-all; margin-bottom:8px;">${entry.full}</div>
+      <div style="font-size:11px; color:#446644; margin-bottom:4px;">PREFIX (first 12 chars — copy this):</div>
+      <div class="otp-capture-prefix">${entry.prefix}</div>
+    </div>
+  `).join('');
+}
+
+function doReset() {
+  if (confirm('Reset game? This will navigate to /escape-room/.')) {
+    window.location.href = '/escape-room/';
+  }
+}
+</script>
+
+{{ end }}
