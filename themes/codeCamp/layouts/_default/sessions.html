@@ -1,0 +1,28 @@
+{{ define "main" }}
+<!-- <h3>This is begin list Content</h3> -->
+
+  <h1>{{ (now.Year) }} {{ .Title }}</h1>
+  {{ .Content }}
+  <!-- <h3>This is end Content</h3> -->
+  {{ range .Pages }}
+  <hr />
+  <br/>
+
+    {{ if .Params.accordion }}
+    <details class="accordion">
+      <summary class="accordion-header">
+        <span class="accordion-icon">&#9658;</span>
+        <h3>{{ .LinkTitle }}</h3>
+      </summary>
+      <div class="accordion-body">{{ .Summary }}</div>
+    </details>
+    {{ else if .Params.externalLink }}
+    <h3><a href="{{ .Params.externalLink }}" target="_blank" rel="noopener noreferrer">{{ .LinkTitle }} ↗</a></h3>
+    {{ .Summary }}
+    {{ else }}
+    <h3><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
+    {{ .Summary }}
+    {{ end }}
+
+  {{ end }}
+{{ end }}

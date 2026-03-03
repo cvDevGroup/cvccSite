@@ -899,3 +899,7 @@ details.nav-accordion .nav-accordion-header::-webkit-details-marker {
     transition: transform 0.1s ease, box-shadow 0.1s ease;
   }
 }
+
+ol{
+  list-style: decimal !important;
+}

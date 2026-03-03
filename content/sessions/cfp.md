@@ -1,6 +1,6 @@
 ---
 date: 2024-12-30
-draft: false
+draft: true
 title: 'Call For Speakers is OPEN'
 # externalLink: 'https://papercall.io/cvcc2026'
 weight: 100

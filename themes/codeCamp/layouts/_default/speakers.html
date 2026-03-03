@@ -1,0 +1,34 @@
+{{ define "main" }}
+<!-- <h3>This is begin list Content</h3> -->
+
+<h2>{{ now.Year }} Presenters</h2>
+<hr/>
+
+{{ range where .RegularPages "PublishDate.Year" (now.Year) }}
+  <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+  {{ .Summary }}
+  <!-- {{ .Content }} -->
+  <!-- <h3>This is end Content</h3> -->
+
+  <hr />
+  <br/>
+
+    <!-- {{ if .Params.accordion }}
+    <details class="accordion">
+      <summary class="accordion-header">
+        <span class="accordion-icon">&#9658;</span>
+        <h2>{{ .LinkTitle }}</h2>
+      </summary>
+      <div class="accordion-body">{{ .Content }}</div>
+    </details>
+    {{ else if .Params.externalLink }}
+    <h2><a href="{{ .Params.externalLink }}" target="_blank" rel="noopener noreferrer">{{ .LinkTitle }} ↗</a></h2>
+    {{ .Content }}
+    {{ else }}
+    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+    {{ .Content }}
+    {{ end }} -->
+
+  {{ end }}
+  <hr/>
+{{ end }}

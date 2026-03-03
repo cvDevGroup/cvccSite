@@ -1,7 +1,7 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
   <div class="columns scheduleLine">
-      {{ $pages := where .Site.RegularPages "Section" "sessions" }}
+      {{ $pages := where (where .Site.RegularPages "Section" "sessions") "PublishDate.Year" (now.Year) }}
       {{ $sortedPages := sort $pages ".Params.weight" "asc" }}
       {{ range $sortedPages }}
           {{ if eq (path.Ext .File.Path) ".md" }}
