@@ -1,12 +1,18 @@
----
-date: 2026-02-24
-draft: false
-title: 'Panel: IT EDUCATION DEATHMATCH'
-weight: 10
----
++++
+title = "Panel: IT EDUCATION DEATHMATCH"
+date = 2026-03-03
+draft = false
+location = "Commons"
+sessionTime = "12:45 pm"
+weight = 11
+layout = "session"
++++
+
 
 This gameshow will decide once-and-for-all which kind of IT education is best! Five different kinds of educators will compete in a bloodthirsty head-to-head competition where they will answer questions about how they approach educating their students/stakeholders:
  
+<!--more-->
+
 - Children's Education <br/> &nbsp; &nbsp; &nbsp; Represented by Councilman Nate Otto, _Eau Claire City Councilman and School Teacher_
 - Tradeschool <br/> &nbsp; &nbsp; &nbsp; Represented by Director Kyle Lowenhagen, _CVTC's IT/DA Program Director and longtime instructor_
 - Collegiate <br/> &nbsp; &nbsp; &nbsp; Represented by Dr. Benjamin Anderson, _Doctor of Vocational Education and Director of Privacy Engineering at Paramount_

@@ -1,14 +1,19 @@
 {{ define "main" }}
 <!-- <h3>This is begin list Content</h3> -->
-{{ range .Data.Pages.ByPublishDate }}
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
+
+<h2>{{ now.Year }} Presenters</h2>
+<hr/>
+
+{{ range where .RegularPages "PublishDate.Year" (now.Year) }}
+  <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+  {{ .Summary }}
+  <!-- {{ .Content }} -->
   <!-- <h3>This is end Content</h3> -->
 
   <hr />
   <br/>
 
-    {{ if .Params.accordion }}
+    <!-- {{ if .Params.accordion }}
     <details class="accordion">
       <summary class="accordion-header">
         <span class="accordion-icon">&#9658;</span>
@@ -22,7 +27,8 @@
     {{ else }}
     <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
     {{ .Content }}
-    {{ end }}
+    {{ end }} -->
 
   {{ end }}
+  <hr/>
 {{ end }}
