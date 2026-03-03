@@ -5,6 +5,6 @@ title: Brandon Roehl
 weight: 9
 ---
 
-Brandon Roehl is a Senior Engineer working at Jamf. He currently works on Jamf Protect
+Brandon Roehl is a Senior Engineer working at Jamf. He currently works on Jamf Protect.
 
 [https://github.com/BrandonRoehl](https://github.com/BrandonRoehl)
