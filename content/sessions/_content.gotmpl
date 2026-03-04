@@ -1,0 +1,16 @@
+{{ range site.Data.conference.sessions }}
+  {{ $content := dict "mediaType" "text/markdown" "value" .description }}
+  {{ $params := dict
+    "weight"      .weight
+    "sessionTime" .sessionTime
+    "location"    .location
+  }}
+  {{ $page := dict
+    "content" $content
+    "kind"    "page"
+    "params"  $params
+    "path"    .id
+    "title"   .title
+  }}
+  {{ $.AddPage $page }}
+{{ end }}

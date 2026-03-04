@@ -903,3 +903,329 @@ details.nav-accordion .nav-accordion-header::-webkit-details-marker {
 ol{
   list-style: decimal !important;
 }
+
+/* ── Speaker cards ───────────────────────────────────────────── */
+
+.speaker-cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+}
+
+.speaker-card {
+  flex: 0 0 calc(25% - 1.125rem);
+  position: relative;
+  cursor: pointer;
+  border-radius: 14px;
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  text-align: center;
+  padding: 1.5rem 1rem 2.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  outline: none;
+  user-select: none;
+}
+
+.speaker-card:hover,
+.speaker-card:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.15);
+}
+
+.speaker-card:active {
+  transform: translateY(-2px) scale(0.97);
+  transition-duration: 0.1s;
+}
+
+/* Fixed-height photo area so the name lines up across all card types */
+.speaker-card-photo-wrap {
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Overlapping multi-speaker photos */
+.speaker-card-photo-stack {
+  display: flex;
+  align-items: center;
+}
+
+.speaker-card-photo-stacked {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 3px solid #fff;
+  flex-shrink: 0;
+}
+
+.speaker-card-photo-stacked:not(:first-child) {
+  margin-left: -24px;
+  box-shadow: -3px 0 6px rgba(0, 0, 0, 0.12);
+}
+
+.speaker-card-photo-stacked--fallback {
+  opacity: 0.2;
+  background: #f5f5f5;
+  object-fit: contain;
+  padding: 12px;
+}
+
+/* Photo — circular, cropped to face */
+.speaker-card-photo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 3px solid #f0f0f0;
+  flex-shrink: 0;
+}
+
+/* Placeholder when no photo is available */
+.speaker-card-no-photo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: #f5f5f5;
+  border: 3px solid #e8e8e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.speaker-card-no-photo img {
+  width: 55%;
+  height: 55%;
+  object-fit: contain;
+  opacity: 0.3;
+}
+
+.speaker-card-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #222;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* Optional sponsor/company logo */
+.speaker-card-company-logo {
+  max-width: 80px;
+  max-height: 32px;
+  object-fit: contain;
+  opacity: 0.75;
+}
+
+/* Small CVCC logo badge at bottom */
+.speaker-card-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  opacity: 0.2;
+  margin-top: auto;
+}
+
+/* "click to read bio" hint — fades in on hover */
+.speaker-card-hint {
+  position: absolute;
+  bottom: 0.55rem;
+  left: 0;
+  right: 0;
+  font-size: 0.7rem;
+  color: #aaa;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+.speaker-card:hover .speaker-card-hint,
+.speaker-card:focus-visible .speaker-card-hint {
+  opacity: 1;
+}
+
+/* ── Fullscreen bio overlay ──────────────────────────────────── */
+
+#speaker-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0);
+  pointer-events: none;
+  transition: background 0.35s ease;
+}
+
+#speaker-overlay.open {
+  background: rgba(0, 0, 0, 0.8);
+  pointer-events: auto;
+}
+
+/* The card that "flips in" */
+.speaker-bio-panel {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+  max-width: 640px;
+  width: 100%;
+  max-height: 88vh;
+  overflow-y: auto;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.35);
+  /* Start edge-on as if the card is mid-flip */
+  transform: perspective(1200px) rotateY(-90deg);
+  opacity: 0;
+  transition:
+    transform 0.5s cubic-bezier(0.34, 1.2, 0.64, 1),
+    opacity   0.25s ease;
+}
+
+#speaker-overlay.open .speaker-bio-panel {
+  transform: perspective(1200px) rotateY(0deg);
+  opacity: 1;
+}
+
+/* Sticky close button row */
+.speaker-bio-top {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: #fff;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 1rem 0.25rem;
+  border-radius: 16px 16px 0 0;
+}
+
+.speaker-bio-close {
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+
+.speaker-bio-close:hover {
+  background: #555;
+}
+
+/* Bio content area */
+#speaker-bio-content {
+  padding: 0 2rem 2rem;
+}
+
+#speaker-bio-content h2 {
+  margin-top: 0;
+  font-size: 1.6rem;
+}
+
+/* Keep bio images reasonably sized */
+#speaker-bio-content img {
+  max-width: 200px;
+  border-radius: 8px;
+  display: block;
+  margin: 0.75rem 0 1rem;
+}
+
+/* ── Keynote speaker ─────────────────────────────────────────── */
+
+.speaker-keynote-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.speaker-keynote-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  width: 100%;
+}
+
+.speaker-keynote-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #b8860b;
+  margin: 0 0 0.75rem;
+}
+
+.speaker-keynote-card {
+  width: 100%;
+  /* Gold outline */
+  border: 3px solid #f0c020;
+  box-shadow:
+    0 0 0 4px rgba(240, 192, 32, 0.18),
+    0 6px 24px rgba(0, 0, 0, 0.12);
+}
+
+.speaker-keynote-card:hover,
+.speaker-keynote-card:focus-visible {
+  box-shadow:
+    0 0 0 4px rgba(240, 192, 32, 0.35),
+    0 12px 32px rgba(0, 0, 0, 0.18);
+}
+
+/* Larger photo for keynote */
+.speaker-keynote-card .speaker-card-photo,
+.speaker-keynote-card .speaker-card-no-photo {
+  width: 140px;
+  height: 140px;
+}
+
+.speaker-keynote-card .speaker-card-name {
+  font-size: 1.05rem;
+}
+
+/* ── Speaker card responsive ─────────────────────────────────── */
+
+@media (max-width: 600px) {
+  .speaker-cards-grid,
+  .speaker-keynote-grid {
+    gap: 1rem;
+  }
+
+  .speaker-card {
+    flex: 0 0 calc(50% - 0.5rem);
+    padding: 1.25rem 0.75rem 2rem;
+  }
+
+  .speaker-card-photo,
+  .speaker-card-no-photo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .speaker-bio-panel {
+    max-height: 92vh;
+  }
+
+  #speaker-bio-content {
+    padding: 0 1.25rem 1.5rem;
+  }
+}
