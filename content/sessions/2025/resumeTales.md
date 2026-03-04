@@ -9,7 +9,7 @@ weight = 11
 layout = "session"
 +++
 
-[Andrew Kirchman]({{< relref "/speakers/andrewK" >}})
+[Andrew Kirchman](/speakers/andrewk/)
 
 Andrew Kirchman is a lead software engineer at Thomson Reuters who brings over a decade of resume review and hiring experience. Through this talk, we’ll learn from others’ mistakes in their resumes, and how to best craft a resume to improve your hiring chances.
 

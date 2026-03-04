@@ -11,7 +11,7 @@ layout = "session"
 
 
 ## Success On Your Own Terms
-[Todd H. Gardner]({{< relref "/speakers/todd" >}})
+[Todd H. Gardner](/speakers/todd/)
 
 
 Are you ready to level up your career, but the only path you see is to become management? Let me show you another way. I’ve been a code-monkey. I’ve worked in the cubical mazes of “bigcorp”. I got out, and it was the scariest thing I ever did—and the best thing that ever happened to me.
