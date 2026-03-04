@@ -1,0 +1,158 @@
+{{ define "main" }}
+{{ $showCompanyLogos := site.Data.conference.showCompanyLogos }}
+<h2>{{ now.Year }} Presenters</h2>
+<hr/>
+
+{{ $speakers := where .RegularPages "PublishDate.Year" (now.Year) }}
+{{ $sorted   := sort $speakers "Params.weight" "asc" }}
+
+{{/* Hidden bio templates — one per speaker, indexed by speaker slug */}}
+{{ range $sorted }}
+{{ $id := .RelPermalink | strings.TrimRight "/" | path.Base }}
+<template id="bio-{{ $id }}">
+  <h2>{{ .Title }}</h2>
+  {{ .Content }}
+</template>
+{{ end }}
+
+{{/* ── Keynote speakers ─────────────────────────────────────── */}}
+{{ $keynote := where $sorted "Params.keynote" true }}
+{{ if $keynote }}
+<section class="speaker-keynote-section">
+  <p class="speaker-keynote-label">✦ Keynote Speaker{{ if gt (len $keynote) 1 }}s{{ end }}</p>
+  <div class="speaker-keynote-grid">
+    {{ range $keynote }}
+    {{ $id := .RelPermalink | strings.TrimRight "/" | path.Base }}
+    <div class="speaker-card speaker-keynote-card"
+         data-bio="bio-{{ $id }}"
+         role="button"
+         tabindex="0"
+         aria-label="Read bio for {{ .Title }}">
+      <div class="speaker-card-photo-wrap">
+        {{ if and .Params.images (gt (len .Params.images) 1) }}
+        <div class="speaker-card-photo-stack">
+          {{ range .Params.images }}
+          <img src="{{ . }}" alt="" class="speaker-card-photo-stacked">
+          {{ end }}
+        </div>
+        {{ else if .Params.image }}
+        <img src="{{ .Params.image }}" alt="{{ .Title }}" class="speaker-card-photo">
+        {{ else }}
+        <div class="speaker-card-no-photo">
+          <img src="/img/2023/CVCC_round_01.png" alt="">
+        </div>
+        {{ end }}
+      </div>
+      <p class="speaker-card-name">{{ .Title }}</p>
+      {{ if $showCompanyLogos }}
+      {{ if .Params.companyLogo }}
+      <img src="{{ .Params.companyLogo }}" alt="" class="speaker-card-company-logo">
+      {{ else }}
+      <img src="/img/2023/CVCC_round_01.png" alt="" class="speaker-card-logo" aria-hidden="true">
+      {{ end }}
+      {{ end }}
+      <span class="speaker-card-hint">click to read bio</span>
+    </div>
+    {{ end }}
+  </div>
+</section>
+<hr/>
+{{ end }}
+
+{{/* ── All other speakers ───────────────────────────────────── */}}
+{{ $regular := where $sorted "Params.keynote" "ne" true }}
+<div class="speaker-cards-grid">
+  {{ range $regular }}
+  {{ $id := .RelPermalink | strings.TrimRight "/" | path.Base }}
+  <div class="speaker-card"
+       data-bio="bio-{{ $id }}"
+       role="button"
+       tabindex="0"
+       aria-label="Read bio for {{ .Title }}">
+    <div class="speaker-card-photo-wrap">
+      {{ if and .Params.images (gt (len .Params.images) 1) }}
+      <div class="speaker-card-photo-stack">
+        {{ range .Params.images }}
+        <img src="{{ . }}" alt="" class="speaker-card-photo-stacked">
+        {{ end }}
+      </div>
+      {{ else if .Params.image }}
+      <img src="{{ .Params.image }}" alt="{{ .Title }}" class="speaker-card-photo">
+      {{ else }}
+      <div class="speaker-card-no-photo">
+        <img src="/img/2023/CVCC_round_01.png" alt="">
+      </div>
+      {{ end }}
+    </div>
+    <p class="speaker-card-name">{{ .Title }}</p>
+    {{ if $showCompanyLogos }}
+    {{ if .Params.companyLogo }}
+    <img src="{{ .Params.companyLogo }}" alt="" class="speaker-card-company-logo">
+    {{ else }}
+    <img src="/img/2023/CVCC_round_01.png" alt="" class="speaker-card-logo" aria-hidden="true">
+    {{ end }}
+    {{ end }}
+    <span class="speaker-card-hint">click to read bio</span>
+  </div>
+  {{ end }}
+</div>
+
+{{/* ── Fullscreen bio overlay ───────────────────────────────── */}}
+<div id="speaker-overlay" role="dialog" aria-modal="true">
+  <div class="speaker-bio-panel" id="speaker-bio-panel">
+    <div class="speaker-bio-top">
+      <button class="speaker-bio-close" id="speaker-bio-close" aria-label="Close">&times;</button>
+    </div>
+    <div id="speaker-bio-content"></div>
+  </div>
+</div>
+
+<script>
+(function () {
+  const overlay  = document.getElementById('speaker-overlay');
+  const panel    = document.getElementById('speaker-bio-panel');
+  const content  = document.getElementById('speaker-bio-content');
+  const closeBtn = document.getElementById('speaker-bio-close');
+  let lastFocused = null;
+
+  function openBio(card) {
+    const tmpl = document.getElementById(card.dataset.bio);
+    if (!tmpl) return;
+    content.innerHTML = '';
+    content.appendChild(tmpl.content.cloneNode(true));
+    lastFocused = card;
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => closeBtn.focus(), 60);
+  }
+
+  function closeBio() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+    setTimeout(() => { content.innerHTML = ''; }, 500);
+    if (lastFocused) lastFocused.focus();
+  }
+
+  document.querySelectorAll('.speaker-card-photo-stacked').forEach(img => {
+    img.addEventListener('error', function () {
+      this.onerror = null;
+      this.src = '/img/2023/CVCC_round_01.png';
+      this.classList.add('speaker-card-photo-stacked--fallback');
+    });
+  });
+
+  document.querySelectorAll('.speaker-card').forEach(card => {
+    card.addEventListener('click', () => openBio(card));
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openBio(card); }
+    });
+  });
+
+  closeBtn.addEventListener('click', closeBio);
+  overlay.addEventListener('click', e => { if (!panel.contains(e.target)) closeBio(); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && overlay.classList.contains('open')) closeBio();
+  });
+}());
+</script>
+{{ end }}

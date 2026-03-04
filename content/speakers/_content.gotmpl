@@ -1,0 +1,14 @@
+{{ range site.Data.conference.speakers }}
+  {{ $content := dict "mediaType" "text/markdown" "value" .bio }}
+  {{ $params := dict "weight" .weight "image" .image "keynote" .keynote "companyLogo" .companyLogo "images" .images }}
+  {{ $dates := dict "date" now "publishDate" now }}
+  {{ $page := dict
+    "content" $content
+    "dates"   $dates
+    "kind"    "page"
+    "params"  $params
+    "path"    .id
+    "title"   .name
+  }}
+  {{ $.AddPage $page }}
+{{ end }}

@@ -9,7 +9,7 @@ weight = 299
 layout = "session"
 +++
 
-[Wesley Larrabee]({{< relref "/speakers/wesleyL" >}})
+[Wesley Larrabee](/speakers/wesleyl/)
 
 IoT devices offer an opportunity to expand and enhance existing networks but also introduce new security vulnerabilities. This session will explore various types of IoT devices and networks, along with the associated security challenges they present and the potential risks to network integrity.
 

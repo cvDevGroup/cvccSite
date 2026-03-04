@@ -9,7 +9,7 @@ weight = 40
 layout = "session"
 +++
 
-[Cory LaNou]({{< relref "/speakers/coryL" >}})
+[Cory LaNou](/speakers/coryl/)
 
 This hands-on workshop will guide you through building a modern web application using a powerful and efficient tech stack. You'll create a complete web application with server-side rendering, dynamic frontend interactions, database operations, and beautiful styling—all with minimal JavaScript.
 

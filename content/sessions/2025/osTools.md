@@ -9,7 +9,7 @@ weight = 20
 layout = "session"
 +++
 
-[Brian P. Hogan]({{< relref "/speakers/bpHogan" >}})
+[Brian P. Hogan](/speakers/bphogan/)
 
 You probably already use Markdown to create content, but you can supercharge your content workflow with additional tools that let you create technically correct and consistent content your fellow developers will love.
 

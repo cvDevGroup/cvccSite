@@ -1,28 +1,15 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
   <div class="columns scheduleLine">
-      {{ $pages := where (where .Site.RegularPages "Section" "sessions") "PublishDate.Year" (now.Year) }}
-      {{ $sortedPages := sort $pages ".Params.weight" "asc" }}
-      {{ range $sortedPages }}
-          {{ if eq (path.Ext .File.Path) ".md" }}
-            <div class="column col-3">
-                <!-- {{ .Params.date.Format "January 2, 2006" }} -->
-                {{ .Params.sessionTime }}
-            </div>
-            <div class="column col-6">
-              <a href="{{ .RelPermalink }}">
-                  {{ .Params.title }}
-              </a>
-            </div>
-            <div class="column col-3">
-              
-                  {{ .Params.location }}
-              
-            </div>
-            <!-- <div class="column col-4 hide-lg"></div> -->
-          {{ end }}
-
-      {{ end }}
-      <hr />
+    {{ $sessions := $.Site.Data.conference.sessions }}
+    {{ $sorted := sort $sessions "weight" "asc" }}
+    {{ range $sorted }}
+      <div class="column col-3">{{ .sessionTime }}</div>
+      <div class="column col-6">
+        <a href="/sessions/{{ .id }}/">{{ .title }}</a>
+      </div>
+      <div class="column col-3">{{ .location }}</div>
+    {{ end }}
+    <hr />
   </div>
 {{ end }}
