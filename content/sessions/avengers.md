@@ -17,7 +17,7 @@ This talk is about how to use an agent development tools with a multi-git checko
 
 This is a talk about using a multi-checkout single machine strategy to develop an application end to end as a solo developer. This talk will cover the following areas
 - Agentic development using Claude Code(cli, desktop and web and yes I use all 3)
-- advantages and disadvantages of the multi-checkout approach to 'Agents' (The Avengers!)
+- Advantages and disadvantages of the multi-checkout approach to 'Agents' (The Avengers!)
 - Using LLM's as part of the end user experience of the app
 - Context demystified. How to manage and use context and prompts when using AI interaction as part of your application
 - What is MCP and why is it your superpower as a dev. Specifically this will focus on playwright, sentry, maestro and gitbhub mcp interaction

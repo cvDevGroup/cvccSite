@@ -15,4 +15,4 @@ When picking the best tool for the job why limit yourself to only one? How to bu
 
 <!--more-->
 
-Talk about building multi language projects. How to structure them what are the limitations. Demystifying the compiler toolchain and C FFI to help better understand what is going on under the hood.
+Talk about building multi language projects. How to structure them, and what are the limitations. Demystifying the compiler toolchain and C [FFI](https://en.wikipedia.org/wiki/Foreign_function_interface) to help better understand what is going on under the hood.
