@@ -19,10 +19,10 @@ On **March 14th, 2026**, we are once again bringing together the area's brightes
 - 8:30am - Breakfast, Registration Opens
 - 9:05am - Keynote by the magnanimous [Brian Hogan](/speakers/bphogan/)
 - 9:30am - [Workshop & Presentations](/schedule/) 
-- 12:15pm - Lunch
-- Afternoon - Panel: [IT EDUCATION DEATHMATCH](/sessions/panel/)
+- 12:15pm - [Lunch](/sessions/lunch/)
+- 12:45 - Panel: [IT EDUCATION DEATHMATCH](/sessions/panel/)
 - 1:30pm - [Workshop & Presentations](/schedule/) 
-- 3:15pm - Closing Remarks
+- 3:15pm - [Closing Remarks](/sessions/closing/)
 - 4:30pm - Afterparty at [Growler Guys](https://thegrowlerguys.com/locations/eau-claire-wisconsin/)
 
 ### Venue
