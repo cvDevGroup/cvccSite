@@ -4,6 +4,7 @@ draft: false
 title: Cory LaNou
 weight: 2
 ---
+![Cory LaNou](/img/speakers/cory-lanou-new.png)
 
 Cory La Nou is a technologist with 30+ years of experience specializing in technology consulting and Go development. He's the founder of Gopher Guides, the industry leader in Go training and education, and co-founded one of the world's first Go meetups. Cory helped organize the inaugural GopherCon and has spoken at conferences and meetups across the US and internationally. He's a published author and currently builds AI-assisted development tooling at github.com/gopherguides/gopher-ai. He's been a regular presenter at Chippewa Valley Code Camp for several years.
 <!-- 
