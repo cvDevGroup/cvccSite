@@ -42,7 +42,7 @@ This is not theory.
 We will build it live.
 
 
-## Workshop pre-requisites:
+## Workshop Prerequisites:
 Working computer with:
 - Reasonable CPU running reasonable OS
     - Windows (Intel 8th gen or newer)
@@ -50,13 +50,13 @@ Working computer with:
     - Mac (Intel 8th gen or newer or M1 or newer)
 - Reasonable RAM 
     - 16 GB or RAM would be a good starting point
-- Reasonable GPU
-    - While not required for basics... 
-        - Basic ML inference recommends: 12GB of vRAM
-        - ZImage Turbo: 24GB of vRAM
+- Reasonable GPU (optional) 
+    - Basic ML inference recommends: 12GB of vRAM
+    - ZImage Turbo: 24GB of vRAM
 - Software preinstalled (we can configure it in workshop)
     - Docker
     - Ollama
+        - Install a base model with `ollama run phi4-mini`
     - Git
     - GIT-LFS (optional)
     - Curl (on linux)

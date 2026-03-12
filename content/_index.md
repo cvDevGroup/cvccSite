@@ -31,32 +31,29 @@ On **March 14th, 2026**, we are once again bringing together the area's brightes
 620 W. Clairemont Avenue  
 Eau Claire, WI 54701
 
-Enter the front doors for Student Commons, the main entrance, on the south side of the building, facing Clairemont Ave - Labeled 1 below.
+Enter the front doors for Student Commons. It's the main entrance, on the south side of the building facing Clairemont Ave - **Labeled `1`** below.
 
 ### Parking
 
-Parking in lots on College Drive - labeled P1 and P9 below.
+Parking in lots on College Drive - **Labeled `P1` and `P9`** below.
 
-[![CVTC Campus Map](/img/cvtcCampus.jpg)](/img/cvtcCampus.jpg)
+[![CVTC Campus Map](/img/cvtcParking.png)](/img/cvtcCampus.jpg)
 
-<!-- ### Wi-Fi
+### Wi-Fi
 
-CVTCEvents - open network  
+`CVTCEvents` - open network  
 
 ### Breakfast - 8:30am  
 
-We have Donuts, fruit (apples, organges, bananas), and Coffee, served next to Commons.
+Donuts (Courtesy [festival](https://www.festfoods.com)), fruit (apples, organges, bananas), and Coffee(Courtesy Cole and Collin), served next to Commons.
 
- 
+
 ### Lunch - 12:15pm
 
-We have Turkey, Ham, Roast Beef, and Vegetarian Sandwiches from [Erberts & Gerberts](https://www.erbertandgerberts.com/locations/eau-claire-water-st/), served in the Commons
-
+Sub Sandwiches - Turkey, Ham, Roast Beef, and Vegetarian Sandwiches from [Erberts & Gerberts](https://www.erbertandgerberts.com/locations/eau-claire-east-clairemont-ave/), served in the Commons
 
 ## Afterparty - 4:30pm
 
-Pizza (gratis) and beer (non-gratis) in the back Event Room at Growler Guys
-
 [Growler Guys](https://thegrowlerguys.com/locations/eau-claire-wisconsin/)  
 2832 London Road  
-Eau Claire, WI -->
+Eau Claire, WI
