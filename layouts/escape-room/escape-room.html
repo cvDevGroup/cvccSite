@@ -1,0 +1,301 @@
+{{ define "title" }}CVCC: OPERATION HOTFIX — CAMPFIRE Terminal{{ end }}
+
+{{ define "head" }}
+  {{- with resources.Get "css/escape-room.css" }}
+    {{- if eq hugo.Environment "development" }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}">
+    {{- else }}
+      {{- with . | minify | fingerprint }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+      {{- end }}
+    {{- end }}
+  {{- end }}
+{{ end }}
+
+{{ define "main" }}
+
+<!-- HIDDEN YUBIKEY INPUT -->
+<input id="yubikey-input" type="text" autocomplete="off" autocorrect="off"
+       autocapitalize="none" spellcheck="false" aria-hidden="true" tabindex="-1" />
+
+<!-- SESSION CODE (bottom-left, for volunteer/admin reference) -->
+<div id="session-code-display">
+  SESSION <span id="session-code-value">—</span>
+</div>
+
+<!-- HUD -->
+<div id="hud">
+  <span id="hud-stage">● STAGE 1</span>
+  <span id="hud-timer">T-05:00</span>
+  <span style="color: var(--green-dim); font-size:11px; letter-spacing:0.1em;">CAMPFIRE</span>
+</div>
+
+<!-- SCREEN: INTRO -->
+<div id="screen-intro" class="screen active">
+  <div class="cerberus-logo">◈ CVCC: OPERATION HOTFIX ◈</div>
+  <div class="cerberus-sub">CHIPPEWA VALLEY CODE CAMP — VOLUNTEER PORTAL</div>
+
+  <div class="intro-box">
+    <p>You're at a volunteer workstation inside <strong>CVTC Business Campus</strong> —<br>
+       home of the 14th annual Chippewa Valley Code Camp.</p>
+    <p>Someone left their credentials on a <strong>sticky note</strong> next to the keyboard.</p>
+    <p>You log in — and <strong>CAMPFIRE</strong> flags a crisis.<br>
+       Someone force-pushed <code style="color:var(--amber);">"fix schedule typo"</code> to <code style="color:var(--amber);">main</code>.<br>
+       Brian Hogan's keynote, 47 sessions, and 200+ registrations are at risk.</p>
+    <p style="color: var(--green-dim); font-size: 13px; margin-top: 8px;">
+      CAMPFIRE has locked the pipeline. You have <strong style="color:var(--white);">5 minutes</strong> to authenticate the rollback.<br>
+      <strong style="color: var(--amber);">CAMPFIRE doesn't trust passwords. Only hardware keys.</strong>
+    </p>
+  </div>
+
+  <button class="btn" onclick="beginMission()">▶ BEGIN MISSION</button>
+  <p class="text-dim mt-12" style="font-size: 11px; letter-spacing: 0.15em;">
+    FIND THE STICKY NOTE ON THE DESK
+  </p>
+</div>
+
+<!-- SCREEN: STAGE 0 — Login -->
+<div id="screen-stage0" class="screen">
+  <div class="login-panel">
+    <div class="login-logo">CAMPFIRE</div>
+    <div class="login-tagline">CVCC VOLUNTEER PORTAL 2026 — SECURE ACCESS</div>
+
+    <form id="login-form" autocomplete="off">
+      <div class="login-field">
+        <label for="login-email">Email Address</label>
+        <input id="login-email" type="email" placeholder="volunteer@cvcc.dev"
+               autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" />
+      </div>
+      <div class="login-field">
+        <label for="login-pass">Password</label>
+        <input id="login-pass" type="password" placeholder="••••••••••" autocomplete="off" />
+      </div>
+      <button type="submit" class="login-submit">SIGN IN →</button>
+      <div id="login-error" class="login-error"></div>
+    </form>
+  </div>
+</div>
+
+<!-- SCREEN: LOCKDOWN -->
+<div id="screen-lockdown" class="screen lockdown-alert">
+  <div class="alert-icon">⚠</div>
+  <div class="alert-title">UNAUTHORIZED PUSH DETECTED</div>
+  <div class="alert-sub">
+    CAMPFIRE LOCKDOWN INITIATED<br>
+    FORCE-PUSH TO cvcc-2026/schedule-app<br>
+    KEYNOTE + 47 SESSIONS + 200+ REGISTRATIONS AT RISK<br>
+    <br>
+    <span style="font-size: 18px; color: var(--red); letter-spacing: 0.2em;" class="blink">
+      HARDWARE AUTHENTICATION REQUIRED TO ROLLBACK
+    </span>
+  </div>
+  <button class="btn btn-red" onclick="lockdownContinue()">► ACCESS CAMPFIRE TERMINAL</button>
+  <p style="color:#ff6666; font-size: 11px; margin-top: 16px; letter-spacing: 0.1em;">
+    TIMER HAS STARTED — ACT IMMEDIATELY
+  </p>
+</div>
+
+<!-- SCREEN: STAGE 1 -->
+<div id="screen-stage1" class="screen">
+  <div class="stage-panel">
+    <div class="stage-label">STAGE 01 / 04</div>
+    <div class="stage-title">IDENTIFY THE COMMITTER</div>
+
+    <div class="terminal-block">
+<span class="term-prompt">campfire@cvcc:~$</span> git log --oneline -1 cvcc-2026/schedule-app
+<span class="term-error">FLAGGED: d3a9<span class="term-value" id="stage1-fp">...gnlr</span> (HEAD -> main) "fix schedule typo"</span>
+<span class="term-prompt">campfire@cvcc:~$</span> campfire verify --suffix <span class="term-value" id="stage1-fp-echo">...gnlr</span>
+ALERT: Unverified push. Brian Hogan keynote + 47 sessions at risk.
+Authenticate volunteer lead to initiate rollback.
+<span class="blink term-prompt">_</span>
+    </div>
+
+    <div class="stage-body">
+      Check the <strong>CVCC VOLUNTEER ROSTER</strong> card on the desk.<br>
+      Find the volunteer whose key suffix matches the commit token above.<br>
+      Pick up <strong>their labeled YubiKey</strong>, plug it in, and <strong>touch the gold contact</strong>.
+    </div>
+
+    <div id="stage1-status" class="status-msg info">
+      Plug in the correct YubiKey and touch it.
+    </div>
+
+    <div id="demo-key-a" style="display:none; margin-top:16px; padding:12px 16px; border:1px dashed var(--amber); border-radius:4px; text-align:center;">
+      <div style="font-size:10px; letter-spacing:0.2em; color:var(--amber); margin-bottom:10px;">⚠ DEMO MODE — NO YUBIKEY CONNECTED</div>
+      <button class="btn btn-amber" onclick="simulateKeyA()">▶ SIMULATE YUBIKEY TOUCH (KEY A)</button>
+    </div>
+  </div>
+</div>
+
+<!-- SCREEN: STAGE 2 -->
+<div id="screen-stage2" class="screen">
+  <div class="stage-panel">
+    <div class="stage-label">STAGE 02 / 04</div>
+    <div class="stage-title">DECRYPT THE ROLLBACK CODE</div>
+
+    <div class="terminal-block">
+<span class="term-prompt">campfire@cvcc:~$</span> campfire auth --accept
+✓ Token verified. Volunteer identity confirmed.
+Decrypting rollback authorization for cvcc-2026/schedule-app...
+    </div>
+
+    <div class="cipher-display">
+      <div class="cipher-label">// ENCRYPTED ROLLBACK AUTHORIZATION — CVCC-2026 //</div>
+      <div class="cipher-encoded" id="stage2-encoded">WKH FRGH LV: GHOWD</div>
+      <div class="cipher-hint">Encoding: ROT-3 cipher — use the cipher wheel on the desk</div>
+    </div>
+
+    <div class="stage-body">
+      Use the <strong>ROT-3 Cipher Wheel</strong> on the desk to decode the message.<br>
+      Each letter has been shifted forward by <strong>3 positions</strong>.<br>
+      The decoded result is a <strong>5-letter codeword</strong> — remember it for the next step.
+    </div>
+
+    <button class="btn" onclick="stage2Continue()">► I HAVE THE CODEWORD</button>
+  </div>
+</div>
+
+<!-- SCREEN: STAGE 3 -->
+<div id="screen-stage3" class="screen">
+  <div class="stage-panel">
+    <div class="stage-label">STAGE 03 / 04</div>
+    <div class="stage-title">ENTER THE CODEWORD</div>
+
+    <div class="cipher-display" style="margin-bottom: 16px;">
+      <div class="cipher-label">// ROLLBACK AUTHORIZATION TO DECODE //</div>
+      <div class="cipher-encoded" id="stage3-encoded-ref"></div>
+      <div class="cipher-hint">ROT-3 — shift each letter back 3 positions</div>
+    </div>
+
+    <div class="stage-body">
+      Type the 5-letter decoded codeword using the keyboard.<br>
+      <span class="text-dim">Letters only — press Backspace to correct.</span>
+    </div>
+
+    <div class="code-input-row">
+      <div class="code-char-box" id="char-0"></div>
+      <div class="code-char-box" id="char-1"></div>
+      <div class="code-char-box" id="char-2"></div>
+      <div class="code-char-box" id="char-3"></div>
+      <div class="code-char-box" id="char-4"></div>
+    </div>
+
+    <div id="stage3-status" class="status-msg info">
+      Type the decoded codeword on the keyboard.
+    </div>
+  </div>
+</div>
+
+<!-- SCREEN: STAGE 4 -->
+<div id="screen-stage4" class="screen">
+  <div class="stage-panel">
+    <div class="stage-label">STAGE 04 / 04</div>
+    <div class="stage-title">DUAL AUTHENTICATION REQUIRED</div>
+
+    <div class="terminal-block">
+<span class="term-prompt">campfire@cvcc:~$</span> git rollback --stage cvcc-2026/schedule-app
+Rollback partially staged. Dual authentication required.
+Awaiting secondary volunteer token...
+<span class="blink term-prompt">_</span>
+    </div>
+
+    <div class="key-slots">
+      <div class="key-slot authenticated" id="slot-a">
+        <div class="key-slot-icon">🔑</div>
+        <div class="key-slot-label">PRIMARY KEY</div>
+        <div class="key-slot-status">✓ AUTHENTICATED</div>
+      </div>
+      <div class="key-slot waiting" id="slot-b">
+        <div class="key-slot-icon">🔐</div>
+        <div class="key-slot-label">SECONDARY KEY</div>
+        <div class="key-slot-status">INSERT KEY B</div>
+      </div>
+    </div>
+
+    <div class="stage-body" id="stage4-hint" style="white-space: pre-line;"></div>
+
+    <div id="stage4-status" class="status-msg info">
+      Locate Key B and plug it in, then touch it.
+    </div>
+
+    <div id="demo-key-b" style="display:none; margin-top:16px; padding:12px 16px; border:1px dashed var(--amber); border-radius:4px; text-align:center;">
+      <div style="font-size:10px; letter-spacing:0.2em; color:var(--amber); margin-bottom:10px;">⚠ DEMO MODE — NO YUBIKEY CONNECTED</div>
+      <button class="btn btn-amber" onclick="simulateKeyB()">▶ SIMULATE YUBIKEY TOUCH (KEY B)</button>
+    </div>
+  </div>
+</div>
+
+<!-- SCREEN: WIN -->
+<div id="screen-win" class="screen">
+  <div class="win-box">
+    <div class="win-title">█ ROLLBACK COMPLETE █</div>
+    <div class="win-sub">CAMPFIRE: DISARMED — CVCC 2026 SYSTEMS RESTORED</div>
+
+    <div class="win-time" id="win-time">Time remaining: --:--</div>
+
+    <div class="win-message">
+      Brian Hogan's keynote is back online.<br>
+      All 47 sessions and 200+ registrations restored.<br>
+      <br>
+      <span class="text-dim" style="font-size: 12px;">
+        This is why hardware keys exist — a sticky note on a keyboard<br>
+        can take down a live conference app. A hardware key can't.
+      </span>
+    </div>
+
+    <div class="win-qr" id="win-qr" title="Scan to learn more about YubiKey">
+      <span style="font-size: 9px; line-height: 1.4;">
+        QR CODE<br>yubico.com<br>
+        <small>(replace with actual QR image)</small>
+      </span>
+    </div>
+
+    <button class="btn mt-12" onclick="resetGame()">↺ RESET FOR NEXT GROUP</button>
+  </div>
+</div>
+
+<!-- SCREEN: FAIL -->
+<div id="screen-fail" class="screen">
+  <div class="alert-icon" style="color: var(--red);">✗</div>
+  <div class="fail-title">ROLLBACK FAILED</div>
+  <div class="fail-sub">
+    CAMPFIRE: LOCKDOWN MAINTAINED<br>
+    CVCC 2026 SCHEDULE APP: OFFLINE<br>
+    BRIAN HOGAN'S KEYNOTE: GONE<br>
+    <br>
+    <span style="font-size: 13px; color: #cc7777;">
+      A sticky note on a keyboard took down the whole conference.<br>
+      A hardware key could have stopped it.
+    </span>
+  </div>
+  <button class="btn btn-red" onclick="resetGame()">↺ TRY AGAIN</button>
+</div>
+
+<!-- config.js is a plain static file so volunteers can edit it without a rebuild -->
+<script src="/escape-room/config.js"></script>
+
+{{- with resources.Get "js/escape-room.js" }}
+  {{- if eq hugo.Environment "development" }}
+    <script src="{{ .RelPermalink }}"></script>
+  {{- else }}
+    {{- with . | minify | fingerprint }}
+      <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
+    {{- end }}
+  {{- end }}
+{{- end }}
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const echo = document.getElementById('stage1-fp-echo');
+    const main = document.getElementById('stage1-fp');
+    if (echo && main) {
+      const observer = new MutationObserver(() => { echo.textContent = main.textContent; });
+      observer.observe(main, { childList: true, subtree: true, characterData: true });
+    }
+    document.body.addEventListener('touchmove', (e) => {
+      if (e.target === document.body) e.preventDefault();
+    }, { passive: false });
+  });
+</script>
+
+{{ end }}
