@@ -16,7 +16,7 @@ This gameshow will decide once-and-for-all which kind of IT education is best! F
 - Children's Education <br/> &nbsp; &nbsp; &nbsp; Represented by Councilman Nate Otto, _Eau Claire City Councilman and School Teacher_
 - Tradeschool <br/> &nbsp; &nbsp; &nbsp; Represented by Director Kyle Lowenhagen, _CVTC's IT/DA Program Director and longtime instructor_
 - Collegiate <br/> &nbsp; &nbsp; &nbsp; Represented by Dr. Benjamin Anderson, _Doctor of Vocational Education and Director of Privacy Engineering at Paramount_
-- Professional In-house <br/> &nbsp; &nbsp; &nbsp; Represented by Mr. Brian Hogan, _Head of Technical Content at Tailscale, professor, instructor, and author._
+- Professional In-house <br/> &nbsp; &nbsp; &nbsp; Represented by Mr. Brian P. Hogan, _Head of Technical Content at Tailscale, professor, instructor, and author._
 - Professional External <br/> &nbsp; &nbsp; &nbsp; Represented by Mr. Cory LaNou, _Owner of Gopher Guides, specializing in Go software engineering training for Fortune 500 companies. AI & programming educator and content creator._
 
 

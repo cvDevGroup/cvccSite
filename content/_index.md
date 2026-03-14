@@ -17,7 +17,7 @@ On **March 14th, 2026**, we are once again bringing together the area's brightes
 ### Schedule
 
 - 8:30am - Breakfast, Registration Opens
-- 9:05am - Keynote by the magnanimous [Brian Hogan](/speakers/bphogan/)
+- 9:05am - Keynote by the magnanimous [Brian P. Hogan](/speakers/bphogan/)
 - 9:30am - [Workshop & Presentations](/schedule/) 
 - 12:15pm - [Lunch](/sessions/lunch/)
 - 12:45 - Panel: [IT EDUCATION DEATHMATCH](/sessions/panel/)
