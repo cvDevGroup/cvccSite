@@ -37,6 +37,9 @@ function pickCredential() {
 
   const codeEl = document.getElementById('session-code-value');
   if (codeEl) codeEl.textContent = sessionCode;
+
+  const emailEl = document.getElementById('login-email');
+  if (emailEl) emailEl.value = activeCredential ? activeCredential.email : '';
 }
 
 // ---- Init --------------------------------------------------
@@ -142,7 +145,7 @@ function handleLogin() {
   const pass  = passEl.value;
 
   // Wrong credentials — show error and stay on login
-  if (email !== activeCredential.email || pass !== activeCredential.password) {
+  if (email !== activeCredential.email || pass.toLowerCase() !== activeCredential.password.toLowerCase()) {
     errEl.textContent = "Authentication failed. Check your credentials.";
     passEl.value = '';
     passEl.focus();
@@ -257,8 +260,11 @@ function enterStage4() {
   setSlotState('slot-a', 'authenticated', '✓ AUTHENTICATED');
   setSlotState('slot-b', 'waiting', 'INSERT KEY B');
 
+  const keyBUser = CONFIG.ROSTER.find(r => r.id === CONFIG.KEY_B_USER_ID);
   const hint = document.getElementById('stage4-hint');
-  if (hint) hint.textContent = CONFIG.KEY_B_HINT;
+  if (hint && keyBUser) {
+    hint.innerHTML = `The rollback requires countersignature from an <strong style="color:var(--amber);">${keyBUser.dept}</strong>.<br>Find the YubiKey for that role somewhere around the workstation.`;
+  }
 
   const demoBtn = document.getElementById('demo-key-b');
   if (demoBtn) demoBtn.style.display = CONFIG.YUBIKEY_REQUIRED ? 'none' : 'block';
@@ -312,13 +318,11 @@ function resetGame() {
   secondsLeft = CONFIG.TIMER_SECONDS;
   pickCredential();
 
-  // Reset login form
-  const emailEl = document.getElementById('login-email');
-  const passEl  = document.getElementById('login-pass');
-  const errEl   = document.getElementById('login-error');
-  if (emailEl) emailEl.value = '';
-  if (passEl)  passEl.value  = '';
-  if (errEl)   errEl.textContent = '';
+  // Reset login form (email is re-populated by pickCredential above)
+  const passEl = document.getElementById('login-pass');
+  const errEl  = document.getElementById('login-error');
+  if (passEl) passEl.value       = '';
+  if (errEl)  errEl.textContent  = '';
 
   const panel = document.querySelector('.login-panel');
   if (panel) { panel.style.opacity = ''; panel.style.transition = ''; }

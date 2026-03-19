@@ -60,8 +60,9 @@
     <form id="login-form" autocomplete="off">
       <div class="login-field">
         <label for="login-email">Email Address</label>
-        <input id="login-email" type="email" placeholder="volunteer@cvcc.dev"
-               autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" />
+        <input id="login-email" type="email"
+               autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false"
+               readonly />
       </div>
       <div class="login-field">
         <label for="login-pass">Password</label>
@@ -217,7 +218,7 @@ Awaiting secondary volunteer token...
       </div>
     </div>
 
-    <div class="stage-body" id="stage4-hint" style="white-space: pre-line;"></div>
+    <div class="stage-body" id="stage4-hint"></div>
 
     <div id="stage4-status" class="status-msg info">
       Locate Key B and plug it in, then touch it.

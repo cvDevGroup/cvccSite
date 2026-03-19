@@ -241,6 +241,15 @@ body::after {
 .login-field input:focus {
   border-color: #7788ff;
 }
+.login-field input[readonly] {
+  color: #778;
+  background: #0c0c18;
+  border-color: #2a2a44;
+  cursor: default;
+}
+.login-field input[readonly]:focus {
+  border-color: #2a2a44;
+}
 .login-submit {
   width: 100%;
   padding: 11px;

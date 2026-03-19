@@ -18,9 +18,9 @@ const CONFIG = {
   KEY_B_USER_ID: "CVCC2026-45",
 
   ROSTER: [
-    { id: "CVCC2026-61", firstName: "Tommy",    lastName: "Luangrath", name: "Tommy Luangrath",  dept: "Check-in Volunteer",    email: "t.luangrath@cvcc.dev", password: "dontlayafinger", keyPrefix: "ccccccfhgnlg", keySuffix: "CVCC2026-61", favoriteColor: "Yellow", favoriteSweet: "Butterfinger" },
-    { id: "CVCC2026-21", firstName: "Mitchell", lastName: "Weston",    name: "Mitchell Weston",  dept: "Sponsor Coordinator",   email: "m.weston@cvcc.dev",    password: "password123",    keyPrefix: "ccccccfhgngl", keySuffix: "CVCC2026-21", favoriteColor: "Red",    favoriteSweet: "PayDay"       },
-    { id: "CVCC2026-45", firstName: "Jessica",  lastName: "Torres",    name: "Jessica Torres",   dept: "Organizer",             email: "j.torres@cvcc.dev",    password: "Volunteer#1",    keyPrefix: "ccccccelrtgt", keySuffix: "CVCC2026-45", favoriteColor: "Blue",   favoriteSweet: "Left Twix"    },
+    { id: "CVCC2026-61", firstName: "Tommy",    lastName: "Luangrath", name: "Tommy Luangrath",  dept: "Check-in Volunteer",    email: "t.luangrath@cvcc.dev", password: "dontlayafinger", keyPrefix: "cccccdbhntlg", keySuffix: "CVCC2026-61", favoriteColor: "Yellow", favoriteSweet: "Butterfinger" },
+    { id: "CVCC2026-21", firstName: "Mitchell", lastName: "Weston",    name: "Mitchell Weston",  dept: "Sponsor Coordinator",   email: "m.weston@cvcc.dev",    password: "password123",    keyPrefix: "cccccdbhntgl", keySuffix: "CVCC2026-21", favoriteColor: "Red",    favoriteSweet: "PayDay"       },
+    { id: "CVCC2026-45", firstName: "Jessica",  lastName: "Torres",    name: "Jessica Torres",   dept: "Organizer",             email: "j.torres@cvcc.dev",    password: "Volunteer#1",    keyPrefix: "cccccdbhnrld", keySuffix: "CVCC2026-45", favoriteColor: "Blue",   favoriteSweet: "Left Twix"    },
     { id: "CVCC2026-87", firstName: "Dan",      lastName: "Bunmander", name: "Dan Bunmander",    dept: "Activities Specialist", email: "d.bunmander@cvcc.dev", password: "cake4me",        keyPrefix: "cccccdbhnrnc", keySuffix: "CVCC2026-87", favoriteColor: "White",  favoriteSweet: "Cake"         },
   ],
 
@@ -29,10 +29,6 @@ const CONFIG = {
   // "THE CODE IS: DELTA" → encoded with ROT-3 → "WKH FRGH LV: GHOWD"
   ENCODED_MESSAGE: "WKH FRGH LV: GHOWD",
   CODEWORD: "DELTA", // Players decode and type this in Stage 3
-
-  // ---- Stage 4: Second key hint ---------------------------
-  // Shown as a clue on screen after stage 3 passes.
-  KEY_B_HINT: "Locate the secondary authentication device.\nCheck the volunteer station for the backup hardware key.",
 
   // ---- Admin panel PIN ------------------------------------
   ADMIN_PIN: "1337",
@@ -49,7 +45,7 @@ const CONFIG = {
   // Adds a visible "Simulate YubiKey Touch" button on stages 1 and 4
   // so the game can be run and tested without hardware.
   // Set back to true before any real event.
-  YUBIKEY_REQUIRED: false,
+  YUBIKEY_REQUIRED: true,
 
   // ---- Stage toggles --------------------------------------
   // Set any stage to false to skip it entirely during play.
