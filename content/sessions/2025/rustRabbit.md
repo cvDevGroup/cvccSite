@@ -9,6 +9,6 @@ weight = 41
 layout = "session"
 +++
 
-[Dan Weese](/speakers/danw/)
+[Dan Weese]({{< relref "/speakers/danW" >}})
 
 Learn to build high-performance, reliable systems with Rust and RabbitMQ. This beginner-friendly talk explores message queues, asynchronous programming, and real-world examples.

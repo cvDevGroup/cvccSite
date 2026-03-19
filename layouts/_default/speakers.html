@@ -1,5 +1,6 @@
 {{ define "main" }}
-{{ $showCompanyLogos := site.Data.conference.showCompanyLogos }}
+{{ $showCompanyLogos := false }}
+{{ with site.Data.conference }}{{ $showCompanyLogos = .showCompanyLogos }}{{ end }}
 <h2>{{ now.Year }} Presenters</h2>
 <hr/>
 
