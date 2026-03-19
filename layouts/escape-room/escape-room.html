@@ -14,9 +14,6 @@
 
 {{ define "main" }}
 
-<!-- HIDDEN YUBIKEY INPUT -->
-<input id="yubikey-input" type="text" autocomplete="off" autocorrect="off"
-       autocapitalize="none" spellcheck="false" aria-hidden="true" tabindex="-1" />
 
 <!-- SESSION CODE (bottom-left, for volunteer/admin reference) -->
 <div id="session-code-display">
@@ -120,6 +117,14 @@ Authenticate volunteer lead to initiate rollback.
       Plug in the correct YubiKey and touch it.
     </div>
 
+    <div class="yk-reader-wrap" id="yk-wrap-s1">
+      <div class="yk-reader-label" id="yk-label-s1">▸ TAP HERE — THEN TOUCH YUBIKEY</div>
+      <input id="yubikey-input-s1" class="yk-reader-input"
+             type="text" inputmode="none"
+             placeholder="[ KEY READER STANDBY ]"
+             autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" />
+    </div>
+
     <div id="demo-key-a" style="display:none; margin-top:16px; padding:12px 16px; border:1px dashed var(--amber); border-radius:4px; text-align:center;">
       <div style="font-size:10px; letter-spacing:0.2em; color:var(--amber); margin-bottom:10px;">⚠ DEMO MODE — NO YUBIKEY CONNECTED</div>
       <button class="btn btn-amber" onclick="simulateKeyA()">▶ SIMULATE YUBIKEY TOUCH (KEY A)</button>
@@ -216,6 +221,14 @@ Awaiting secondary volunteer token...
 
     <div id="stage4-status" class="status-msg info">
       Locate Key B and plug it in, then touch it.
+    </div>
+
+    <div class="yk-reader-wrap" id="yk-wrap-s4">
+      <div class="yk-reader-label" id="yk-label-s4">▸ TAP HERE — THEN TOUCH YUBIKEY</div>
+      <input id="yubikey-input-s4" class="yk-reader-input"
+             type="text" inputmode="none"
+             placeholder="[ KEY READER STANDBY ]"
+             autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" />
     </div>
 
     <div id="demo-key-b" style="display:none; margin-top:16px; padding:12px 16px; border:1px dashed var(--amber); border-radius:4px; text-align:center;">

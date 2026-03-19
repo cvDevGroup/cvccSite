@@ -119,6 +119,54 @@
       font-size: 15px;
       letter-spacing: 0.1em;
     }
+
+    /* ---- Stage toggle switches ----------------------------- */
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 44px;
+      height: 24px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .toggle-switch input {
+      opacity: 0; width: 0; height: 0; position: absolute;
+    }
+    .toggle-track {
+      position: absolute;
+      inset: 0;
+      border: 1px solid var(--green-dim);
+      border-radius: 12px;
+      background: #0a0a0a;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .toggle-track::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #333;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .toggle-switch input:checked + .toggle-track {
+      border-color: var(--green);
+      background: rgba(0,255,65,0.08);
+    }
+    .toggle-switch input:checked + .toggle-track::after {
+      transform: translateX(20px);
+      background: var(--amber);
+    }
+    .stage-toggle-status {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      width: 56px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
     .divider {
       border: none;
       border-top: 1px solid #1a3a1a;
@@ -162,18 +210,11 @@
     <div class="admin-section">
       <h2>▸ YubiKey Prefixes (read-only)</h2>
       <p style="font-size: 12px; color: var(--green-dim); margin-bottom: 16px; line-height: 1.6;">
-        These are loaded from <code style="color:var(--amber);">config.js</code>.<br>
-        To change them, edit that file directly, then reload.
+        Prefixes are stored per-user in <code style="color:var(--amber);">config.js</code> → <code style="color:var(--amber);">ROSTER</code>.<br>
+        Use the Live OTP Capture tool below to find a prefix, then edit the file directly.
       </p>
-      <div class="admin-row">
-        <span class="admin-label">Key A Prefix (Stage 1)</span>
-        <span class="admin-value" id="show-key-a">—</span>
-      </div>
-      <div class="admin-row">
-        <span class="admin-label">Key B Prefix (Stage 4)</span>
-        <span class="admin-value" id="show-key-b">—</span>
-      </div>
-      <div class="admin-row">
+      <div id="roster-prefix-list"></div>
+      <div class="admin-row" style="margin-top: 12px;">
         <span class="admin-label">Codeword (Stage 3)</span>
         <span class="admin-value" id="show-codeword">—</span>
       </div>
@@ -227,10 +268,58 @@
     </div>
 
     <div class="admin-section">
+      <h2>▸ Stage Toggles</h2>
+      <p style="font-size: 12px; color: var(--green-dim); margin-bottom: 16px; line-height: 1.6;">
+        Disable stages to skip them during play. Useful for demos or shortened runs.<br>
+        Settings are saved in this browser and persist across sessions.
+      </p>
+      <div class="admin-row">
+        <span class="admin-label">Stage 0 — Login</span>
+        <span class="stage-toggle-status" id="status-s0">ENABLED</span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="toggle-s0" onchange="saveStageToggles()">
+          <span class="toggle-track"></span>
+        </label>
+      </div>
+      <div class="admin-row">
+        <span class="admin-label">Stage 1 — Identify committer (Key A)</span>
+        <span class="stage-toggle-status" id="status-s1">ENABLED</span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="toggle-s1" onchange="saveStageToggles()">
+          <span class="toggle-track"></span>
+        </label>
+      </div>
+      <div class="admin-row">
+        <span class="admin-label">Stage 2 — Decrypt cipher</span>
+        <span class="stage-toggle-status" id="status-s2">ENABLED</span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="toggle-s2" onchange="saveStageToggles()">
+          <span class="toggle-track"></span>
+        </label>
+      </div>
+      <div class="admin-row">
+        <span class="admin-label">Stage 3 — Enter codeword</span>
+        <span class="stage-toggle-status" id="status-s3">ENABLED</span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="toggle-s3" onchange="saveStageToggles()">
+          <span class="toggle-track"></span>
+        </label>
+      </div>
+      <div class="admin-row">
+        <span class="admin-label">Stage 4 — Dual auth (Key B)</span>
+        <span class="stage-toggle-status" id="status-s4">ENABLED</span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="toggle-s4" onchange="saveStageToggles()">
+          <span class="toggle-track"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="admin-section">
       <h2>▸ Pre-Event Checklist</h2>
       <ol style="font-size: 13px; color: var(--white); line-height: 2; padding-left: 20px;">
-        <li>Capture OTP prefixes for each YubiKey using the tool above.</li>
-        <li>Update <code style="color:var(--amber);">static/escape-room/config.js</code> with <code style="color:var(--amber);">KEY_A_PREFIX</code> and <code style="color:var(--amber);">KEY_B_PREFIX</code>.</li>
+        <li>Capture OTP prefixes for each YubiKey using the Live OTP Capture tool above.</li>
+        <li>Update <code style="color:var(--amber);">static/escape-room/config.js</code> → each user's <code style="color:var(--amber);">keyPrefix</code> in <code style="color:var(--amber);">ROSTER</code>.</li>
         <li>Confirm <code style="color:var(--amber);">CODEWORD</code> and <code style="color:var(--amber);">ENCODED_MESSAGE</code> match in config.</li>
         <li>Print Volunteer Roster and Cipher Wheel props.</li>
         <li>Label YubiKeys with volunteer names.</li>
@@ -294,10 +383,60 @@ function checkPin() {
 }
 
 function loadAdminValues() {
-  setText('show-key-a',    CONFIG.KEY_A_PREFIX  || '(not set)');
-  setText('show-key-b',    CONFIG.KEY_B_PREFIX  || '(not set)');
   setText('show-codeword', CONFIG.CODEWORD      || '(not set)');
   setText('show-timer',    CONFIG.TIMER_SECONDS + 's (' + Math.floor(CONFIG.TIMER_SECONDS/60) + ' min)');
+
+  const listEl = document.getElementById('roster-prefix-list');
+  if (listEl) {
+    listEl.innerHTML = CONFIG.ROSTER.map(r => {
+      const isKeyB = r.id === CONFIG.KEY_B_USER_ID;
+      const role   = isKeyB ? ' <span style="color:var(--amber);font-size:10px;">KEY B (Stage 4)</span>'
+                            : ' <span style="color:var(--green-dim);font-size:10px;">Stage 1 eligible</span>';
+      return `
+        <div class="admin-row">
+          <span class="admin-label">${r.firstName} ${r.lastName} — ${r.id}${role}</span>
+          <span class="admin-value">${r.keyPrefix || '<span style="color:#555;">(not set)</span>'}</span>
+        </div>`;
+    }).join('');
+  }
+
+  loadStageToggles();
+}
+
+function loadStageToggles() {
+  let cfg = null;
+  try {
+    const stored = localStorage.getItem('campfire_stages');
+    if (stored) cfg = JSON.parse(stored);
+  } catch (e) {}
+  ['s0','s1','s2','s3','s4'].forEach(s => {
+    const cb = document.getElementById(`toggle-${s}`);
+    if (!cb) return;
+    // localStorage takes precedence; fall back to CONFIG.STAGES_ENABLED defaults
+    if (cfg) {
+      cb.checked = cfg[s] !== false;
+    } else {
+      cb.checked = CONFIG.STAGES_ENABLED ? CONFIG.STAGES_ENABLED[s] !== false : true;
+    }
+    updateStageStatusLabel(s, cb.checked);
+  });
+}
+
+function saveStageToggles() {
+  const cfg = {};
+  ['s0','s1','s2','s3','s4'].forEach(s => {
+    const cb = document.getElementById(`toggle-${s}`);
+    cfg[s] = cb ? cb.checked : true;
+    updateStageStatusLabel(s, cfg[s]);
+  });
+  localStorage.setItem('campfire_stages', JSON.stringify(cfg));
+}
+
+function updateStageStatusLabel(s, enabled) {
+  const el = document.getElementById(`status-${s}`);
+  if (!el) return;
+  el.textContent = enabled ? 'ENABLED' : 'SKIPPED';
+  el.style.color  = enabled ? 'var(--green-dim)' : 'var(--red)';
 }
 
 function setText(id, val) {
@@ -309,15 +448,16 @@ function lookupSession() {
   const input = document.getElementById('session-lookup-input');
   const resultEl = document.getElementById('session-lookup-result');
   const code = input.value.trim().toUpperCase();
-  const idx = code.charCodeAt(0) - 65; // A→0, B→1, C→2, D→3
-  const creds = CONFIG.LOGIN_CREDENTIALS;
+  const idx = code.charCodeAt(0) - 65; // A→0, B→1, C→2, …
+  const eligible = CONFIG.ROSTER.filter(r => r.id !== CONFIG.KEY_B_USER_ID && r.keyPrefix);
 
-  if (!code || isNaN(idx) || idx < 0 || idx >= creds.length) {
-    resultEl.innerHTML = '<div style="color:var(--red);font-size:13px;">✗ Invalid session code. Enter A, B, C, or D.</div>';
+  if (!code || isNaN(idx) || idx < 0 || idx >= eligible.length) {
+    const last = String.fromCharCode(65 + eligible.length - 1);
+    resultEl.innerHTML = `<div style="color:var(--red);font-size:13px;">✗ Invalid session code. Enter A–${last}.</div>`;
     return;
   }
 
-  const cred = creds[idx];
+  const user = eligible[idx];
   resultEl.innerHTML = `
     <div style="border:1px solid #1a3a1a; border-radius:3px; padding:12px 14px;">
       <div style="font-size:10px; color:var(--green-dim); letter-spacing:0.15em; margin-bottom:12px;">
@@ -325,15 +465,15 @@ function lookupSession() {
       </div>
       <div class="admin-row">
         <span class="admin-label">Name</span>
-        <span class="admin-value">${cred.name}</span>
+        <span class="admin-value">${user.name}</span>
       </div>
       <div class="admin-row">
         <span class="admin-label">Email</span>
-        <span class="admin-value">${cred.email}</span>
+        <span class="admin-value">${user.email}</span>
       </div>
       <div class="admin-row" style="margin-bottom:0;">
         <span class="admin-label">Password</span>
-        <span class="admin-value">${cred.password}</span>
+        <span class="admin-value">${user.password}</span>
       </div>
     </div>
   `;

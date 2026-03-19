@@ -596,14 +596,57 @@ body::after {
 .status-msg.error { color: var(--red); }
 .status-msg.info  { color: var(--amber); }
 
-/* ---- Hidden YubiKey input -------------------------------- */
-#yubikey-input {
-  position: fixed;
-  left: -9999px;
-  top: 0;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
+/* ---- YubiKey reader input (stages 1 & 4) ----------------- */
+.yk-reader-wrap {
+  margin-top: 16px;
+  text-align: center;
+}
+.yk-reader-label {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: var(--green-dim);
+  margin-bottom: 8px;
+  transition: color 0.2s;
+}
+.yk-reader-wrap.active .yk-reader-label {
+  color: var(--amber);
+  animation: readerPulse 1.4s ease-in-out infinite;
+}
+@keyframes readerPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.45; }
+}
+.yk-reader-input {
+  display: block;
+  width: 100%;
+  padding: 16px 20px;
+  background: #050f05;
+  border: 2px solid var(--green-dim);
+  border-radius: 4px;
+  color: var(--green-dim);
+  caret-color: var(--green);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s, background 0.15s, color 0.15s;
+  -webkit-user-select: text;
+  user-select: text;
+}
+.yk-reader-input::placeholder {
+  color: var(--green-dim);
+  letter-spacing: 0.18em;
+}
+.yk-reader-wrap.active .yk-reader-input {
+  border-color: var(--amber);
+  box-shadow: 0 0 0 3px rgba(255,170,0,0.15), 0 0 20px rgba(255,170,0,0.08);
+  background: rgba(255,170,0,0.03);
+  color: var(--amber);
+}
+.yk-reader-wrap.active .yk-reader-input::placeholder {
+  color: var(--amber);
 }
 
 /* ---- Utility --------------------------------------------- */

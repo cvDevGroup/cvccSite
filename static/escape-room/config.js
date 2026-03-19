@@ -7,32 +7,21 @@ const CONFIG = {
   // ---- Timer ------------------------------------------------
   TIMER_SECONDS: 300, // 5 minutes (300 seconds)
 
-  // ---- Stage 0 login credentials ---------------------------
-  // One set is chosen at random each time the game loads.
-  // Each object: { name, email, password }
-  LOGIN_CREDENTIALS: [
-    { name: "A. Wright", email: "a.wright@cvcc.dev",  password: "CodeCamp2026!" },
-    { name: "J. Torres", email: "j.torres@cvcc.dev",  password: "Volunteer#1"   },
-    { name: "S. Kim",    email: "s.kim@cvcc.dev",     password: "AppDev2026"    },
-    { name: "R. Patel",  email: "r.patel@cvcc.dev",   password: "AVTech#99"     },
-  ],
+  // ---- Roster -----------------------------------------------
+  // Single source of truth for all users.
+  // email + password: used for Stage 0 login (one user chosen at random each game).
+  // keyPrefix: first 12 chars of the YubiKey OTP — use Live OTP Capture in admin.
+  //   Leave blank ("") until a key is assigned; blanks are excluded from play.
+  // keySuffix: shown on the physical roster prop card.
+  // KEY_B_USER_ID: always used for Stage 4 (dual auth). Excluded from Stage 0/1 pool.
+  //   All other users with a keyPrefix are eligible for Stage 0 login + Stage 1 key.
+  KEY_B_USER_ID: "CVCC2026-45",
 
-  // ---- Stage 1: YubiKey prefixes ---------------------------
-  // First 12 chars of OTP output identify which physical key was used.
-  // To find these: open a text editor, plug in the key, touch it,
-  // copy the first 12 characters of the output.
-  KEY_A_PREFIX: "ccccccfhgnlr", // Key A — primary / stage 1
-  KEY_B_PREFIX: "ccccccelrtgt", // Key B — secondary / stage 4
-
-  // ---- Stage 1: Team roster (displayed on physical prop) ---
-  // 'suffix' is the last 4 chars shown on the roster card.
-  // The app matches on the full prefix above; this is just for
-  // generating the prop printout reference.
   ROSTER: [
-    { name: "A. Wright",  dept: "Site Reliability", keySuffix: "gnlr", isTarget: true  },
-    { name: "J. Torres",  dept: "Web Volunteer",    keySuffix: "rt7x", isTarget: false },
-    { name: "S. Kim",     dept: "App Dev",          keySuffix: "2mk9", isTarget: false },
-    { name: "R. Patel",   dept: "AV & Networking",  keySuffix: "9cbe", isTarget: false },
+    { id: "CVCC2026-61", firstName: "Tommy",    lastName: "Luangrath", name: "Tommy Luangrath",  dept: "Check-in Volunteer",    email: "t.luangrath@cvcc.dev", password: "dontlayafinger", keyPrefix: "ccccccfhgnlg", keySuffix: "CVCC2026-61", favoriteColor: "Yellow", favoriteSweet: "Butterfinger" },
+    { id: "CVCC2026-21", firstName: "Mitchell", lastName: "Weston",    name: "Mitchell Weston",  dept: "Sponsor Coordinator",   email: "m.weston@cvcc.dev",    password: "password123",    keyPrefix: "ccccccfhgngl", keySuffix: "CVCC2026-21", favoriteColor: "Red",    favoriteSweet: "PayDay"       },
+    { id: "CVCC2026-45", firstName: "Jessica",  lastName: "Torres",    name: "Jessica Torres",   dept: "Organizer",             email: "j.torres@cvcc.dev",    password: "Volunteer#1",    keyPrefix: "ccccccelrtgt", keySuffix: "CVCC2026-45", favoriteColor: "Blue",   favoriteSweet: "Left Twix"    },
+    { id: "CVCC2026-87", firstName: "Dan",      lastName: "Bunmander", name: "Dan Bunmander",    dept: "Activities Specialist", email: "d.bunmander@cvcc.dev", password: "cake4me",        keyPrefix: "cccccdbhnrnc", keySuffix: "CVCC2026-87", favoriteColor: "White",  favoriteSweet: "Cake"         },
   ],
 
   // ---- Stage 2: Cipher ------------------------------------
@@ -61,4 +50,16 @@ const CONFIG = {
   // so the game can be run and tested without hardware.
   // Set back to true before any real event.
   YUBIKEY_REQUIRED: false,
+
+  // ---- Stage toggles --------------------------------------
+  // Set any stage to false to skip it entirely during play.
+  // Can also be changed live from the admin panel (stored in localStorage,
+  // which takes precedence over these defaults).
+  STAGES_ENABLED: {
+    s0: true, // Stage 0 — Login
+    s1: true, // Stage 1 — Identify committer (Key A)
+    s2: false, // Stage 2 — Decrypt cipher
+    s3: false, // Stage 3 — Enter codeword
+    s4: true, // Stage 4 — Dual auth (Key B)
+  },
 };

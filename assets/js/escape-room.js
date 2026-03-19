@@ -23,13 +23,17 @@ let keyBAuthenticated = false;
 let otpBuffer = "";
 let activeCredential = null;
 let sessionCode = '—';
+let targetUserA = null; // randomly chosen Stage 1 target (changes each game)
 
-// ---- Credential picker -------------------------------------
+// ---- Credential / target picker ----------------------------
+// Picks one eligible roster member to use for both Stage 0 (login)
+// and Stage 1 (Key A). Eligible = has a keyPrefix and is not KEY_B_USER_ID.
 function pickCredential() {
-  const creds = CONFIG.LOGIN_CREDENTIALS;
-  const idx = Math.floor(Math.random() * creds.length);
-  activeCredential = creds[idx];
-  sessionCode = String.fromCharCode(65 + idx); // 0→A, 1→B, 2→C, 3→D
+  const eligible = CONFIG.ROSTER.filter(r => r.id !== CONFIG.KEY_B_USER_ID && r.keyPrefix);
+  const idx = eligible.length ? Math.floor(Math.random() * eligible.length) : 0;
+  activeCredential = eligible[idx] || null;
+  targetUserA      = activeCredential;
+  sessionCode = String.fromCharCode(65 + idx); // 0→A, 1→B, 2→C, …
 
   const codeEl = document.getElementById('session-code-value');
   if (codeEl) codeEl.textContent = sessionCode;
@@ -97,10 +101,24 @@ function getTimeRemaining() {
   return `${m}:${s}`;
 }
 
+// ---- Stage enable helpers ----------------------------------
+function isStageEnabled(n) {
+  try {
+    const stored = localStorage.getItem('campfire_stages');
+    if (stored) {
+      const cfg = JSON.parse(stored);
+      return cfg[`s${n}`] !== false;
+    }
+  } catch (e) {}
+  // Fall back to config.js defaults
+  return CONFIG.STAGES_ENABLED ? CONFIG.STAGES_ENABLED[`s${n}`] !== false : true;
+}
+
 // ---- Intro -------------------------------------------------
 function beginMission() {
   playSound('beep');
   currentState = State.STAGE_0;
+  if (!isStageEnabled(0)) { transitionToLockdown(); return; }
   showScreen('screen-stage0');
   // HUD not shown yet — timer starts after lockdown trigger
 }
@@ -151,7 +169,6 @@ function transitionToLockdown() {
   showScreen('screen-lockdown');
   setHUD(true, '● LOCKDOWN ACTIVE');
   startTimer();
-  focusYubiKeyInput();
 }
 
 // ---- Stage 1: Identify the breach + plug in Key A ----------
@@ -163,13 +180,11 @@ function enterStage1() {
   // Show the target fingerprint suffix
   const el = document.getElementById('stage1-fp');
   if (el) {
-    const target = CONFIG.ROSTER.find(r => r.isTarget);
-    el.textContent = `...${target ? target.keySuffix : '????'}`;
+    el.textContent = `...${targetUserA ? targetUserA.keySuffix : '????'}`;
   }
   const demoBtn = document.getElementById('demo-key-a');
   if (demoBtn) demoBtn.style.display = CONFIG.YUBIKEY_REQUIRED ? 'none' : 'block';
   setStage1Status('info', CONFIG.YUBIKEY_REQUIRED ? 'Plug in the correct YubiKey and touch it.' : 'Demo mode: use the button below to simulate a key touch.');
-  focusYubiKeyInput();
 }
 
 function setStage1Status(type, msg) {
@@ -181,13 +196,13 @@ function setStage1Status(type, msg) {
 
 // ---- Stage 2: Cipher display -------------------------------
 function enterStage2() {
+  if (!isStageEnabled(2)) { enterStage3(); return; }
   currentState = State.STAGE_2;
   showScreen('screen-stage2');
   setHUD(true, '● STAGE 2 — DECRYPT MESSAGE');
 
   const el = document.getElementById('stage2-encoded');
   if (el) el.textContent = CONFIG.ENCODED_MESSAGE;
-  focusYubiKeyInput();
 }
 
 // Stage 2 advances automatically via button — no YubiKey needed
@@ -200,6 +215,7 @@ function stage2Continue() {
 let codewordBuffer = '';
 
 function enterStage3() {
+  if (!isStageEnabled(3)) { enterStage4(); return; }
   currentState = State.STAGE_3;
   codewordBuffer = '';
   showScreen('screen-stage3');
@@ -210,8 +226,7 @@ function enterStage3() {
 
   renderCodeword();
   setStage3Status('info', 'Type the decoded codeword on the keyboard.');
-  // For stage 3, we capture keypresses directly (not YubiKey)
-  focusYubiKeyInput();
+  // For stage 3, we capture keypresses directly via document keydown (not YubiKey input)
 }
 
 function renderCodeword() {
@@ -233,6 +248,7 @@ function setStage3Status(type, msg) {
 
 // ---- Stage 4: Dual auth ------------------------------------
 function enterStage4() {
+  if (!isStageEnabled(4)) { goWin(); return; }
   currentState = State.STAGE_4;
   showScreen('screen-stage4');
   setHUD(true, '● STAGE 4 — DUAL AUTHENTICATION');
@@ -247,7 +263,6 @@ function enterStage4() {
   const demoBtn = document.getElementById('demo-key-b');
   if (demoBtn) demoBtn.style.display = CONFIG.YUBIKEY_REQUIRED ? 'none' : 'block';
   setStage4Status('info', CONFIG.YUBIKEY_REQUIRED ? 'Locate Key B and plug it in, then touch it.' : 'Demo mode: use the button below to simulate a key touch.');
-  focusYubiKeyInput();
 }
 
 function setSlotState(slotId, className, statusText) {
@@ -314,44 +329,36 @@ function resetGame() {
 
 // ---- YubiKey listener -------------------------------------
 // The YubiKey types its OTP as fast keystrokes, ending with Enter.
-// We keep a hidden input focused during stages that need it,
-// and listen for keydown to detect End-of-OTP.
+// Each YubiKey stage has its own visible input the player taps to activate.
+// inputmode="none" prevents the software keyboard from appearing on iPad
+// while still accepting input from the YubiKey (a hardware HID device).
 
 function setupYubiKeyListener() {
-  const input = document.getElementById('yubikey-input');
-  if (!input) return;
+  ['yubikey-input-s1', 'yubikey-input-s4'].forEach(id => {
+    const input = document.getElementById(id);
+    if (!input) return;
 
-  // Capture typing into otpBuffer (for YubiKey OTP stages)
-  input.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-      const otp = input.value.trim();
-      input.value = '';
-      if (otp.length > 0) {
-        handleOTPOrKeypress(otp);
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const otp = input.value.trim();
+        input.value = '';
+        if (otp.length > 0) handleOTPOrKeypress(otp);
       }
-    }
+    });
+
+    input.addEventListener('focus', () => {
+      input.closest('.yk-reader-wrap').classList.add('active');
+    });
+    input.addEventListener('blur', () => {
+      input.closest('.yk-reader-wrap').classList.remove('active');
+    });
   });
 
-  // Also intercept body keydown for stage 3 (regular keyboard)
+  // Stage 3 codeword entry uses regular keyboard via body keydown
   document.addEventListener('keydown', (e) => {
     handleBodyKeydown(e);
   });
 }
-
-function focusYubiKeyInput() {
-  const input = document.getElementById('yubikey-input');
-  if (input) {
-    // Small delay ensures the screen transition has settled
-    setTimeout(() => input.focus(), 100);
-  }
-}
-
-// Refocus hidden input if user taps anywhere during key stages
-document.addEventListener('click', () => {
-  if ([State.STAGE_1, State.STAGE_4].includes(currentState)) {
-    focusYubiKeyInput();
-  }
-});
 
 // ---- Keyboard handler for stage 3 codeword entry ----------
 function handleBodyKeydown(e) {
@@ -417,8 +424,9 @@ function handleOTPOrKeypress(otp) {
 
 function identifyKey(otp) {
   const prefix = otp.slice(0, 12);
-  if (prefix === CONFIG.KEY_A_PREFIX) return 'A';
-  if (prefix === CONFIG.KEY_B_PREFIX) return 'B';
+  const keyBUser = CONFIG.ROSTER.find(r => r.id === CONFIG.KEY_B_USER_ID);
+  if (targetUserA && prefix === targetUserA.keyPrefix) return 'A';
+  if (keyBUser && prefix === keyBUser.keyPrefix) return 'B';
   return null;
 }
 
@@ -427,7 +435,8 @@ function handleStage1OTP(otp) {
 
   if (key === 'A') {
     keyAAuthenticated = true;
-    setStage1Status('ok', '✓ Token verified. Commit author confirmed: A. Wright');
+    const name = targetUserA ? targetUserA.name : 'unknown';
+    setStage1Status('ok', `✓ Token verified. Commit author confirmed: ${name}`);
     playSound('beep');
     setTimeout(() => enterStage2(), 1400);
   } else if (key === 'B') {
@@ -440,7 +449,6 @@ function handleStage1OTP(otp) {
   } else {
     // Probably noise / accidental input — ignore silently
   }
-  focusYubiKeyInput();
 }
 
 function handleStage4OTP(otp) {
@@ -455,14 +463,12 @@ function handleStage4OTP(otp) {
   } else if (key === 'A') {
     setStage4Status('error', '✗ Key A already used. A different key is required.');
     playSound('beep');
-    focusYubiKeyInput();
   } else if (key === 'B' && keyBAuthenticated) {
     // Already done — shouldn't happen but handle gracefully
     goWin();
   } else if (otp.length >= 32) {
     setStage4Status('error', '✗ Unrecognized key. Locate the correct secondary key.');
     playSound('beep');
-    focusYubiKeyInput();
   }
 }
 
@@ -506,16 +512,20 @@ function playSound(name) {
 // Constructs a mock OTP with the correct prefix so the normal
 // key-identification logic passes without a physical key.
 function simulateKeyA() {
-  handleOTPOrKeypress(CONFIG.KEY_A_PREFIX + 'x'.repeat(32));
+  const prefix = targetUserA ? targetUserA.keyPrefix : '';
+  handleOTPOrKeypress(prefix + 'x'.repeat(32));
 }
 
 function simulateKeyB() {
-  handleOTPOrKeypress(CONFIG.KEY_B_PREFIX + 'x'.repeat(32));
+  const keyBUser = CONFIG.ROSTER.find(r => r.id === CONFIG.KEY_B_USER_ID);
+  const prefix = keyBUser ? keyBUser.keyPrefix : '';
+  handleOTPOrKeypress(prefix + 'x'.repeat(32));
 }
 
 // ---- Lockdown continue button ------------------------------
 function lockdownContinue() {
   playSound('beep');
+  if (!isStageEnabled(1)) { keyAAuthenticated = true; enterStage2(); return; }
   enterStage1();
 }
 
