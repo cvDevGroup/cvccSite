@@ -7,6 +7,8 @@ location = "Presentation Track"
 # link = "sessions/modernGo"
 weight = 5
 layout = "session"
+trackOrder = 2
+speakers = ["acmstudents"]
 +++
 
 [UWEC Student Association for Computing Machinery](/speakers/acmstudents)
