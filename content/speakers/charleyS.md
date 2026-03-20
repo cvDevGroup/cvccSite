@@ -4,6 +4,9 @@ draft: false
 title: Charley Stran
 weight: 14
 ---
+![Charley Stran](/img/speakers/charleys.jpeg)
+
+
 
 My name is Charley Stran, I graduated from UWEC in 2007 with a BBA in management with an Entrepreneur emphasis and am a self taught software engineer with 15 years+ professional experience. I started my big boy job life at Marten Transport, spent a few years a JAMF, left to help revolutionize online video delivery, then spend a few years as a federal contractor and am now the Senior director of Product and Platform Engineering at Locus Health a remote patient monitoring health tech company.
 

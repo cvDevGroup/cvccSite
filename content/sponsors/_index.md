@@ -9,12 +9,13 @@ layout= "sponsorlist"
 ---- 
 
 ### Special Thanks to:
-
+- [Mr. Collin Schindler](https://github.com/ceschindler) for chipping in and coffee
+- [Mr. Connor Temple](https://connortemple.com/) for chipping in and A/V recording
 - [Growler Guys](https://thegrowlerguys.com/locations/eau-claire-wisconsin/) for hosting the afterparty for free
 - [CVTC](https://cvtc.edu) for discounted venue
 - [Erberts & Gerberts](https://www.erbertandgerberts.com/locations/eau-claire-east-clairemont-ave/) for discounted lunch
-- [Mr. Collin Schindler](https://github.com/ceschindler) for chipping in!
-- [Festival Foods](https://www.festfoods.com) For chipping in on snacks! 
+- [Costco](https://www.costco.com) for chipping in on snacks
+- [Festival Foods](https://www.festfoods.com) For Donuts 
 
 
  Chip in via [PayPal](https://www.paypal.com/donate/?hosted_button_id=4LHV8KQKSN4U8)

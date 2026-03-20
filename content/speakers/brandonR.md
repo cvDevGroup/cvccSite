@@ -6,6 +6,9 @@ weight: 9
 image: /img/speakers/brandon-roehl-headshot.jpeg
 ---
 
+![Brandon Roehl](/img/speakers/brandonr.jpg)
+
+
 Brandon Roehl is a Senior Engineer working at Jamf. He currently works on Jamf Protect.
 
 [https://github.com/BrandonRoehl](https://github.com/BrandonRoehl)

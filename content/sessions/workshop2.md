@@ -44,3 +44,36 @@ By the end of this session, you’ll understand how local AI actually works — 
 
 This is not theory.
 We will build it live.
+
+
+## Workshop Prerequisites:
+Working computer with:
+- Reasonable CPU running reasonable OS
+    - Windows (Intel 8th gen or newer)
+    - Linux (Intel 8th gen or newer)
+    - Mac (Intel 8th gen or newer or M1 or newer)
+- Reasonable RAM 
+    - 16 GB or RAM would be a good starting point
+- Reasonable GPU (optional) 
+    - Basic ML inference recommends: 12GB of vRAM
+    - ZImage Turbo: 24GB of vRAM
+- Software preinstalled (we can configure it in workshop)
+    - Docker
+    - Ollama
+        - Install a base model with `ollama run phi4-mini`
+    - Git
+    - GIT-LFS (optional)
+    - Curl (on linux)
+
+The Maungs are going to be working and performing their workshop demos on Intel NUC 10th Gen i5  with 16GB of DDR4 for basic setup.
+Basic setup:
+
+- Docker
+- Ollama
+- Kokoro TTS
+- Open WebUI
+- Basic models that can run on CPU with 16GB of RAM
+
+
+They will demo / show you steps on how to enable Image creation using ZImage Turbo and add that feature on to OpenWebUI.
+This will be demoed on MacBook Pro M3 with 128GB of vRAM (and / or) Nvidia DGX Spark (128GB of vRAM), (and / or) Ubuntu Server with Undisclosed NVidia GPUs. ;)
