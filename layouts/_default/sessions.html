@@ -18,19 +18,7 @@
     {{ $speaker := site.GetPage (printf "/speakers/%s" .) }}
     {{ if $speaker }}
     <div class="session-overlay-speaker">
-      {{ if and $speaker.Params.images (gt (len $speaker.Params.images) 1) }}
-      <div class="speaker-card-photo-stack">
-        {{ range $speaker.Params.images }}
-        <img src="{{ . }}" alt="" class="speaker-card-photo-stacked">
-        {{ end }}
-      </div>
-      {{ else if $speaker.Params.image }}
-      <img src="{{ $speaker.Params.image }}" alt="{{ $speaker.Title }}" class="speaker-card-photo">
-      {{ else }}
-      <div class="speaker-card-no-photo">
-        <img src="/img/2023/CVCC_round_01.png" alt="">
-      </div>
-      {{ end }}
+      {{ partial "speaker-photo.html" $speaker }}
       <p class="session-overlay-speaker-name">{{ $speaker.Title }}</p>
     </div>
     {{ end }}

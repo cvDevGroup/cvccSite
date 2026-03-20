@@ -30,19 +30,7 @@
          tabindex="0"
          aria-label="Read bio for {{ .Title }}">
       <div class="speaker-card-photo-wrap">
-        {{ if and .Params.images (gt (len .Params.images) 1) }}
-        <div class="speaker-card-photo-stack">
-          {{ range .Params.images }}
-          <img src="{{ . }}" alt="" class="speaker-card-photo-stacked">
-          {{ end }}
-        </div>
-        {{ else if .Params.image }}
-        <img src="{{ .Params.image }}" alt="{{ .Title }}" class="speaker-card-photo">
-        {{ else }}
-        <div class="speaker-card-no-photo">
-          <img src="/img/2023/CVCC_round_01.png" alt="">
-        </div>
-        {{ end }}
+        {{ partial "speaker-photo.html" . }}
       </div>
       <p class="speaker-card-name">{{ .Title }}</p>
       {{ if $showCompanyLogos }}
@@ -71,19 +59,7 @@
        tabindex="0"
        aria-label="Read bio for {{ .Title }}">
     <div class="speaker-card-photo-wrap">
-      {{ if and .Params.images (gt (len .Params.images) 1) }}
-      <div class="speaker-card-photo-stack">
-        {{ range .Params.images }}
-        <img src="{{ . }}" alt="" class="speaker-card-photo-stacked">
-        {{ end }}
-      </div>
-      {{ else if .Params.image }}
-      <img src="{{ .Params.image }}" alt="{{ .Title }}" class="speaker-card-photo">
-      {{ else }}
-      <div class="speaker-card-no-photo">
-        <img src="/img/2023/CVCC_round_01.png" alt="">
-      </div>
-      {{ end }}
+      {{ partial "speaker-photo.html" . }}
     </div>
     <p class="speaker-card-name">{{ .Title }}</p>
     {{ if $showCompanyLogos }}
