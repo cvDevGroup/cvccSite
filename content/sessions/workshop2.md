@@ -3,9 +3,13 @@ title = "Build Your Own Private ChatGPT: Local AI with Docker, Ollama, Open WebU
 date = 2026-03-01T00:05:06-06:00
 draft = false
 sessionTime = "1:30 pm"
+endTime = "3:30 pm"
+spansInto = ["2:30 pm"]
 location = "Workshop Track"
 weight = 12
 layout = "session"
+trackOrder = 1
+speakers = ["maungs"]
 +++
 
 [Lwin & Min Maung](/speakers/maungs)

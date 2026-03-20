@@ -1,0 +1,8 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ with .Param "sessionTime" }}<span>at {{ . }}</span>{{ end }}
+  {{ with .Param "location" }} <span>in {{ . }}</span>{{ end }}
+  {{ if or (.Param "sessionTime") (.Param "location") }}<hr/>{{ end }}
+  {{ .Content }}
+  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+{{ end }}

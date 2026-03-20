@@ -1,0 +1,147 @@
+{{ define "main" }}
+<h2>{{ now.Year }} {{ .Title }}</h2>
+<hr/>
+
+{{ $allPages := where (where .Site.RegularPages "Section" "sessions") "PublishDate.Year" (now.Year) }}
+{{ $sorted   := sort $allPages "Params.weight" "asc" }}
+
+{{/* Hidden overlay templates — one per session */}}
+{{ range $sorted }}
+{{ $id := .RelPermalink | strings.TrimRight "/" | path.Base }}
+<template id="session-{{ $id }}">
+  <h2 class="session-overlay-title">{{ .Title }}</h2>
+
+  {{/* Speaker photo(s) */}}
+  {{ with .Params.speakers }}
+  <div class="session-overlay-speakers">
+    {{ range . }}
+    {{ $speaker := site.GetPage (printf "/speakers/%s" .) }}
+    {{ if $speaker }}
+    <div class="session-overlay-speaker">
+      {{ partial "speaker-photo.html" $speaker }}
+      <p class="session-overlay-speaker-name">{{ $speaker.Title }}</p>
+    </div>
+    {{ end }}
+    {{ end }}
+  </div>
+  {{ end }}
+
+  <div class="session-overlay-content">
+    {{ .Summary }}
+  </div>
+  <a href="{{ .RelPermalink }}" class="session-overlay-readmore">Read full description &rarr;</a>
+</template>
+{{ end }}
+
+{{/* Collect unique time slots in weight order */}}
+{{ $times := slice }}
+{{ range $sorted }}
+  {{ $t := .Param "sessionTime" }}
+  {{ if and $t (not (in $times $t)) }}
+    {{ $times = $times | append $t }}
+  {{ end }}
+{{ end }}
+
+{{/* Render each time group */}}
+{{ range $times }}
+{{ $time  := . }}
+{{ $group := where $sorted "Params.sessionTime" $time }}
+
+{{/* Sessions from earlier slots that continue into this time slot */}}
+{{ $continuing := slice }}
+{{ range $sorted }}
+  {{ if in (.Param "spansInto") $time }}
+    {{ $continuing = $continuing | append . }}
+  {{ end }}
+{{ end }}
+
+<div class="sessions-time-group">
+  <h3 class="sessions-time-header">{{ $time }}</h3>
+  {{/* Merge regular + continuing, sort by trackOrder so tracks are always consistent */}}
+  {{ $combined := union $group $continuing }}
+  {{ $ordered  := sort $combined "Params.trackOrder" "asc" }}
+  <div class="sessions-cards-grid">
+    {{ range $ordered }}
+    {{ $id          := .RelPermalink | strings.TrimRight "/" | path.Base }}
+    {{ $isContinuing := in $continuing . }}
+    <div class="session-card{{ if $isContinuing }} session-card--continuing{{ end }}"
+         data-session="session-{{ $id }}"
+         role="button"
+         tabindex="0"
+         aria-label="View details for {{ .Title }}">
+      {{ with .Param "location" }}
+      <span class="session-card-location" data-location="{{ . }}">{{ . }}</span>
+      {{ end }}
+      <p class="session-card-title">{{ .Title }}</p>
+      {{ with .Params.speakers }}
+      <p class="session-card-speaker">
+        {{- range $i, $sid := . -}}
+          {{- if $i }} &amp; {{ end -}}
+          {{- $sp := site.GetPage (printf "/speakers/%s" $sid) -}}
+          {{- if $sp }}{{ $sp.Title }}{{ end -}}
+        {{- end -}}
+      </p>
+      {{ end }}
+      {{ if $isContinuing }}
+      <span class="session-card-continuing-badge">▶ Still in session{{ with .Param "endTime" }} until {{ . }}{{ end }}</span>
+      {{ else }}
+      {{ with .Param "endTime" }}<span class="session-card-continues">Continues until {{ . }}</span>{{ end }}
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
+
+{{/* Fullscreen session overlay */}}
+<div id="session-overlay" role="dialog" aria-modal="true">
+  <div class="session-bio-panel" id="session-bio-panel">
+    <div class="session-bio-top">
+      <button class="session-bio-close" id="session-bio-close" aria-label="Close">&times;</button>
+    </div>
+    <div id="session-bio-content"></div>
+  </div>
+</div>
+
+<script>
+(function () {
+  const overlay  = document.getElementById('session-overlay');
+  const panel    = document.getElementById('session-bio-panel');
+  const content  = document.getElementById('session-bio-content');
+  const closeBtn = document.getElementById('session-bio-close');
+  let lastFocused = null;
+
+  function openSession(card) {
+    const tmpl = document.getElementById(card.dataset.session);
+    if (!tmpl) return;
+    content.innerHTML = '';
+    content.appendChild(tmpl.content.cloneNode(true));
+    lastFocused = card;
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => closeBtn.focus(), 60);
+  }
+
+  function closeSession() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+    setTimeout(() => { content.innerHTML = ''; }, 500);
+    if (lastFocused) lastFocused.focus();
+  }
+
+  document.querySelectorAll('.session-card').forEach(card => {
+    card.addEventListener('click', () => openSession(card));
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openSession(card); }
+    });
+  });
+
+  closeBtn.addEventListener('click', closeSession);
+  overlay.addEventListener('click', e => { if (!panel.contains(e.target)) closeSession(); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && overlay.classList.contains('open')) closeSession();
+  });
+}());
+</script>
+
+{{ end }}
