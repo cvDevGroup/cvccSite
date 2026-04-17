@@ -10,6 +10,12 @@ layout = "session"
 
 [Lwin & Min Maung](/speakers/maungs)
 
+**EDIT:** 
+The github repos for the presentation:
+
+- [https://github.com/amaung-us/presentations/tree/CVCC-26](https://github.com/amaung-us/presentations/tree/CVCC-26)
+- [https://github.com/amaung-us/zImage-Turbo-QuickStart](https://github.com/amaung-us/zImage-Turbo-QuickStart)
+
 
 Everyone is experimenting with AI — but most organizations are sending sensitive data to third-party cloud services without fully understanding the tradeoffs.
 
