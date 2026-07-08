@@ -7,8 +7,8 @@
   <div class="container grid-xl">
 
     {{ partial "header.html" . }}
-  {{/* Global announcement banner - hidden if page has hideAnnouncement = true */}}
-  {{ if and site.Params.announcement (not .Params.hideAnnouncement) }}
+  {{/* Global announcement banner - hidden site-wide if showAnnouncement = false, or on a page with hideAnnouncement = true */}}
+  {{ if and site.Params.announcement (ne site.Params.showAnnouncement false) (not .Params.hideAnnouncement) }}
   <div class="announcement-banner-fullwidth">
     {{ if site.Params.announcementConfetti }}
     <canvas id="confetti-canvas"></canvas>
