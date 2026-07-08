@@ -6,6 +6,8 @@ location = "Presentation Track"
 title = "AgentOps for Real: Evals, Tracing, and Regression Tests for AI Agents"
 weight = 14
 layout = "session"
+trackOrder = 2
+speakers = ["brianh"]
 +++
 
 [Brian Haydin](/speakers/brianh)

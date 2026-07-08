@@ -6,6 +6,8 @@ location = "Presentation Track"
 title = "Vision on the Fly - Computer Vision On The Web"
 weight = 6
 layout = "session"
+trackOrder = 2
+speakers = ["aaronr"]
 +++
 
 [Aaron Riedel](/speakers/aaronr)

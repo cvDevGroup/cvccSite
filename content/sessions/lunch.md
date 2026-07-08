@@ -6,6 +6,7 @@ location = "Commons"
 sessionTime = "12:15 pm"
 weight = 10
 layout = "session"
+trackOrder = 3
 +++
 
 Erbs & Gerbs sandwhiches with chips

@@ -6,6 +6,8 @@ location = "Presentation Track"
 title = "Speaking C"
 weight = 4
 layout = "session"
+trackOrder = 2
+speakers = ["brandonr"]
 +++
 
 [Brandon Roehl](/speakers/brandonr)
