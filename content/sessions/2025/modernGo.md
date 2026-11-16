@@ -1,4 +1,5 @@
 +++
+speakers = ["coryL"]
 title = "Modern Web Development with Go Workshop"
 date = 2025-03-07T00:05:06-06:00
 draft = false
@@ -9,7 +10,7 @@ weight = 40
 layout = "session"
 +++
 
-[Cory LaNou]({{< relref "/speakers/2026/coryL" >}})
+[Cory LaNou]({{< relref "/speakers/coryL" >}})
 
 This hands-on workshop will guide you through building a modern web application using a powerful and efficient tech stack. You'll create a complete web application with server-side rendering, dynamic frontend interactions, database operations, and beautiful styling—all with minimal JavaScript.
 

@@ -1,4 +1,5 @@
 +++
+speakers = ["maungs"]
 title = "Build Your Own Private ChatGPT: Local AI with Docker, Ollama, Open WebUI, and ZImage Turbo"
 date = 2026-03-01T00:05:06-06:00
 draft = false
@@ -8,7 +9,7 @@ weight = 12
 layout = "session"
 +++
 
-[Lwin & Min Maung](/speakers/2026/maungs/)
+[Lwin & Min Maung](/speakers/maungs/)
 
 **EDIT:** 
 The github repos for the presentation:

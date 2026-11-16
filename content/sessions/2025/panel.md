@@ -1,4 +1,5 @@
 +++
+speakers = ["dougR", "bpHogan", "todd", "coryL"]
 title = "Panel: Side Hustles for Knowledge or Profit"
 date = 2025-03-07T00:05:06-06:00
 draft = false
@@ -9,9 +10,9 @@ weight = 31
 layout = "session"
 +++
 
-Moderated by [Mr. Doug Rhoten]({{< relref "/speakers/2025/dougR" >}}),
+Moderated by [Mr. Doug Rhoten]({{< relref "/speakers/dougR" >}}),
 
 Guests: 
- - [Brian P. Hogan]({{< relref "/speakers/2026/bpHogan" >}})
- - [Todd H. Gardner]({{< relref "/speakers/2025/todd" >}})
- - [Cory LaNou]({{< relref "/speakers/2026/coryL" >}})
+ - [Brian P. Hogan]({{< relref "/speakers/bpHogan" >}})
+ - [Todd H. Gardner]({{< relref "/speakers/todd" >}})
+ - [Cory LaNou]({{< relref "/speakers/coryL" >}})

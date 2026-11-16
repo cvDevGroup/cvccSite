@@ -1,4 +1,5 @@
 +++
+speakers = ["coryL"]
 title = "Teach Your AI to Code Like You: A Hands-On Setup Workshop"
 date = 2026-03-01T00:05:06-06:00
 draft = false
@@ -9,7 +10,7 @@ weight = 3
 layout = "session"
 +++
 
-[Cory La Nou](/speakers/2026/coryl/)
+[Cory La Nou](/speakers/coryl/)
 
 **EDIT:** The training materials from this workshop are available here: [https://gopherguides.com/redeem/2026-cvcc-agentic](https://gopherguides.com/redeem/2026-cvcc-agentic)
 

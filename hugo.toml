@@ -12,10 +12,23 @@ name = 'Promo Kit'
 url = '/promo_kit/'
 weight = 17
 
+# Speakers is a taxonomy (see [taxonomies] below), not a section, so sectionPagesMenu doesn't add it.
+[[menus.main]]
+name = 'Speakers'
+pageRef = '/speakers'
+
 [[menus.footer]]
 name = 'Tags'
 pageRef = '/tags'
 weight = 30
+
+# Speakers are a taxonomy: each session lists its presenters in front matter, e.g.
+#   speakers = ["coryL", "bpHogan"]
+# and Hugo links each speaker page (content/speakers/<name>/_index.md) to their sessions.
+# Defining [taxonomies] replaces Hugo's defaults, so 'tags' must stay listed here.
+[taxonomies]
+  tag = 'tags'
+  speaker = 'speakers'
 
 [markup.goldmark.renderer]
   unsafe = true # Allow HTML in md files

@@ -1,4 +1,5 @@
 +++
+speakers = ["benA", "bpHogan", "coryL"]
 title = "Panel: IT EDUCATION DEATHMATCH"
 date = 2026-03-03
 draft = false

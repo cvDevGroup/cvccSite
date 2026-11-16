@@ -1,4 +1,5 @@
 +++
+speakers = ["bpHogan"]
 title = "Craft Great Developer Content with Open Source Tools"
 date = 2025-03-07T00:05:06-06:00
 draft = false
@@ -9,7 +10,7 @@ weight = 20
 layout = "session"
 +++
 
-[Brian P. Hogan]({{< relref "/speakers/2026/bpHogan" >}})
+[Brian P. Hogan]({{< relref "/speakers/bpHogan" >}})
 
 You probably already use Markdown to create content, but you can supercharge your content workflow with additional tools that let you create technically correct and consistent content your fellow developers will love.
 

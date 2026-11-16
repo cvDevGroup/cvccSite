@@ -1,4 +1,5 @@
 +++
+speakers = ["bpHogan"]
 date = 2026-01-19
 draft = false
 sessionTime = "9:00 am"
@@ -12,4 +13,4 @@ layout = "session"
 Opening remarks followed by:
 
 ## Keynote By Brian Hogan
-[Brian P. Hogan]({{< relref "/speakers/2026/bpHogan" >}})
+[Brian P. Hogan]({{< relref "/speakers/bpHogan" >}})

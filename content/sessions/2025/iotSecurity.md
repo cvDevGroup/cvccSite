@@ -1,4 +1,5 @@
 +++
+speakers = ["wesleyL"]
 title = "CANCELLED - IoT Networks and Security"
 date = 2025-03-07T00:05:06-06:00
 draft = false
@@ -9,7 +10,7 @@ weight = 299
 layout = "session"
 +++
 
-[Wesley Larrabee]({{< relref "/speakers/2025/wesleyL" >}})
+[Wesley Larrabee]({{< relref "/speakers/wesleyL" >}})
 
 IoT devices offer an opportunity to expand and enhance existing networks but also introduce new security vulnerabilities. This session will explore various types of IoT devices and networks, along with the associated security challenges they present and the potential risks to network integrity.
 
