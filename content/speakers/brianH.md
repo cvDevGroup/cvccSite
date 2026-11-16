@@ -3,6 +3,7 @@ date: 2026-02-02T04:14:54-08:00
 draft: false
 title: Brian Haydin
 weight: 10
+image: /img/speakers/brian-haydin.png
 ---
 
 Brian Haydin is a Solution Architect at Concurrency focused on AI agents, Microsoft Fabric, and secure enterprise AI implementations. He works with manufacturing, finance, and infrastructure organizations to move AI from experimentation to production - without sacrificing governance or security.

@@ -3,6 +3,9 @@ date: 2026-02-02T04:14:54-08:00
 draft: false
 title: Lwin & Min Maung
 weight: 16
+images:
+    - /img/speakers/lwin.png
+    - /img/speakers/min-wbg.png
 ---
 
 ![Min Maung](/img/speakers/minm.png)

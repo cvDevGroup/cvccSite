@@ -3,10 +3,14 @@ title = "Teach Your AI to Code Like You: A Hands-On Setup Workshop"
 date = 2026-03-01T00:05:06-06:00
 draft = false
 sessionTime = "9:30 am"
+endTime = "12:15 pm"
+spansInto = ["10:30 am", "11:30 am"]
 location = "Workshop Track"
 # link = "sessions/modernGo"
 weight = 3
 layout = "session"
+trackOrder = 1
+speakers = ["coryl"]
 +++
 
 [Cory La Nou](/speakers/coryl)

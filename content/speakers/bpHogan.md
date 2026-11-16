@@ -3,6 +3,8 @@ date: 2026-02-02T04:14:54-08:00
 title: 'Brian P. Hogan'
 draft: false
 weight: 5
+keynote: true
+image: /img/speakers/bpHogan.jpg
 ---
 
 ![Brian P. Hogan](/img/speakers/bpHogan.jpg)

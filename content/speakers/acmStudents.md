@@ -3,6 +3,11 @@ title: 'UWEC Student Association for Computing Machinery'
 date: 2026-03-01T00:10:28-06:00
 draft: false
 weight: 3
+images:
+    - /img/speakers/aaron-fraser.jpeg
+    - /img/speakers/jack-hagen.jpeg
+    - /img/speakers/reed-graf.jpg
+    - /img/speakers/silas-eacret.jpg
 ---
 
 ![acmStudents](/img/speakers/acmStudents.png)

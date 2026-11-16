@@ -6,6 +6,8 @@ location = "Commons"
 sessionTime = "12:45 pm"
 weight = 11
 layout = "session"
+trackOrder = 3
+speakers = ["bphogan", "coryl"]
 +++
 
 

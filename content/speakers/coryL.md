@@ -3,6 +3,7 @@ date: 2026-02-02T04:14:54-08:00
 draft: false
 title: Cory LaNou
 weight: 2
+image: /img/speakers/cory-lanou-2026.png
 ---
 ![Cory LaNou](/img/speakers/cory-lanou-new.png)
 

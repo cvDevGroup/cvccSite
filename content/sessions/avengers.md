@@ -6,6 +6,8 @@ location = "Presentation Track"
 title = "How I used the Avengers to build a golf coaching AI to win the 2030 Masters"
 weight = 30
 layout = "session"
+trackOrder = 2
+speakers = ["charleys"]
 +++
 
 [Charley Stran](/speakers/charleys)

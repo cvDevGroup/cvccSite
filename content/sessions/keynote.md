@@ -7,6 +7,8 @@ title = "Opening Remarks & Keynote"
 link = "sessions/keynote"
 weight = 2
 layout = "session"
+trackOrder = 3
+speakers = ["bphogan"]
 +++
 
 Opening remarks followed by:
