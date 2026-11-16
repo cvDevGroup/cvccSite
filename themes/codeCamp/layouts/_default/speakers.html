@@ -43,7 +43,8 @@
   {{ end }}
   <hr/>
 
-{{ with .Sections }}
+{{/* Year archives newest-first by folder name (e.g. 2026, 2023) */}}
+{{ with sort .Sections "File.ContentBaseName" "desc" }}
 <h3>Past Presenters</h3>
 {{ range . }}
   <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
