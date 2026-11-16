@@ -1,11 +1,12 @@
 +++
+speakers = ["zachH"]
 title = "Keynote"
 date = 2023-12-02T08:30:00-06:00
 draft = false
 weight = 1
 +++
 
-Speaker: [Zach Halmstad](/speakers/2023/zachh/)
+Speaker: [Zach Halmstad](/speakers/zachh/)
 
 Getting us fired up for our first CVCC in four years!
 

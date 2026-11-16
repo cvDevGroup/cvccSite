@@ -1,0 +1,44 @@
+{{ define "main" }}
+<style>
+  img{max-width:50%}
+</style>
+
+{{- /*
+  A single speaker page (/speakers/<name>/). The bio comes from content/speakers/<name>/_index.md;
+  the talks are every session whose front matter lists this speaker, grouped by Code Camp year:
+  sessions directly in content/sessions/ are the current camp (site.Params.campYear), and
+  sessions in content/sessions/<year>/ belong to that year.
+*/ -}}
+
+<h1>{{ .Title }}</h1>
+<hr/>
+{{ .Content }}
+
+{{ $speaker := . }}
+{{ $sessionsSection := site.GetPage "/sessions" }}
+{{ $groups := slice (dict "year" (string site.Params.campYear) "section" $sessionsSection) }}
+{{ range sort $sessionsSection.Sections "File.ContentBaseName" "desc" }}
+  {{ $groups = $groups | append (dict "year" .File.ContentBaseName "section" .) }}
+{{ end }}
+
+{{ with .Pages }}
+<hr/>
+<h2>Code Camp Talks</h2>
+{{ range $groups }}
+  {{ $section := .section }}
+  {{ $year := .year }}
+  {{ $talks := slice }}
+  {{ range $speaker.Pages }}
+    {{ if eq .Parent $section }}{{ $talks = $talks | append . }}{{ end }}
+  {{ end }}
+  {{ with $talks }}
+  <h4>{{ $year }}</h4>
+  <ul>
+    {{ range sort . "Weight" }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+  </ul>
+  {{ end }}
+{{ end }}
+{{ end }}
+{{ end }}

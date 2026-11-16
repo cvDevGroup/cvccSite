@@ -1,4 +1,5 @@
 +++
+speakers = ["andrewK"]
 title = "True Tales of Tragic Resumes"
 date = 2025-03-07T00:05:06-06:00
 draft = false
@@ -9,7 +10,7 @@ weight = 11
 layout = "session"
 +++
 
-[Andrew Kirchman]({{< relref "/speakers/2025/andrewK" >}})
+[Andrew Kirchman]({{< relref "/speakers/andrewK" >}})
 
 Andrew Kirchman is a lead software engineer at Thomson Reuters who brings over a decade of resume review and hiring experience. Through this talk, we’ll learn from others’ mistakes in their resumes, and how to best craft a resume to improve your hiring chances.
 

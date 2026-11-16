@@ -1,4 +1,5 @@
 +++
+speakers = ["aaronR"]
 date = 2026-01-19
 draft = false
 sessionTime = "11:30 am"
@@ -8,7 +9,7 @@ weight = 6
 layout = "session"
 +++
 
-[Aaron Riedel](/speakers/2026/aaronr/)
+[Aaron Riedel](/speakers/aaronr/)
 
 When playing Counterstrike I challenged myself to create a bot that used only vision to play the game. Working on building computer vision showed me the interesting problems with building real-time solutions.
 

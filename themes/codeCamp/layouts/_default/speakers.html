@@ -1,53 +1,62 @@
 {{ define "main" }}
-<!-- <h3>This is begin list Content</h3> -->
 <style>
   img{max-width:50%}
 </style>
 
-{{/* Top-level /speakers/ shows the current camp year; year archives (e.g. /speakers/2026/) show all of their pages */}}
-{{ $isArchive := not .Parent.IsHome }}
-{{ $speakers := .RegularPages }}
-{{ if $isArchive }}
-<h2>{{ .Title }}</h2>
-{{ else }}
-<h2>{{ site.Params.campYear }} Presenters</h2>
-{{ $speakers = where .RegularPages "PublishDate.Year" site.Params.campYear }}
+{{- /*
+  The /speakers/ page. Speakers are a Hugo taxonomy: each session lists its presenters in
+  front matter (speakers = ["coryL"]) and each bio lives at content/speakers/<name>/_index.md.
+  Who presented when is read from the sessions, so nothing here depends on speaker dates.
+*/ -}}
+
+{{- /* Guard: a single-file speaker (content/speakers/<name>.md) silently hides that speaker's
+  sessions, because it takes over the URL of their taxonomy page. Fail the build instead. */ -}}
+{{ range where site.RegularPages "Section" "speakers" }}
+  {{ errorf "Speaker %q must be a folder: move %s to content/speakers/%s/_index.md (see README: Adding a speaker)" .Title .File.Path .File.ContentBaseName }}
 {{ end }}
+
+{{- /* Warn about sessions naming a speaker that has no bio page (often a typo). */ -}}
+{{ range $name, $sessions := site.Taxonomies.speakers }}
+  {{ if not $sessions.Page.File }}
+    {{ warnf "Speaker %q is named in a session but has no bio at content/speakers/%s/_index.md" $name $name }}
+  {{ end }}
+{{ end }}
+
+{{ $sessionsSection := site.GetPage "/sessions" }}
+
+{{- /* Current presenters: speakers named by sessions directly in content/sessions/ */ -}}
+{{- /* Keyed by URL so a speaker with several sessions is listed once */ -}}
+{{ $current := dict }}
+{{ range $sessionsSection.RegularPages }}
+  {{ range .GetTerms "speakers" }}{{ $current = merge $current (dict .RelPermalink .) }}{{ end }}
+{{ end }}
+
+<h2>{{ site.Params.campYear }} Presenters</h2>
 <hr/>
-
-{{ range $speakers }}
-  <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+{{ range sort $current "LinkTitle" }}
+  <h3><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
   {{ .Summary }}
-  <!-- {{ .Content }} -->
-  <!-- <h3>This is end Content</h3> -->
-
   <hr />
   <br/>
+{{ end }}
 
-    <!-- {{ if .Params.accordion }}
-    <details class="accordion">
-      <summary class="accordion-header">
-        <span class="accordion-icon">&#9658;</span>
-        <h2>{{ .LinkTitle }}</h2>
-      </summary>
-      <div class="accordion-body">{{ .Content }}</div>
-    </details>
-    {{ else if .Params.externalLink }}
-    <h2><a href="{{ .Params.externalLink }}" target="_blank" rel="noopener noreferrer">{{ .LinkTitle }} ↗</a></h2>
-    {{ .Content }}
-    {{ else }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ .Content }}
-    {{ end }} -->
-
-  {{ end }}
-  <hr/>
-
-{{/* Year archives newest-first by folder name (e.g. 2026, 2023) */}}
-{{ with sort .Sections "File.ContentBaseName" "desc" }}
+{{- /* Past presenters: one group per session archive (content/sessions/<year>/), newest first.
+  Speakers who presented in several years appear under each year, linking to one bio page. */ -}}
+{{ $archives := sort $sessionsSection.Sections "File.ContentBaseName" "desc" }}
+{{ with $archives }}
 <h3>Past Presenters</h3>
 {{ range . }}
-  <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+  {{ $year := .File.ContentBaseName }}
+  {{ $names := dict }}
+  {{ range .RegularPages }}
+    {{ range .GetTerms "speakers" }}{{ $names = merge $names (dict .RelPermalink .) }}{{ end }}
+  {{ end }}
+  {{ with $names }}
+  <h4 id="{{ $year }}">{{ $year }}</h4>
+  <p>
+    {{ range $i, $s := sort . "LinkTitle" }}{{ if $i }} &middot; {{ end }}<a href="{{ $s.RelPermalink }}">{{ $s.LinkTitle }}</a>{{ end }}
+  </p>
+  {{ end }}
 {{ end }}
 {{ end }}
 {{ end }}

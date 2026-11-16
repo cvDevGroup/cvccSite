@@ -1,4 +1,5 @@
 +++
+speakers = ["coryL"]
 title = "Teach Your AI to Code Like You: A Hands-On Setup Workshop"
 date = 2026-03-01T00:05:06-06:00
 draft = false
@@ -9,7 +10,7 @@ weight = 3
 layout = "session"
 +++
 
-[Cory La Nou](/speakers/2026/coryl/)
+[Cory La Nou](/speakers/coryl/)
 
 You've spent years mastering how to design, debug, and build software. Your AI coding assistant has no idea. In this hands-on workshop, you'll teach it to work the way you work, and leave with a setup you can use Monday morning.
 

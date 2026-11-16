@@ -1,11 +1,12 @@
 +++
+speakers = ["brianS"]
 title = "Cancelled: The Developer's Productivity Toolbox"
 date = 2023-12-02T08:30:00-06:00
 draft = false
 weight = 3
 +++
 
-Speaker: [Brian Stewart](/speakers/2023/brians/)
+Speaker: [Brian Stewart](/speakers/brians/)
 
 **Unfortunately, this session has been cancelled.**
 

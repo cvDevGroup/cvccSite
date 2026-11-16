@@ -1,4 +1,5 @@
 +++
+speakers = ["brandonR"]
 date = 2026-01-19
 draft = false
 sessionTime = "9:30 am"
@@ -8,7 +9,7 @@ weight = 4
 layout = "session"
 +++
 
-[Brandon Roehl](/speakers/2026/brandonr/)
+[Brandon Roehl](/speakers/brandonr/)
 
 
 When picking the best tool for the job why limit yourself to only one? How to build multi language apps with live demos and examples.  

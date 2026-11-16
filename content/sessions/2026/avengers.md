@@ -1,4 +1,5 @@
 +++
+speakers = ["charleyS"]
 date = 2026-01-19
 draft = false
 sessionTime = "2:30 pm"
@@ -8,7 +9,7 @@ weight = 30
 layout = "session"
 +++
 
-[Charley Stran](/speakers/2026/charleys/)
+[Charley Stran](/speakers/charleys/)
 
 
 This talk is about how to use an agent development tools with a multi-git checkout multiple folder approach for agent management. The talk covers the building of a real world and deployed tool built using agentic tools both for development and part of the shipped product.

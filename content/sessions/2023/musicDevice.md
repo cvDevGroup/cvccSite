@@ -1,11 +1,12 @@
 +++
+speakers = ["davidE"]
 title = "Creating a Consumer Electronic Music Device - Firmware - Apps - Interfaces"
 date = 2023-12-02T08:30:00-06:00
 draft = false
 weight = 10
 +++
 
-Speaker: [David Elvig](/speakers/2023/davide/)
+Speaker: [David Elvig](/speakers/davide/)
 
 Building a delivering a successful consumer electronics device can take a lot of coding. In my case, coding in C++, C#, SWIFT and Javascript for the firmware and various apps.
 

@@ -1,11 +1,12 @@
 +++
+speakers = ["coryL"]
 title = "Create a Restful JSON Service in Go with GIN"
 date = 2023-12-02T08:30:00-06:00
 draft = false
 weight = 2
 +++
 
-Speaker: [Cory LaNou](/speakers/2026/coryl/)
+Speaker: [Cory LaNou](/speakers/coryl/)
 
 _All Morning Workshop_
 
