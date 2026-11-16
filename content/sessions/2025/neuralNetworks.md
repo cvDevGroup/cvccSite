@@ -9,6 +9,6 @@ weight = 10
 layout = "session"
 +++
 
-[John Urberg]({{< relref "/speakers/johnU" >}})
+[John Urberg]({{< relref "/speakers/2025/johnU" >}})
 
 This presentation will give an introduction to how Neural Networks. We will train a couple of simple networks live during the presentation and take you step by step thru how it works. We’ll follow up with a short discussion on how LLMs use neural networks.

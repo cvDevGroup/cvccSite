@@ -4,7 +4,7 @@ draft = false
 sessionTime = "9:00 am"
 location = "Commons"
 title = "Opening Remarks & Keynote"
-link = "sessions/keynote"
+link = "sessions/2026/keynote"
 weight = 2
 layout = "session"
 +++
@@ -12,4 +12,4 @@ layout = "session"
 Opening remarks followed by:
 
 ## Keynote By Brian Hogan
-[Brian P. Hogan]({{< relref "/speakers/bpHogan" >}})
+[Brian P. Hogan]({{< relref "/speakers/2026/bpHogan" >}})

@@ -8,7 +8,7 @@ weight = 14
 layout = "session"
 +++
 
-[Brian Haydin](/speakers/brianh)
+[Brian Haydin](/speakers/2026/brianh/)
 
 **EDIT:** presentation materials from this talk are available here: [https://github.com/bhaydin/Presentations/tree/main/2026/ChippewaValleyCodeCamp](https://github.com/bhaydin/Presentations/tree/main/2026/ChippewaValleyCodeCamp)
 

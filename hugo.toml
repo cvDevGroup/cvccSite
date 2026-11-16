@@ -35,3 +35,8 @@ weight = 30
   announcementLink = 'https://www.eventbrite.com/e/chippewa-valley-code-camp-2026-tickets-1980783904981'
   announcementButtonText = 'Register on Eventbrite'
   announcementConfetti = true  # Set to false to disable confetti animation
+
+  # The year of the upcoming Code Camp. Update this once per year when rolling the site over.
+  # Used for the Sessions/Presenters headings, to filter which speakers and sessions are "current",
+  # and available in content via the {{< campYear >}} shortcode.
+  campYear = 2027

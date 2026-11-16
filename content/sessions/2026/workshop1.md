@@ -9,7 +9,7 @@ weight = 3
 layout = "session"
 +++
 
-[Cory La Nou](/speakers/coryl)
+[Cory La Nou](/speakers/2026/coryl/)
 
 **EDIT:** The training materials from this workshop are available here: [https://gopherguides.com/redeem/2026-cvcc-agentic](https://gopherguides.com/redeem/2026-cvcc-agentic)
 

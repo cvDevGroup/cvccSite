@@ -8,7 +8,7 @@ weight = 4
 layout = "session"
 +++
 
-[Brandon Roehl](/speakers/brandonr)
+[Brandon Roehl](/speakers/2026/brandonr/)
 
 
 When picking the best tool for the job why limit yourself to only one? How to build multi language apps with live demos and examples.  

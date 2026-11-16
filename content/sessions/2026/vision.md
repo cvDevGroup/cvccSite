@@ -8,7 +8,7 @@ weight = 6
 layout = "session"
 +++
 
-[Aaron Riedel](/speakers/aaronr)
+[Aaron Riedel](/speakers/2026/aaronr/)
 
 When playing Counterstrike I challenged myself to create a bot that used only vision to play the game. Working on building computer vision showed me the interesting problems with building real-time solutions.
 

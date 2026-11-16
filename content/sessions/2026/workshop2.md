@@ -8,7 +8,7 @@ weight = 12
 layout = "session"
 +++
 
-[Lwin & Min Maung](/speakers/maungs)
+[Lwin & Min Maung](/speakers/2026/maungs/)
 
 **EDIT:** 
 The github repos for the presentation:

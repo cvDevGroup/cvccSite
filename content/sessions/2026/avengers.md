@@ -8,7 +8,7 @@ weight = 30
 layout = "session"
 +++
 
-[Charley Stran](/speakers/charleys)
+[Charley Stran](/speakers/2026/charleys/)
 
 
 This talk is about how to use an agent development tools with a multi-git checkout multiple folder approach for agent management. The talk covers the building of a real world and deployed tool built using agentic tools both for development and part of the shipped product.

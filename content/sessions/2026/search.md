@@ -9,7 +9,7 @@ weight = 5
 layout = "session"
 +++
 
-[UWEC Student Association for Computing Machinery](/speakers/acmstudents)
+[UWEC Student Association for Computing Machinery](/speakers/2026/acmstudents/)
 
 We built an independent search engine with its own high-performance web index using web scrapers. The talk will walk through the whole engineering outline of our project, from the policy of our web scrapers, to the networking of our Kubernetes cluster, to the high capacity postgresql database that stores the data for millions of website pages.
 
