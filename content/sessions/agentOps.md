@@ -10,6 +10,7 @@ layout = "session"
 
 [Brian Haydin](/speakers/brianh)
 
+**EDIT:** presentation materials from this talk are available here: [https://github.com/bhaydin/Presentations/tree/main/2026/ChippewaValleyCodeCamp](https://github.com/bhaydin/Presentations/tree/main/2026/ChippewaValleyCodeCamp)
 
 Shipping an AI agent without observability is like deploying a distributed system with no logging. Learn how to implement evals, tracing, and regression testing so your agents don’t quietly degrade into chaos.
 
