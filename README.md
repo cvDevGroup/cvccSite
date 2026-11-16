@@ -27,45 +27,6 @@ hugo serve --bind 192.168.1.20 baseURL http://192.168.1.20/ --buildDrafts
 
 Access on http://localhost:1313
 
-## Speakers and sessions
-
-Speakers are a Hugo [taxonomy](https://gohugo.io/content-management/taxonomies/): sessions say who presented them, and each speaker page lists that speaker's talks across every Code Camp year automatically.
-
-### Adding a speaker
-Create a **folder** with an `_index.md` inside it. The folder name is the speaker's ID:
-```
-content/speakers/janeD/_index.md
-```
-```markdown
----
-title: Jane Doe
----
-
-Jane's bio...
-
-![Jane Doe](/img/speakers/janeD.jpg)
-```
-The page is published at `/speakers/janed/` (lowercase), even before Jane has a session.
-
-> **Don't** create `content/speakers/janeD.md` as a single file. It would hide Jane's talks, so the build stops with an error telling you to move it into a folder.
-
-### Linking a session to its speakers
-List speaker IDs in the session's front matter:
-```toml
-+++
-title = "My Talk"
-speakers = ["janeD"]          # panels: ["janeD", "coryL", "bpHogan"]
-+++
-```
-- Sessions directly in `content/sessions/` are the current camp (`campYear` in `hugo.toml`). Their speakers appear under "Presenters" on `/speakers/`.
-- Sessions in `content/sessions/<year>/` are archives. Their speakers appear under that year in "Past Presenters".
-- Naming someone without a bio still works: they get a page listing their talks, and the build prints a warning in case it's a typo.
-
-## Rolling over to a new year
-1. Move the current sessions into `content/sessions/<year>/` (add an `_index.md` with `title = 'Archived <year> Sessions'`), and the same for sponsors in `content/sponsors/<year>/`.
-2. Bump `campYear` in `hugo.toml`.
-3. Speakers stay where they are. Returning speakers just get named in the new year's sessions.
-
 
 ## Event TODO
 - Nail down start/end times and update

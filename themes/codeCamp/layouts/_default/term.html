@@ -22,7 +22,7 @@
 {{ end }}
 
 {{ with .Pages }}
-<hr/>
+{{ if $speaker.Content }}<hr/>{{ end }}
 <h2>Code Camp Talks</h2>
 {{ range $groups }}
   {{ $section := .section }}

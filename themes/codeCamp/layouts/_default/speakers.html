@@ -12,7 +12,7 @@
 {{- /* Guard: a single-file speaker (content/speakers/<name>.md) silently hides that speaker's
   sessions, because it takes over the URL of their taxonomy page. Fail the build instead. */ -}}
 {{ range where site.RegularPages "Section" "speakers" }}
-  {{ errorf "Speaker %q must be a folder: move %s to content/speakers/%s/_index.md (see README: Adding a speaker)" .Title .File.Path .File.ContentBaseName }}
+  {{ errorf "Speaker %q must be a folder: move content/speakers/%s to content/speakers/%s/_index.md (see docs/speakers.md)" .Title .File.LogicalName .File.ContentBaseName }}
 {{ end }}
 
 {{- /* Warn about sessions naming a speaker that has no bio page (often a typo). */ -}}

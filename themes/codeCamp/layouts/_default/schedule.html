@@ -1,7 +1,10 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
   <div class="columns scheduleLine">
-      {{ $pages := where (where .Site.RegularPages "Section" "sessions") "PublishDate.Year" site.Params.campYear }}
+      {{- /* The current camp's sessions are the ones directly in content/sessions/ (archives live in
+        content/sessions/<year>/). Dates are ignored: a future-dated session wouldn't be published at all.
+        Pages without a sessionTime (e.g. the call for speakers) aren't schedule slots. */ -}}
+      {{ $pages := where (site.GetPage "/sessions").RegularPages "Params.sessionTime" "!=" nil }}
       {{ $sortedPages := sort $pages ".Params.weight" "asc" }}
       {{ range $sortedPages }}
           {{ if eq (path.Ext .File.Path) ".md" }}
