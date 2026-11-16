@@ -9,9 +9,9 @@ weight = 31
 layout = "session"
 +++
 
-Moderated by [Mr. Doug Rhoten]({{< relref "/speakers/dougR" >}}),
+Moderated by [Mr. Doug Rhoten]({{< relref "/speakers/2025/dougR" >}}),
 
 Guests: 
  - [Brian P. Hogan]({{< relref "/speakers/2026/bpHogan" >}})
- - [Todd H. Gardner]({{< relref "/speakers/todd" >}})
+ - [Todd H. Gardner]({{< relref "/speakers/2025/todd" >}})
  - [Cory LaNou]({{< relref "/speakers/2026/coryL" >}})
