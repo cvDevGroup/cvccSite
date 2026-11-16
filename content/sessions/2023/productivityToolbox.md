@@ -11,6 +11,6 @@ Speaker: Brian Stewart
 
 ~~Beyond just writing code there is a craft: the developer’s personal toolbox that enables productive (and fun!) coding. Let’s dig into the fundamentals: using developer tools, and creating our own, to craft code at the speed of thought. See what is possible, and leave with a full toolbox of ideas.~~
 
-<!--more-->
-
 <img src="/2023/img/speakers/brian-stewart.jpg" alt="Brian Stewart" width="200" height="200">
+
+<!--more-->

@@ -9,6 +9,6 @@ Speaker: Jean Seely
 
 Explore the intersection of AI and privacy with us! Learn how AI can identify personal data, the legalities involved, and practical techniques for safeguarding privacy during modeling. Gain insights for collaboration among lawyers, engineers, and managers. Join us to champion privacy in AI!
 
-<!--more-->
-
 <img src="/2023/img/speakers/jean-seely.jpg" alt="Jean Seely" width="200" height="200">
+
+<!--more-->

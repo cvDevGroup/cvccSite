@@ -11,6 +11,6 @@ Building a delivering a successful consumer electronics device can take a lot of
 
 This talk covers the variety of technologies needed to gain customers and build their success, including lessons learned.
 
-<!--more-->
-
 <img src="/2023/img/speakers/silhouette.png" alt="David Elvig" width="200" height="200">
+
+<!--more-->
