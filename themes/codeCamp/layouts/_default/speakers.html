@@ -44,12 +44,7 @@
   Speakers who presented in several years appear under each year, linking to one bio page. */ -}}
 {{ $archives := sort $sessionsSection.Sections "File.ContentBaseName" "desc" }}
 {{ with $archives }}
-<details class="accordion">
-  <summary class="accordion-header">
-    <span class="accordion-icon">&#9658;</span>
-    <h3>Past Presenters</h3>
-  </summary>
-  <div class="accordion-body">
+<h2>Past Presenters</h2>
 {{ range . }}
   {{ $year := .File.ContentBaseName }}
   {{ $names := dict }}
@@ -57,13 +52,17 @@
     {{ range .GetTerms "speakers" }}{{ $names = merge $names (dict .RelPermalink .) }}{{ end }}
   {{ end }}
   {{ with $names }}
-  <h4 id="{{ $year }}">{{ $year }}</h4>
-  <p>
-    {{ range $i, $s := sort . "LinkTitle" }}{{ if $i }} &middot; {{ end }}<a href="{{ $s.RelPermalink }}">{{ $s.LinkTitle }}</a>{{ end }}
-  </p>
+  {{- /* One collapsed item per year, like the archive list on the sessions page */ -}}
+  <details class="accordion" id="{{ $year }}">
+    <summary class="accordion-header">
+      <span class="accordion-icon">&#9658;</span>
+      <h3>{{ $year }} Presenters</h3>
+    </summary>
+    <div class="accordion-body">
+      {{ range $i, $s := sort . "LinkTitle" }}{{ if $i }} &middot; {{ end }}<a href="{{ $s.RelPermalink }}">{{ $s.LinkTitle }}</a>{{ end }}
+    </div>
+  </details>
   {{ end }}
 {{ end }}
-  </div>
-</details>
 {{ end }}
 {{ end }}
