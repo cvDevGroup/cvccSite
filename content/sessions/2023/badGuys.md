@@ -5,7 +5,7 @@ draft = false
 weight = 8
 +++
 
-Speaker: Kevin Bong
+Speaker: [Kevin Bong](/speakers/2023/kevinb/)
 
 Attackers write crafty code to compromise apps, steal data, and cover their tracks. To protect against them, you need to understand them. Come discover the mistakes developers make, see actual exploits & code extracted from ecommerce breach investigations, and learn ways to protect your own apps.
 

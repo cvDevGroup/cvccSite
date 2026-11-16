@@ -5,7 +5,7 @@ draft = false
 weight = 6
 +++
 
-Speaker: Jean Seely
+Speaker: [Jean Seely](/speakers/2023/jeans/)
 
 Join “Code Made Easy: A Hands-on Guide to Integrating with AI APIs.” Designed for non-technical managers (and those new to AI), learn coding basics for AI integration. Bridge the technical gap in your projects, and lead AI-driven success with newfound confidence!
 

@@ -5,7 +5,7 @@ draft = false
 weight = 1
 +++
 
-Speaker: Zach Halmstad
+Speaker: [Zach Halmstad](/speakers/2023/zachh/)
 
 Getting us fired up for our first CVCC in four years!
 

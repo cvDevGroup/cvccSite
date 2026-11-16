@@ -5,7 +5,7 @@ draft = false
 weight = 3
 +++
 
-Speaker: Brian Stewart
+Speaker: [Brian Stewart](/speakers/2023/brians/)
 
 **Unfortunately, this session has been cancelled.**
 

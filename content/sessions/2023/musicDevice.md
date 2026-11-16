@@ -5,7 +5,7 @@ draft = false
 weight = 10
 +++
 
-Speaker: David Elvig
+Speaker: [David Elvig](/speakers/2023/davide/)
 
 Building a delivering a successful consumer electronics device can take a lot of coding. In my case, coding in C++, C#, SWIFT and Javascript for the firmware and various apps.
 

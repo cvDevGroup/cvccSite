@@ -5,7 +5,7 @@ draft = false
 weight = 7
 +++
 
-Speaker: Benjamin J. Anderson
+Speaker: [Benjamin J. Anderson](/speakers/2023/bena/)
 
 General processing units dominate the computational industry. We can use just about any compiler and have little concern with the binary executable. However, every bit is essential in the microcontroller and processor industry, and C++ compilers frequently exceed the devices capabilities.
 

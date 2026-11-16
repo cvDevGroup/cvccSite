@@ -5,7 +5,7 @@ draft = false
 weight = 5
 +++
 
-Speaker: Jean Seely
+Speaker: [Jean Seely](/speakers/2023/jeans/)
 
 Explore the intersection of AI and privacy with us! Learn how AI can identify personal data, the legalities involved, and practical techniques for safeguarding privacy during modeling. Gain insights for collaboration among lawyers, engineers, and managers. Join us to champion privacy in AI!
 
