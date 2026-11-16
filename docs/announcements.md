@@ -27,6 +27,7 @@ Add the following to `hugo.toml` under the `[params]` section:
 | `announcementLink` | No | URL for the call-to-action button. If omitted, no button is shown |
 | `announcementButtonText` | No | Text for the button. Defaults to "Learn More" if not specified |
 | `announcementConfetti` | No | Set to `true` to enable a celebratory confetti animation on page load |
+| `showAnnouncement` | No | Set to `false` to hide the banner site-wide without deleting the announcement text. Defaults to `true` when omitted |
 
 ### Example
 
@@ -71,7 +72,17 @@ hideAnnouncement = true
 
 ## Disabling the Announcement Site-Wide
 
-To completely disable the announcement banner, either:
+The simplest way to turn the banner off — while keeping the text ready to re-enable later — is the `showAnnouncement` flag:
+
+```toml
+[params]
+  showAnnouncement = false  # Banner is hidden; announcement text is preserved
+  announcement = 'Registration is Now Open!'
+```
+
+Set it back to `true` (or remove the line) to show the banner again. This mirrors how individual social media posts are disabled in the Promo Kit without deleting their content.
+
+Alternatively, you can remove the announcement entirely:
 
 1. Remove or comment out the `announcement` line in `hugo.toml`:
 
