@@ -12,6 +12,6 @@ layout = "session"
 Moderated by [Mr. Doug Rhoten]({{< relref "/speakers/dougR" >}}),
 
 Guests: 
- - [Brian P. Hogan]({{< relref "/speakers/bpHogan" >}})
+ - [Brian P. Hogan]({{< relref "/speakers/2026/bpHogan" >}})
  - [Todd H. Gardner]({{< relref "/speakers/todd" >}})
- - [Cory LaNou]({{< relref "/speakers/coryL" >}})
+ - [Cory LaNou]({{< relref "/speakers/2026/coryL" >}})

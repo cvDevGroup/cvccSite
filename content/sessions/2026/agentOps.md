@@ -8,7 +8,7 @@ weight = 14
 layout = "session"
 +++
 
-[Brian Haydin](/speakers/brianh)
+[Brian Haydin](/speakers/2026/brianh/)
 
 
 Shipping an AI agent without observability is like deploying a distributed system with no logging. Learn how to implement evals, tracing, and regression testing so your agents don’t quietly degrade into chaos.

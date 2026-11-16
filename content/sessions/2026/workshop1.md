@@ -9,7 +9,7 @@ weight = 3
 layout = "session"
 +++
 
-[Cory La Nou](/speakers/coryl)
+[Cory La Nou](/speakers/2026/coryl/)
 
 You've spent years mastering how to design, debug, and build software. Your AI coding assistant has no idea. In this hands-on workshop, you'll teach it to work the way you work, and leave with a setup you can use Monday morning.
 

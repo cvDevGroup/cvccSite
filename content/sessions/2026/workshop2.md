@@ -8,7 +8,7 @@ weight = 12
 layout = "session"
 +++
 
-[Lwin & Min Maung](/speakers/maungs)
+[Lwin & Min Maung](/speakers/2026/maungs/)
 
 
 Everyone is experimenting with AI — but most organizations are sending sensitive data to third-party cloud services without fully understanding the tradeoffs.

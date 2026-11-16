@@ -4,10 +4,18 @@
   img{max-width:50%}
 </style>
 
-<h2>{{ now.Year }} Presenters</h2>
+{{/* Top-level /speakers/ shows the current camp year; year archives (e.g. /speakers/2026/) show all of their pages */}}
+{{ $isArchive := not .Parent.IsHome }}
+{{ $speakers := .RegularPages }}
+{{ if $isArchive }}
+<h2>{{ .Title }}</h2>
+{{ else }}
+<h2>{{ site.Params.campYear }} Presenters</h2>
+{{ $speakers = where .RegularPages "PublishDate.Year" site.Params.campYear }}
+{{ end }}
 <hr/>
 
-{{ range where .RegularPages "PublishDate.Year" (now.Year) }}
+{{ range $speakers }}
   <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
   {{ .Summary }}
   <!-- {{ .Content }} -->
@@ -34,4 +42,11 @@
 
   {{ end }}
   <hr/>
+
+{{ with .Sections }}
+<h3>Past Presenters</h3>
+{{ range . }}
+  <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+{{ end }}
+{{ end }}
 {{ end }}

@@ -1,10 +1,14 @@
 {{ define "main" }}
 <!-- <h3>This is begin list Content</h3> -->
 
-  <h1>{{ (now.Year) }} {{ .Title }}</h1>
+  {{/* Only the top-level /sessions/ page gets the camp year; archives like "Archived 2025 Sessions" already name their year */}}
+  <h1>{{ if .Parent.IsHome }}{{ site.Params.campYear }} {{ end }}{{ .Title }}</h1>
   {{ .Content }}
   <!-- <h3>This is end Content</h3> -->
-  {{ range .Pages }}
+  {{/* Current sessions first, then year archives newest-first by folder name (e.g. 2026, 2025, 2023) */}}
+  {{ $archives := sort .Sections "File.ContentBaseName" "desc" }}
+  {{ $pages := .RegularPages | append $archives }}
+  {{ range $pages }}
   <hr />
   <br/>
 
