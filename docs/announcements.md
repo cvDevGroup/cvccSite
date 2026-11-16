@@ -27,6 +27,9 @@ Add the following to `hugo.toml` under the `[params]` section:
 | `announcementLink` | No | URL for the call-to-action button. If omitted, no button is shown |
 | `announcementButtonText` | No | Text for the button. Defaults to "Learn More" if not specified |
 | `announcementConfetti` | No | Set to `true` to enable a celebratory confetti animation on page load |
+| `showAnnouncement` | No | Set to `false` to hide the banner site-wide without deleting the announcement text. Defaults to `true` when omitted |
+| `announcementStartDate` | No | First day to show the banner (`YYYY-MM-DD`). Hidden before this date |
+| `announcementEndDate` | No | Last day to show the banner (`YYYY-MM-DD`, inclusive). Hidden after this date |
 
 ### Example
 
@@ -46,6 +49,23 @@ When `announcementConfetti = true`, a celebratory confetti animation will spray 
 - Clicking anywhere on the banner (except the button) will replay the animation
 - The confetti is contained within the banner area
 - The animation uses colors that complement the site's theme
+
+## Scheduling the Announcement
+
+Use `announcementStartDate` and `announcementEndDate` to show the banner only between two dates, for example from when registration opens until the event:
+
+```toml
+[params]
+  announcement = 'Registration is Now Open!'
+  announcementStartDate = '2027-01-15'  # first day shown
+  announcementEndDate = '2027-03-13'    # last day shown (inclusive)
+```
+
+Either date can be used on its own. These follow the same rules as `startDate` / `endDate` on Promo Kit posts.
+
+> **Dates are checked when the site is built, not when someone visits.** The banner appears or disappears on the first rebuild after the date passes. If the site isn't rebuilt regularly, rebuild and deploy it after the end date.
+
+`showAnnouncement = false` always hides the banner, whatever the dates are.
 
 ## Hiding the Announcement on Specific Pages
 
@@ -71,7 +91,17 @@ hideAnnouncement = true
 
 ## Disabling the Announcement Site-Wide
 
-To completely disable the announcement banner, either:
+The simplest way to turn the banner off — while keeping the text ready to re-enable later — is the `showAnnouncement` flag:
+
+```toml
+[params]
+  showAnnouncement = false  # Banner is hidden; announcement text is preserved
+  announcement = 'Registration is Now Open!'
+```
+
+Set it back to `true` (or remove the line) to show the banner again. This mirrors how individual social media posts are disabled in the Promo Kit without deleting their content.
+
+Alternatively, you can remove the announcement entirely:
 
 1. Remove or comment out the `announcement` line in `hugo.toml`:
 
