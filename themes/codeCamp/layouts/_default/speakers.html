@@ -44,7 +44,12 @@
   Speakers who presented in several years appear under each year, linking to one bio page. */ -}}
 {{ $archives := sort $sessionsSection.Sections "File.ContentBaseName" "desc" }}
 {{ with $archives }}
-<h3>Past Presenters</h3>
+<details class="accordion">
+  <summary class="accordion-header">
+    <span class="accordion-icon">&#9658;</span>
+    <h3>Past Presenters</h3>
+  </summary>
+  <div class="accordion-body">
 {{ range . }}
   {{ $year := .File.ContentBaseName }}
   {{ $names := dict }}
@@ -58,5 +63,7 @@
   </p>
   {{ end }}
 {{ end }}
+  </div>
+</details>
 {{ end }}
 {{ end }}
