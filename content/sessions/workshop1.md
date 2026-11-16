@@ -11,6 +11,8 @@ layout = "session"
 
 [Cory La Nou](/speakers/coryl)
 
+**EDIT:** The training materials from this workshop are available here: [https://gopherguides.com/redeem/2026-cvcc-agentic](https://gopherguides.com/redeem/2026-cvcc-agentic)
+
 You've spent years mastering how to design, debug, and build software. Your AI coding assistant has no idea. In this hands-on workshop, you'll teach it to work the way you work, and leave with a setup you can use Monday morning.
 
 <!--more-->
